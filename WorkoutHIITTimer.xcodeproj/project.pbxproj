@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		107157422006E58B00BE3739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107157412006E58B00BE3739 /* AppDelegate.swift */; };
-		107157442006E58B00BE3739 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107157432006E58B00BE3739 /* ViewController.swift */; };
 		107157472006E58B00BE3739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107157452006E58B00BE3739 /* Main.storyboard */; };
 		1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107157482006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld */; };
 		1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1071574B2006E58B00BE3739 /* Assets.xcassets */; };
 		1071574F2006E58B00BE3739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1071574D2006E58B00BE3739 /* LaunchScreen.storyboard */; };
+		1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */; };
+		DDF7FC73496A17B72E02E785 /* Pods_WorkoutHIITTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1071573E2006E58B00BE3739 /* WorkoutHIITTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutHIITTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107157412006E58B00BE3739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		107157432006E58B00BE3739 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		107157462006E58B00BE3739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		107157492006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutHIITTimer.xcdatamodel; sourceTree = "<group>"; };
 		1071574B2006E58B00BE3739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1071574E2006E58B00BE3739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		107157502006E58B00BE3739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
+		7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.release.xcconfig"; sourceTree = "<group>"; };
+		DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutHIITTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF7FC73496A17B72E02E785 /* Pods_WorkoutHIITTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				107157402006E58B00BE3739 /* WorkoutHIITTimer */,
 				1071573F2006E58B00BE3739 /* Products */,
+				F5EEAFE75A72A5C45D34FAC9 /* Pods */,
+				25E795BF8FA8E1E9D522F6C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +63,7 @@
 		107157402006E58B00BE3739 /* WorkoutHIITTimer */ = {
 			isa = PBXGroup;
 			children = (
+				107157502006E58B00BE3739 /* Info.plist */,
 				107157412006E58B00BE3739 /* AppDelegate.swift */,
 				107157572006E61400BE3739 /* Models */,
 				107157562006E60500BE3739 /* Controllers */,
@@ -68,7 +76,7 @@
 		107157562006E60500BE3739 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				107157432006E58B00BE3739 /* ViewController.swift */,
+				1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -94,9 +102,25 @@
 			isa = PBXGroup;
 			children = (
 				1071574B2006E58B00BE3739 /* Assets.xcassets */,
-				107157502006E58B00BE3739 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25E795BF8FA8E1E9D522F6C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5EEAFE75A72A5C45D34FAC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */,
+				C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 107157532006E58C00BE3739 /* Build configuration list for PBXNativeTarget "WorkoutHIITTimer" */;
 			buildPhases = (
+				CEFE7C9D6C59E34D4A21439E /* [CP] Check Pods Manifest.lock */,
 				1071573A2006E58B00BE3739 /* Sources */,
 				1071573B2006E58B00BE3739 /* Frameworks */,
 				1071573C2006E58B00BE3739 /* Resources */,
+				EC8153D0B3A2072D7551CEF9 /* [CP] Embed Pods Frameworks */,
+				D0A608357E03AE439EF3D38A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,13 +193,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CEFE7C9D6C59E34D4A21439E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorkoutHIITTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0A608357E03AE439EF3D38A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC8153D0B3A2072D7551CEF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1071573A2006E58B00BE3739 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */,
-				107157442006E58B00BE3739 /* ViewController.swift in Sources */,
+				1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */,
 				107157422006E58B00BE3739 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +395,7 @@
 		};
 		107157542006E58C00BE3739 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -324,6 +412,7 @@
 		};
 		107157552006E58C00BE3739 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
