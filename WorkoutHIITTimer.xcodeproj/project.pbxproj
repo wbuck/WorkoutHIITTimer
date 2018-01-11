@@ -57,14 +57,46 @@
 			isa = PBXGroup;
 			children = (
 				107157412006E58B00BE3739 /* AppDelegate.swift */,
-				107157432006E58B00BE3739 /* ViewController.swift */,
-				107157452006E58B00BE3739 /* Main.storyboard */,
-				1071574B2006E58B00BE3739 /* Assets.xcassets */,
-				1071574D2006E58B00BE3739 /* LaunchScreen.storyboard */,
-				107157502006E58B00BE3739 /* Info.plist */,
-				107157482006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld */,
+				107157572006E61400BE3739 /* Models */,
+				107157562006E60500BE3739 /* Controllers */,
+				107157582006E62300BE3739 /* Views */,
+				107157592006E64300BE3739 /* Supporting Files */,
 			);
 			path = WorkoutHIITTimer;
+			sourceTree = "<group>";
+		};
+		107157562006E60500BE3739 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				107157432006E58B00BE3739 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		107157572006E61400BE3739 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				107157482006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		107157582006E62300BE3739 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				107157452006E58B00BE3739 /* Main.storyboard */,
+				1071574D2006E58B00BE3739 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		107157592006E64300BE3739 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1071574B2006E58B00BE3739 /* Assets.xcassets */,
+				107157502006E58B00BE3739 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N243WUT3NH;
 				INFOPLIST_FILE = WorkoutHIITTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wbuckley.WorkoutHIITTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -296,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N243WUT3NH;
 				INFOPLIST_FILE = WorkoutHIITTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wbuckley.WorkoutHIITTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
