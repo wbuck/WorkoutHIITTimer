@@ -12,28 +12,17 @@
         <scene sceneID="Wvx-Dx-AyK">
             <objects>
                 <tableViewController id="x6q-X1-hOM" customClass="MainMenuTableViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FJ9-ka-dlf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FJ9-ka-dlf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainMenuCell" rowHeight="82" id="CcD-qN-Fhz" customClass="SwipeTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainMenuCell" rowHeight="82" id="CcD-qN-Fhz" customClass="MainMenuTableViewCell" customModule="WorkoutHIITTimer">
                                 <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CcD-qN-Fhz" id="3CL-sP-5MC">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="875-Af-V7I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="875-Af-V7I" firstAttribute="top" secondItem="3CL-sP-5MC" secondAttribute="top" id="AkT-yp-Zpg"/>
-                                        <constraint firstAttribute="bottom" secondItem="875-Af-V7I" secondAttribute="bottom" id="U3W-1H-Rj4"/>
-                                        <constraint firstItem="875-Af-V7I" firstAttribute="leading" secondItem="3CL-sP-5MC" secondAttribute="leading" id="j6i-sV-KZT"/>
-                                        <constraint firstAttribute="trailing" secondItem="875-Af-V7I" secondAttribute="trailing" id="jkJ-st-Syw"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
