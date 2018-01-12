@@ -21,18 +21,16 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUs-j2-vqo" userLabel="Image Container">
                         <rect key="frame" x="0.0" y="0.0" width="75" height="82"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAP-dv-5uL" userLabel="Timer Icon Image">
-                                <rect key="frame" x="25" y="28" width="26" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="26" id="tcv-BF-lpw"/>
-                                    <constraint firstAttribute="height" constant="26" id="zIE-lG-hWQ"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAP-dv-5uL" userLabel="Timer Icon Image">
+                                <rect key="frame" x="0.0" y="0.0" width="75" height="82"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1879999936" green="0.1879999936" blue="0.1879999936" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KAP-dv-5uL" firstAttribute="centerY" secondItem="RUs-j2-vqo" secondAttribute="centerY" id="bHH-Fh-KYT"/>
-                            <constraint firstItem="KAP-dv-5uL" firstAttribute="centerX" secondItem="RUs-j2-vqo" secondAttribute="centerX" id="cWB-05-Wuu"/>
+                            <constraint firstAttribute="trailing" secondItem="KAP-dv-5uL" secondAttribute="trailing" id="7Pk-eI-M1I"/>
+                            <constraint firstAttribute="bottom" secondItem="KAP-dv-5uL" secondAttribute="bottom" id="Ky1-Ka-iMb"/>
+                            <constraint firstItem="KAP-dv-5uL" firstAttribute="top" secondItem="RUs-j2-vqo" secondAttribute="top" id="Pha-T2-GER"/>
+                            <constraint firstItem="KAP-dv-5uL" firstAttribute="leading" secondItem="RUs-j2-vqo" secondAttribute="leading" id="a4N-qI-azF"/>
                             <constraint firstAttribute="width" constant="75" id="lfH-t8-sLH"/>
                         </constraints>
                     </view>

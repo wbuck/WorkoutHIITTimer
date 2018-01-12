@@ -12,14 +12,18 @@ import ChameleonFramework
 class MainMenuTableViewController: UITableViewController {
     
     let mainMenuCellId = "MainMenuCell"
-    let menuOptions = ["My Timers", "Round Timer", "EMOM Timer", "Stopwatch", "TABATA Timer", "Interval Timer"]
+    let menuOptions = ["My Timers", "Round Timer", "EMOM Timer", "Stopwatch", "Tabata Timer", "Interval Timer"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        tableView.separatorStyle = .none
+        // Register custom table view cell.
         tableView.register(UINib(nibName: "MainMenuTableViewCell", bundle: nil), forCellReuseIdentifier: mainMenuCellId)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateTableContentInset()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,49 +36,48 @@ class MainMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuOptions.count
     }
+    
+    func updateTableContentInset() {
+        let numRows = menuOptions.count
+        var contentInsetTop = tableView.bounds.size.height
+        for i in 0..<numRows {
+            contentInsetTop -= tableView(tableView, heightForRowAt: IndexPath(item: i, section: 0))
+            if contentInsetTop <= 0 {
+                contentInsetTop = 0
+            }
+        }
+        tableView.contentInset = UIEdgeInsetsMake(contentInsetTop, 0, 0, 0)
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mainMenuCellId, for: indexPath) as! MainMenuTableViewCell
+        // Remove the selection highlight from cell.
+        cell.selectionStyle = .none
+        if let image = UIImage(named: menuOptions[indexPath.row]) {
+            cell.iconImageView.image = image
+        }
+        if indexPath.row % 2 == 0 {
+            cell.iconBackground.backgroundColor = UIColor(named: "TimerBlack")
+            cell.labelBackground.backgroundColor = UIColor(named: "TimerGrey")
+        }
+        else {
+            cell.iconBackground.backgroundColor = UIColor(named: "TimerDarkGrey")
+            cell.labelBackground.backgroundColor = UIColor(named: "TimerLightGrey")
+        }
+        
         cell.timerLabel.text = menuOptions[indexPath.row].uppercased()
         return cell
     }
  
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+
 
     /*
     // MARK: - Navigation
