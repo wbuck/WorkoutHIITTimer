@@ -15,6 +15,9 @@
 		1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */; };
 		107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */; };
 		107157612006F61F00BE3739 /* MainMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */; };
+		1076F811200A388B0080E1D3 /* RoundTimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F810200A388B0080E1D3 /* RoundTimerTableViewController.swift */; };
+		1076F814200A3A400080E1D3 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F812200A3A400080E1D3 /* TextTableViewCell.swift */; };
+		1076F815200A3A400080E1D3 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1076F813200A3A400080E1D3 /* TextTableViewCell.xib */; };
 		DDF7FC73496A17B72E02E785 /* Pods_WorkoutHIITTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
 		1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuTableViewCell.xib; sourceTree = "<group>"; };
+		1076F810200A388B0080E1D3 /* RoundTimerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTimerTableViewController.swift; sourceTree = "<group>"; };
+		1076F812200A3A400080E1D3 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		1076F813200A3A400080E1D3 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.release.xcconfig"; sourceTree = "<group>"; };
 		DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutHIITTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */,
+				1076F810200A388B0080E1D3 /* RoundTimerTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -116,6 +123,8 @@
 			children = (
 				1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */,
 				1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */,
+				1076F812200A3A400080E1D3 /* TextTableViewCell.swift */,
+				1076F813200A3A400080E1D3 /* TextTableViewCell.xib */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1071574F2006E58B00BE3739 /* LaunchScreen.storyboard in Resources */,
+				1076F815200A3A400080E1D3 /* TextTableViewCell.xib in Resources */,
 				1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */,
 				107157472006E58B00BE3739 /* Main.storyboard in Resources */,
 				107157612006F61F00BE3739 /* MainMenuTableViewCell.xib in Resources */,
@@ -273,7 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1076F814200A3A400080E1D3 /* TextTableViewCell.swift in Sources */,
 				1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */,
+				1076F811200A388B0080E1D3 /* RoundTimerTableViewController.swift in Sources */,
 				1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */,
 				107157422006E58B00BE3739 /* AppDelegate.swift in Sources */,
 				107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */,
