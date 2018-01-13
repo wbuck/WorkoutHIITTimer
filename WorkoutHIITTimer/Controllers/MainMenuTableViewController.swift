@@ -17,12 +17,12 @@ class MainMenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.separatorStyle = .none
         // Register custom table view cell.
         tableView.register(UINib(nibName: "MainMenuTableViewCell", bundle: nil), forCellReuseIdentifier: mainMenuCellId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableView.separatorStyle = .none
         updateTableContentInset()
     }
 
@@ -73,11 +73,6 @@ class MainMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-
-
-
-
-
 
     /*
     // MARK: - Navigation
