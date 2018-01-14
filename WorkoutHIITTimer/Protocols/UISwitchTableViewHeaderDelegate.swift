@@ -6,9 +6,8 @@
 //  Copyright © 2018 Warren Buckley. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol UISwitchTableViewHeaderDelegate {
-    
-    
+protocol UISwitchTableViewHeaderDelegate: class {
+    func switchToggled( _ uiSwitch: UISwitch, in section: Int)
 }

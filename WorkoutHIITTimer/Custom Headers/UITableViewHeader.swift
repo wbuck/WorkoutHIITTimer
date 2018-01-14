@@ -9,6 +9,6 @@
 import UIKit
 
 class UITableViewHeader : UITableViewHeaderFooterView {
-    
+    var section: Int!
     @IBOutlet weak var headerTitle: UILabel!
 }

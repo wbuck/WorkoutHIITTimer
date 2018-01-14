@@ -8,8 +8,8 @@
 
 import UIKit
 
-class RoundTimerTableViewController: UITableViewController {
-    
+class RoundTimerTableViewController: UITableViewController, UISwitchTableViewHeaderDelegate {
+
     let sectionTitles = ["Timer", "Warm Up", "Rounds", "Rest", "Cool Down", "Warnings"]
     let test = ["Name", "Description"]
     let textCellId = "TextCell"
@@ -53,7 +53,7 @@ class RoundTimerTableViewController: UITableViewController {
         let placeHolderColor = UIColor(named: "TimerFadedGrey") ?? UIColor.flatGray
         cell.inputTextField.attributedPlaceholder =
             NSAttributedString(string: "Enter \(test[indexPath.row].lowercased())",
-                               attributes: [NSAttributedStringKey.foregroundColor : placeHolderColor])
+                attributes: [NSAttributedStringKey.foregroundColor : placeHolderColor])
         return cell
     }
     
@@ -67,6 +67,7 @@ class RoundTimerTableViewController: UITableViewController {
                 as! UITableViewHeader
             
             header.headerTitle.text = sectionTitles[section].uppercased()
+            header.section = section
             return header
         }
         else {
@@ -74,7 +75,20 @@ class RoundTimerTableViewController: UITableViewController {
                 as! UISwitchTableViewHeader
             
             header.headerTitle.text = sectionTitles[section].uppercased()
+            header.section = section
+            header.delegate = self
             return header
         }
     }
+    
+    // MARK: - UISwitchTableViewHeaderDelegate delegate methods
+    
+    func switchToggled(_ uiSwitch: UISwitch, in section: Int) {
+        
+    }
 }
+
+
+
+
+
