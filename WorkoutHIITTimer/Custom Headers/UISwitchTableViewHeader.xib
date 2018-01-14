@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UISwitchTableViewHeader" customModule="WorkoutHIITTimer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="440" height="87"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3u-yL-ElQ">
+                    <rect key="frame" x="0.0" y="0.0" width="440" height="87"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pj-9n-u9Y">
+                            <rect key="frame" x="16" y="0.0" width="189" height="87"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" name="TimerTextGrey"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66h-tW-CfO">
+                            <rect key="frame" x="372" y="28.5" width="51" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="jNj-hh-qDq"/>
+                                <constraint firstAttribute="width" constant="49" id="wro-hO-oOq"/>
+                            </constraints>
+                            <color key="onTintColor" name="TimerOrange"/>
+                        </switch>
+                    </subviews>
+                    <color key="backgroundColor" name="TimerBlack"/>
+                    <constraints>
+                        <constraint firstItem="9Pj-9n-u9Y" firstAttribute="leading" secondItem="Y3u-yL-ElQ" secondAttribute="leading" constant="16" id="006-pS-Y9x"/>
+                        <constraint firstAttribute="trailing" secondItem="9Pj-9n-u9Y" secondAttribute="trailing" constant="235" id="1C8-HK-w6m"/>
+                        <constraint firstAttribute="bottom" secondItem="9Pj-9n-u9Y" secondAttribute="bottom" id="42b-CP-oJQ"/>
+                        <constraint firstAttribute="trailing" secondItem="66h-tW-CfO" secondAttribute="trailing" constant="19" id="MrC-2D-h5f"/>
+                        <constraint firstItem="66h-tW-CfO" firstAttribute="centerY" secondItem="Y3u-yL-ElQ" secondAttribute="centerY" id="eRC-hc-ZdH"/>
+                        <constraint firstItem="9Pj-9n-u9Y" firstAttribute="top" secondItem="Y3u-yL-ElQ" secondAttribute="top" id="gzK-Uo-bBp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Y3u-yL-ElQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Erw-bk-hZE"/>
+                <constraint firstItem="Y3u-yL-ElQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Rn6-Gc-FDg"/>
+                <constraint firstItem="Y3u-yL-ElQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bL5-63-2VI"/>
+                <constraint firstItem="Y3u-yL-ElQ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="iHx-gF-3eu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="headerTitle" destination="9Pj-9n-u9Y" id="Dd1-yc-4zs"/>
+            </connections>
+            <point key="canvasLocation" x="67" y="-236.5"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TimerBlack">
+            <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerOrange">
+            <color red="1" green="0.32499998807907104" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerTextGrey">
+            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

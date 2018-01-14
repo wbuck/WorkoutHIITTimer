@@ -12,6 +12,7 @@ import ChameleonFramework
 class MainMenuTableViewController: UITableViewController {
     
     let mainMenuCellId = "MainMenuCell"
+    let segueIds = ["GoToMyTimers", "GoToRoundTimer", "GoToEmomTimer", "GoToStopWatch", "GoToTabataTimer", "GoToIntervalTimer"]
     let menuOptions = ["My Timers", "Round Timer", "EMOM Timer", "Stopwatch", "Tabata Timer", "Interval Timer"]
     
     override func viewDidLoad() {
@@ -69,8 +70,29 @@ class MainMenuTableViewController: UITableViewController {
         cell.timerLabel.text = menuOptions[indexPath.row].uppercased()
         return cell
     }
+    
+    // MARK: - Navigation
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+         performSegue(withIdentifier: segueIds[indexPath.row], sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let destination = segue.destination as?
+//            TimerSetupTableViewController else { return }
+//        if let indexPath = tableView.indexPathForSelectedRow {
+//            destination.timerTitle = menuOptions[indexPath.row]
+//        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+

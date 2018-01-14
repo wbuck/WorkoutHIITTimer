@@ -18,8 +18,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="TimerBlack"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <color key="textColor" name="TimerTextGrey"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="TimerOrange"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -30,7 +33,7 @@
             </objects>
             <point key="canvasLocation" x="-497" y="241"/>
         </scene>
-        <!--HIIT TIMER-->
+        <!--Main-->
         <scene sceneID="Wvx-Dx-AyK">
             <objects>
                 <tableViewController id="x6q-X1-hOM" customClass="MainMenuTableViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,62 +41,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="TimerBlack"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainMenuCell" rowHeight="82" id="CcD-qN-Fhz" customClass="MainMenuTableViewCell" customModule="WorkoutHIITTimer">
-                                <rect key="frame" x="0.0" y="28" width="375" height="82"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CcD-qN-Fhz" id="3CL-sP-5MC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="x6q-X1-hOM" id="BOh-CJ-6XK"/>
                             <outlet property="delegate" destination="x6q-X1-hOM" id="MuW-Az-6vs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="HIIT TIMER" id="64x-Qm-DoN"/>
+                    <navigationItem key="navigationItem" title="Main" id="64x-Qm-DoN"/>
+                    <connections>
+                        <segue destination="j8V-xM-cxK" kind="show" identifier="GoToRoundTimer" id="UEL-T4-V5r"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTo-v8-S1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="386.39999999999998" y="240.62968515742131"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="nR9-AV-ZaE">
+        <!--Round Timer-->
+        <scene sceneID="5e2-wH-lkg">
             <objects>
-                <tableViewController id="IYp-Gb-Ir9" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hr8-8z-Phv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="j8V-xM-cxK" customClass="RoundTimerTableViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" estimatedRowHeight="-1" sectionHeaderHeight="60" sectionFooterHeight="28" id="zSI-Ya-fK8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="htZ-Xn-Iqu">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="htZ-Xn-Iqu" id="b9z-dL-lAg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="IYp-Gb-Ir9" id="Qpa-73-Mta"/>
-                            <outlet property="delegate" destination="IYp-Gb-Ir9" id="Nb3-yt-qyF"/>
+                            <outlet property="dataSource" destination="j8V-xM-cxK" id="HuN-Zz-dPt"/>
+                            <outlet property="delegate" destination="j8V-xM-cxK" id="yJI-oR-JdB"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Round Timer" id="F42-Fv-F3s">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="RNE-8B-FPt"/>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bRP-ez-Y0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keH-P3-97x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1217" y="245"/>
+            <point key="canvasLocation" x="1204" y="246"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="TimerOrange">
-            <color red="1" green="0.32499998807907104" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="TimerTextGrey">
+            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
