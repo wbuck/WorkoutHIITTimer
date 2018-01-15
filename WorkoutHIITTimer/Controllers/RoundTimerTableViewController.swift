@@ -12,7 +12,7 @@ import RealmSwift
 class RoundTimerTableViewController: UITableViewController, UISwitchTableViewHeaderDelegate {
     
     let sectionTitles = ["Timer", "Warm Up", "Rounds", "Rest", "Cool Down", "Warnings"]
-    var tableData = [TableViewData]()
+
     let timerSectionCells = ["Name", "Description"]
     
     /*
