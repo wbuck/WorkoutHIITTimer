@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UISwitchTableViewHeader: UITableViewHeaderFooterView {
+class UISwitchTableViewHeader: UITableViewHeaderFooterView {    
     weak var delegate: UISwitchTableViewHeaderDelegate?
     var section: Int!
     @IBOutlet weak var headerTitle: UILabel!

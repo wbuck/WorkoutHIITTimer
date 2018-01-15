@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SegmentControlTableViewCell" id="KGk-i7-Jjw" customClass="UISegmentTableViewCell" customModule="WorkoutHIITTimer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="46.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hc-le-LvS">
+                        <rect key="frame" x="16" y="0.5" width="124" height="46"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" name="TimerTextGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cIx-Py-TFL">
+                        <rect key="frame" x="183" y="9.5" width="121" height="29"/>
+                        <segments>
+                            <segment title="Down"/>
+                            <segment title="Up"/>
+                        </segments>
+                        <color key="tintColor" name="TimerOrange"/>
+                        <connections>
+                            <action selector="segmentValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="QEJ-up-JQS"/>
+                        </connections>
+                    </segmentedControl>
+                </subviews>
+                <color key="backgroundColor" name="TimerGrey"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="1Hc-le-LvS" secondAttribute="trailing" constant="180" id="4Ri-bE-tXy"/>
+                    <constraint firstItem="cIx-Py-TFL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9.4499999999999993" id="MvN-JC-mLK"/>
+                    <constraint firstAttribute="bottom" secondItem="cIx-Py-TFL" secondAttribute="bottom" constant="9.0500000000000007" id="c8N-XM-Nj6"/>
+                    <constraint firstAttribute="trailing" secondItem="cIx-Py-TFL" secondAttribute="trailing" constant="16" id="ihM-up-8gi"/>
+                    <constraint firstItem="1Hc-le-LvS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="j14-Ig-D9S"/>
+                    <constraint firstItem="1Hc-le-LvS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sIO-nw-woT"/>
+                    <constraint firstAttribute="bottom" secondItem="1Hc-le-LvS" secondAttribute="bottom" id="uEV-0X-ejy"/>
+                    <constraint firstItem="cIx-Py-TFL" firstAttribute="leading" secondItem="1Hc-le-LvS" secondAttribute="trailing" constant="43" id="ucP-tF-5yg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="segmentControl" destination="cIx-Py-TFL" id="Cu3-UZ-T6Z"/>
+                <outlet property="titleTextLabel" destination="1Hc-le-LvS" id="yCN-eC-OFz"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="53.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="TimerGrey">
+            <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerOrange">
+            <color red="1" green="0.32499998807907104" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerTextGrey">
+            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
