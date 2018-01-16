@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class RoundTimerTableViewController: UIViewController {
+class RoundTimerViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     

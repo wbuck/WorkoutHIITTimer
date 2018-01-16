@@ -1,30 +1,39 @@
 //
-//  PickerControlExpansionView.swift
+//  PickerControlView.swift
 //  WorkoutHIITTimer
 //
-//  Created by Warren Buckley on 2018-01-16.
+//  Created by Warren Buckley on 2018-01-15.
 //  Copyright © 2018 Warren Buckley. All rights reserved.
 //
 
 import UIKit
 
-class PickerControlExpansionView: UIView, NibFileOwnerLoadable, UIPickerViewDataSource, UIPickerViewDelegate {
+class PickerControlView: UIView, NibFileOwnerLoadable  {
     
+    var time: (Int, Int, Int) = (0, 0, 0) {
+        didSet {
+            let hour = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
+            let minute = time.1 < 10 ? "0\(time.1)" : "\(time.1)"
+            let second = time.2 < 10 ? "0\(time.2)" : "\(time.2)"
+            timeLabel.text = "\(hour):\(minute):\(second)"
+        }
+    }
+    
+    @IBOutlet weak var chevronImage: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
-    var hours = 0
-    var minutes = 0
-    var seconds = 0
+    @IBOutlet weak var timeLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadNibContent()
         pickerView.delegate = self
         pickerView.dataSource = self
-        
+        chevronImage.transform = chevronImage.transform.rotated(by: .pi / 2)
     }
+}
+
+extension PickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
     
-    
-    // MARKL - UIPickerView data source methods.
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
@@ -47,11 +56,11 @@ class PickerControlExpansionView: UIView, NibFileOwnerLoadable, UIPickerViewData
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
-            hours = row
+            time.0 = row
         case 1:
-            minutes = row
+            time.1 = row
         case 2:
-            seconds = row
+            time.2 = row
         default:
             break
         }
@@ -59,8 +68,8 @@ class PickerControlExpansionView: UIView, NibFileOwnerLoadable, UIPickerViewData
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = (view as? UILabel) ?? UILabel()
-        label.textColor = UIColor(named: "TimerTextGrey")
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = UIColor(named: "TimerOrange")
+        label.font = UIFont.systemFont(ofSize: 17)
         label.textAlignment = .center
         switch component {
         case 0:

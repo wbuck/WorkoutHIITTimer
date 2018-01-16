@@ -15,7 +15,7 @@
 		1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */; };
 		107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */; };
 		107157612006F61F00BE3739 /* MainMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */; };
-		1076F811200A388B0080E1D3 /* RoundTimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F810200A388B0080E1D3 /* RoundTimerTableViewController.swift */; };
+		1076F811200A388B0080E1D3 /* RoundTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F810200A388B0080E1D3 /* RoundTimerViewController.swift */; };
 		1076F821200B8AAE0080E1D3 /* UISwitchTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F820200B8AAE0080E1D3 /* UISwitchTableViewHeader.swift */; };
 		1076F823200B8B280080E1D3 /* UISwitchTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1076F822200B8B280080E1D3 /* UISwitchTableViewHeader.xib */; };
 		1076F825200B9DB20080E1D3 /* UITableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F824200B9DB20080E1D3 /* UITableViewHeader.swift */; };
@@ -40,8 +40,6 @@
 		10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */; };
 		10F1274A200D915C00DE7F6D /* PickerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12749200D915C00DE7F6D /* PickerControlView.xib */; };
 		10F1274C200D935000DE7F6D /* PickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1274B200D935000DE7F6D /* PickerControlView.swift */; };
-		10F1274E200E21DB00DE7F6D /* PickerControlExpansionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F1274D200E21DB00DE7F6D /* PickerControlExpansionView.xib */; };
-		10F12750200E237D00DE7F6D /* PickerControlExpansionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1274F200E237D00DE7F6D /* PickerControlExpansionView.swift */; };
 		DDF7FC73496A17B72E02E785 /* Pods_WorkoutHIITTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +54,7 @@
 		1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
 		1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuTableViewCell.xib; sourceTree = "<group>"; };
-		1076F810200A388B0080E1D3 /* RoundTimerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTimerTableViewController.swift; sourceTree = "<group>"; };
+		1076F810200A388B0080E1D3 /* RoundTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTimerViewController.swift; sourceTree = "<group>"; };
 		1076F820200B8AAE0080E1D3 /* UISwitchTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchTableViewHeader.swift; sourceTree = "<group>"; };
 		1076F822200B8B280080E1D3 /* UISwitchTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UISwitchTableViewHeader.xib; sourceTree = "<group>"; };
 		1076F824200B9DB20080E1D3 /* UITableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewHeader.swift; sourceTree = "<group>"; };
@@ -81,8 +79,6 @@
 		10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSwitchView.swift; sourceTree = "<group>"; };
 		10F12749200D915C00DE7F6D /* PickerControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerControlView.xib; sourceTree = "<group>"; };
 		10F1274B200D935000DE7F6D /* PickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlView.swift; sourceTree = "<group>"; };
-		10F1274D200E21DB00DE7F6D /* PickerControlExpansionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerControlExpansionView.xib; sourceTree = "<group>"; };
-		10F1274F200E237D00DE7F6D /* PickerControlExpansionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlExpansionView.swift; sourceTree = "<group>"; };
 		7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.release.xcconfig"; sourceTree = "<group>"; };
 		DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutHIITTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */,
-				1076F810200A388B0080E1D3 /* RoundTimerTableViewController.swift */,
+				1076F810200A388B0080E1D3 /* RoundTimerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,18 +158,10 @@
 			children = (
 				107157452006E58B00BE3739 /* Main.storyboard */,
 				1071574D2006E58B00BE3739 /* LaunchScreen.storyboard */,
-				10F12737200D60CE00DE7F6D /* TextFieldView.xib */,
-				10F12739200D637E00DE7F6D /* TextFieldView.swift */,
-				10F1273D200D7F0100DE7F6D /* SegmentControlView.xib */,
-				10F1273F200D809C00DE7F6D /* SegmentControlView.swift */,
-				10F12741200D81B200DE7F6D /* HeaderView.xib */,
-				10F12743200D826E00DE7F6D /* HeaderView.swift */,
-				10F12745200D8E2300DE7F6D /* HeaderSwitchView.xib */,
-				10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */,
-				10F12749200D915C00DE7F6D /* PickerControlView.xib */,
-				10F1274B200D935000DE7F6D /* PickerControlView.swift */,
-				10F1274D200E21DB00DE7F6D /* PickerControlExpansionView.xib */,
-				10F1274F200E237D00DE7F6D /* PickerControlExpansionView.swift */,
+				10F12754200E324900DE7F6D /* TextView */,
+				10F12753200E323F00DE7F6D /* SegmentView */,
+				10F12752200E323200DE7F6D /* HeaderView */,
+				10F12751200E322200DE7F6D /* PickerVIew */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +211,44 @@
 				1076F839200C219F0080E1D3 /* TimerDirection.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		10F12751200E322200DE7F6D /* PickerVIew */ = {
+			isa = PBXGroup;
+			children = (
+				10F12749200D915C00DE7F6D /* PickerControlView.xib */,
+				10F1274B200D935000DE7F6D /* PickerControlView.swift */,
+			);
+			path = PickerVIew;
+			sourceTree = "<group>";
+		};
+		10F12752200E323200DE7F6D /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				10F12741200D81B200DE7F6D /* HeaderView.xib */,
+				10F12743200D826E00DE7F6D /* HeaderView.swift */,
+				10F12745200D8E2300DE7F6D /* HeaderSwitchView.xib */,
+				10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		10F12753200E323F00DE7F6D /* SegmentView */ = {
+			isa = PBXGroup;
+			children = (
+				10F1273D200D7F0100DE7F6D /* SegmentControlView.xib */,
+				10F1273F200D809C00DE7F6D /* SegmentControlView.swift */,
+			);
+			path = SegmentView;
+			sourceTree = "<group>";
+		};
+		10F12754200E324900DE7F6D /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				10F12737200D60CE00DE7F6D /* TextFieldView.xib */,
+				10F12739200D637E00DE7F6D /* TextFieldView.swift */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 		25E795BF8FA8E1E9D522F6C6 /* Frameworks */ = {
@@ -310,7 +336,6 @@
 				1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */,
 				10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */,
 				107157472006E58B00BE3739 /* Main.storyboard in Resources */,
-				10F1274E200E21DB00DE7F6D /* PickerControlExpansionView.xib in Resources */,
 				10F12742200D81B200DE7F6D /* HeaderView.xib in Resources */,
 				10F12746200D8E2300DE7F6D /* HeaderSwitchView.xib in Resources */,
 				10F1273E200D7F0100DE7F6D /* SegmentControlView.xib in Resources */,
@@ -391,10 +416,9 @@
 				1076F83A200C219F0080E1D3 /* TimerDirection.swift in Sources */,
 				1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */,
 				10F1274C200D935000DE7F6D /* PickerControlView.swift in Sources */,
-				1076F811200A388B0080E1D3 /* RoundTimerTableViewController.swift in Sources */,
+				1076F811200A388B0080E1D3 /* RoundTimerViewController.swift in Sources */,
 				1076F836200C10D50080E1D3 /* TimerInfo.swift in Sources */,
 				10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */,
-				10F12750200E237D00DE7F6D /* PickerControlExpansionView.swift in Sources */,
 				1076F83E200C240B0080E1D3 /* TimerWarnings.swift in Sources */,
 				1076F831200C0DE90080E1D3 /* RoundTimer.swift in Sources */,
 				1076F829200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift in Sources */,
