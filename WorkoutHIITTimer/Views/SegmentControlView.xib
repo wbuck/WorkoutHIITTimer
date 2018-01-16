@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK4-KJ-mJh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOb-7k-wp3">
+                            <rect key="frame" x="16" y="0.0" width="85" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="85" id="3hQ-yp-pas"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" name="TimerTextGrey"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1lk-Zi-HeB">
+                            <rect key="frame" x="246" y="11" width="113" height="29"/>
+                            <segments>
+                                <segment title="Up"/>
+                                <segment title="Down"/>
+                            </segments>
+                            <color key="tintColor" name="TimerOrange"/>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" name="TimerGrey"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="1lk-Zi-HeB" secondAttribute="bottom" constant="11" id="10Q-d8-eV9"/>
+                        <constraint firstItem="WOb-7k-wp3" firstAttribute="top" secondItem="FK4-KJ-mJh" secondAttribute="top" id="Fm4-UU-xZq"/>
+                        <constraint firstItem="1lk-Zi-HeB" firstAttribute="top" secondItem="FK4-KJ-mJh" secondAttribute="top" constant="11" id="YWu-Am-bgC"/>
+                        <constraint firstAttribute="trailing" secondItem="1lk-Zi-HeB" secondAttribute="trailing" constant="16" id="Ze6-ca-bMQ"/>
+                        <constraint firstAttribute="bottom" secondItem="WOb-7k-wp3" secondAttribute="bottom" id="l2c-R1-t1H"/>
+                        <constraint firstItem="1lk-Zi-HeB" firstAttribute="leading" secondItem="FK4-KJ-mJh" secondAttribute="leading" constant="246" id="nyr-Gc-CbD"/>
+                        <constraint firstItem="WOb-7k-wp3" firstAttribute="leading" secondItem="FK4-KJ-mJh" secondAttribute="leading" constant="16" id="yFA-6G-Hr4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="FK4-KJ-mJh" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="B40-S5-L82"/>
+                <constraint firstItem="FK4-KJ-mJh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fZM-93-IHh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FK4-KJ-mJh" secondAttribute="trailing" id="iVI-7o-sh7"/>
+                <constraint firstItem="FK4-KJ-mJh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kEm-ic-BoQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="55"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TimerGrey">
+            <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerOrange">
+            <color red="1" green="0.32499998807907104" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerTextGrey">
+            <color red="0.58399999140000003" green="0.59600001570000005" blue="0.60399997230000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

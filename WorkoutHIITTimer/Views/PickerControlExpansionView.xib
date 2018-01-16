@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickerControlExpansionView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+            <connections>
+                <outlet property="pickerView" destination="vo5-Eh-40S" id="Vh7-Zo-52f"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSr-Ui-djq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vo5-Eh-40S">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" name="TimerGrey"/>
+                    <constraints>
+                        <constraint firstItem="vo5-Eh-40S" firstAttribute="leading" secondItem="jSr-Ui-djq" secondAttribute="leading" id="Sop-40-jAu"/>
+                        <constraint firstAttribute="bottom" secondItem="vo5-Eh-40S" secondAttribute="bottom" id="XFJ-7m-VTN"/>
+                        <constraint firstAttribute="trailing" secondItem="vo5-Eh-40S" secondAttribute="trailing" id="Y1I-2B-Phb"/>
+                        <constraint firstItem="vo5-Eh-40S" firstAttribute="top" secondItem="jSr-Ui-djq" secondAttribute="top" id="crV-XY-GOY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jSr-Ui-djq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="6RO-EW-5sC"/>
+                <constraint firstItem="jSr-Ui-djq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="N4x-jY-kKx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jSr-Ui-djq" secondAttribute="trailing" id="TUB-PE-fFM"/>
+                <constraint firstItem="jSr-Ui-djq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gUZ-8C-SPJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="55"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TimerGrey">
+            <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

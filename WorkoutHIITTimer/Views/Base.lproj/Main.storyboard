@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,38 +49,182 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Main" id="64x-Qm-DoN"/>
                     <connections>
-                        <segue destination="j8V-xM-cxK" kind="show" identifier="GoToRoundTimer" id="UEL-T4-V5r"/>
+                        <segue destination="LX3-ta-hBQ" kind="show" identifier="GoToRoundTimer" id="cBR-b4-A52"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTo-v8-S1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="386.39999999999998" y="240.62968515742131"/>
         </scene>
-        <!--Round Timer-->
-        <scene sceneID="5e2-wH-lkg">
+        <!--Round Timer Table View Controller-->
+        <scene sceneID="5VY-jk-BVf">
             <objects>
-                <tableViewController id="j8V-xM-cxK" customClass="RoundTimerTableViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" estimatedRowHeight="-1" sectionHeaderHeight="60" sectionFooterHeight="28" id="zSI-Ya-fK8">
+                <viewController id="LX3-ta-hBQ" customClass="RoundTimerTableViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h72-Rq-nLe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-wr-Og1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGZ-2W-zrE" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="C1d-t5-crA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYd-dT-6mM" userLabel="Separator">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="1"/>
+                                        <color key="backgroundColor" name="TimerFadedGrey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="7LR-Xn-dg1"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jme-TK-XuC" customClass="TextFieldView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="112" width="375" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="VsK-yT-xpt"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFu-Ad-XV7" userLabel="Separator">
+                                        <rect key="frame" x="0.0" y="162" width="375" height="1"/>
+                                        <color key="backgroundColor" name="TimerFadedGrey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="7fj-Kr-PR5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wz0-gx-WsF" customClass="HeaderSwitchView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="163" width="375" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="7yZ-dU-a0x"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPQ-wX-6yK" userLabel="Separator">
+                                        <rect key="frame" x="0.0" y="223" width="375" height="1"/>
+                                        <color key="backgroundColor" name="TimerFadedGrey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="71g-UL-Mje"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAP-EK-c11" customClass="PickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="224" width="375" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Bll-KE-2IG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHx-t8-9Uj" userLabel="Inset Separator">
+                                        <rect key="frame" x="16" y="284" width="359" height="1"/>
+                                        <color key="backgroundColor" name="TimerFadedGrey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Iqw-to-UOj"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrS-D2-984" customClass="PickerControlExpansionView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="285" width="375" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="sqE-Zl-sIX"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDP-i2-a6M" customClass="TextFieldView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="61" width="375" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MrN-P3-P6d"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIZ-K9-FkH" userLabel="Inset Separator">
+                                        <rect key="frame" x="16" y="111" width="359" height="1"/>
+                                        <color key="backgroundColor" name="TimerFadedGrey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="1Nw-XO-2ds"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="TimerGrey"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lYd-dT-6mM" secondAttribute="trailing" id="16d-jz-lMV"/>
+                                    <constraint firstItem="Jme-TK-XuC" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="4Us-ST-FsJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="MrS-D2-984" secondAttribute="trailing" id="6s2-X7-WBP"/>
+                                    <constraint firstItem="YHx-t8-9Uj" firstAttribute="top" secondItem="sAP-EK-c11" secondAttribute="bottom" id="7ZX-0x-bsr"/>
+                                    <constraint firstItem="UFu-Ad-XV7" firstAttribute="top" secondItem="Jme-TK-XuC" secondAttribute="bottom" id="Ayo-xU-XDy"/>
+                                    <constraint firstItem="sAP-EK-c11" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="Brf-HP-ie7"/>
+                                    <constraint firstAttribute="trailing" secondItem="sAP-EK-c11" secondAttribute="trailing" id="Fzy-QW-Axz"/>
+                                    <constraint firstItem="qIZ-K9-FkH" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" constant="16" id="JaH-zf-EG9"/>
+                                    <constraint firstItem="lYd-dT-6mM" firstAttribute="top" secondItem="dGZ-2W-zrE" secondAttribute="bottom" id="Koc-ZA-sXw"/>
+                                    <constraint firstItem="ZDP-i2-a6M" firstAttribute="top" secondItem="lYd-dT-6mM" secondAttribute="bottom" id="L5D-r1-zsS"/>
+                                    <constraint firstItem="qIZ-K9-FkH" firstAttribute="top" secondItem="ZDP-i2-a6M" secondAttribute="bottom" id="L9z-kw-CYm"/>
+                                    <constraint firstItem="dGZ-2W-zrE" firstAttribute="centerX" secondItem="4lF-wr-Og1" secondAttribute="centerX" id="QIX-yl-FKi"/>
+                                    <constraint firstItem="MrS-D2-984" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="Qhi-TV-fV4"/>
+                                    <constraint firstAttribute="trailing" secondItem="aPQ-wX-6yK" secondAttribute="trailing" id="RDG-vk-JnR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jme-TK-XuC" secondAttribute="trailing" id="VNn-6H-lMy"/>
+                                    <constraint firstAttribute="trailing" secondItem="UFu-Ad-XV7" secondAttribute="trailing" id="WsF-Aa-wRd"/>
+                                    <constraint firstItem="aPQ-wX-6yK" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="XpI-BZ-gXE"/>
+                                    <constraint firstItem="sAP-EK-c11" firstAttribute="top" secondItem="aPQ-wX-6yK" secondAttribute="bottom" id="XzL-v2-giO"/>
+                                    <constraint firstItem="ZDP-i2-a6M" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="Xzp-h3-7zJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="YHx-t8-9Uj" secondAttribute="trailing" id="YfC-Yk-ist"/>
+                                    <constraint firstItem="aPQ-wX-6yK" firstAttribute="top" secondItem="wz0-gx-WsF" secondAttribute="bottom" id="Yof-5h-Om4"/>
+                                    <constraint firstItem="dGZ-2W-zrE" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="ZrO-PR-I0c"/>
+                                    <constraint firstItem="lYd-dT-6mM" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="cPg-L8-9MP"/>
+                                    <constraint firstItem="wz0-gx-WsF" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="fSC-Jf-wq8"/>
+                                    <constraint firstAttribute="trailing" secondItem="qIZ-K9-FkH" secondAttribute="trailing" id="fy0-JM-god"/>
+                                    <constraint firstItem="UFu-Ad-XV7" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" id="g9B-S4-WXd"/>
+                                    <constraint firstAttribute="trailing" secondItem="wz0-gx-WsF" secondAttribute="trailing" id="hlP-7l-gpj"/>
+                                    <constraint firstItem="YHx-t8-9Uj" firstAttribute="leading" secondItem="4lF-wr-Og1" secondAttribute="leading" constant="16" id="ibq-Ok-tq6"/>
+                                    <constraint firstItem="dGZ-2W-zrE" firstAttribute="top" secondItem="4lF-wr-Og1" secondAttribute="top" id="kjg-8t-NjE"/>
+                                    <constraint firstItem="Jme-TK-XuC" firstAttribute="top" secondItem="qIZ-K9-FkH" secondAttribute="bottom" id="mzy-kV-WY2"/>
+                                    <constraint firstItem="wz0-gx-WsF" firstAttribute="top" secondItem="UFu-Ad-XV7" secondAttribute="bottom" id="qMH-kv-zHi"/>
+                                    <constraint firstItem="MrS-D2-984" firstAttribute="top" secondItem="YHx-t8-9Uj" secondAttribute="bottom" id="t2Y-JR-DyJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dGZ-2W-zrE" secondAttribute="trailing" id="tCS-G9-m7R"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZDP-i2-a6M" secondAttribute="trailing" id="uZg-SM-61o"/>
+                                    <constraint firstAttribute="bottom" secondItem="dGZ-2W-zrE" secondAttribute="bottom" constant="543" id="xhb-Hc-I7X"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="j8V-xM-cxK" id="HuN-Zz-dPt"/>
-                            <outlet property="delegate" destination="j8V-xM-cxK" id="yJI-oR-JdB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Round Timer" id="F42-Fv-F3s">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="RNE-8B-FPt"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="keH-P3-97x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="4lF-wr-Og1" firstAttribute="trailing" secondItem="NAi-NF-MJI" secondAttribute="trailing" id="9LL-Fl-eeb"/>
+                            <constraint firstItem="4lF-wr-Og1" firstAttribute="bottom" secondItem="NAi-NF-MJI" secondAttribute="bottom" id="Cjo-PZ-zFx"/>
+                            <constraint firstItem="4lF-wr-Og1" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="dYE-DN-J5U"/>
+                            <constraint firstItem="4lF-wr-Og1" firstAttribute="top" secondItem="NAi-NF-MJI" secondAttribute="top" id="qcF-Qn-gN9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NAi-NF-MJI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BgI-az-xox"/>
+                    <connections>
+                        <outlet property="scrollView" destination="4lF-wr-Og1" id="xNt-pd-129"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huu-q2-yOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="246"/>
+            <point key="canvasLocation" x="1269.5999999999999" y="240.62968515742131"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999140000003" green="0.59600001570000005" blue="0.60399997230000002" alpha="0.40000000600000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999140000003" green="0.59600001570000005" blue="0.60399997230000002" alpha="0.40000000600000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999140000003" green="0.59600001570000005" blue="0.60399997230000002" alpha="0.40000000600000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999140000003" green="0.59600001570000005" blue="0.60399997230000002" alpha="0.40000000600000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerGrey">
+            <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TimerTextGrey">
             <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

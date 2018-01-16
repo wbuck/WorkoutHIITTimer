@@ -16,27 +16,32 @@
 		107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */; };
 		107157612006F61F00BE3739 /* MainMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */; };
 		1076F811200A388B0080E1D3 /* RoundTimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F810200A388B0080E1D3 /* RoundTimerTableViewController.swift */; };
-		1076F814200A3A400080E1D3 /* UITextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F812200A3A400080E1D3 /* UITextTableViewCell.swift */; };
-		1076F815200A3A400080E1D3 /* UITextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1076F813200A3A400080E1D3 /* UITextTableViewCell.xib */; };
 		1076F821200B8AAE0080E1D3 /* UISwitchTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F820200B8AAE0080E1D3 /* UISwitchTableViewHeader.swift */; };
 		1076F823200B8B280080E1D3 /* UISwitchTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1076F822200B8B280080E1D3 /* UISwitchTableViewHeader.xib */; };
 		1076F825200B9DB20080E1D3 /* UITableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F824200B9DB20080E1D3 /* UITableViewHeader.swift */; };
 		1076F827200B9DE50080E1D3 /* UITableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1076F826200B9DE50080E1D3 /* UITableViewHeader.xib */; };
 		1076F829200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F828200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift */; };
 		1076F82B200BBF4E0080E1D3 /* CustomCellActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F82A200BBF4E0080E1D3 /* CustomCellActions.swift */; };
-		1076F82E200BFB7E0080E1D3 /* UISegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F82C200BFB7E0080E1D3 /* UISegmentTableViewCell.swift */; };
-		1076F82F200BFB7E0080E1D3 /* UISegmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1076F82D200BFB7E0080E1D3 /* UISegmentTableViewCell.xib */; };
 		1076F831200C0DE90080E1D3 /* RoundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F830200C0DE90080E1D3 /* RoundTimer.swift */; };
 		1076F834200C0E5F0080E1D3 /* TimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F833200C0E5F0080E1D3 /* TimerType.swift */; };
 		1076F836200C10D50080E1D3 /* TimerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F835200C10D50080E1D3 /* TimerInfo.swift */; };
 		1076F83A200C219F0080E1D3 /* TimerDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F839200C219F0080E1D3 /* TimerDirection.swift */; };
 		1076F83E200C240B0080E1D3 /* TimerWarnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F83D200C240B0080E1D3 /* TimerWarnings.swift */; };
 		1076F840200C26BA0080E1D3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F83F200C26BA0080E1D3 /* Timer.swift */; };
-		10F1272A200CD05F00DE7F6D /* UIPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12728200CD05F00DE7F6D /* UIPickerTableViewCell.swift */; };
-		10F1272B200CD05F00DE7F6D /* UIPickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12729200CD05F00DE7F6D /* UIPickerTableViewCell.xib */; };
-		10F1272E200CD07600DE7F6D /* UIPickerExpansionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1272C200CD07600DE7F6D /* UIPickerExpansionTableViewCell.swift */; };
-		10F1272F200CD07600DE7F6D /* UIPickerExpansionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F1272D200CD07600DE7F6D /* UIPickerExpansionTableViewCell.xib */; };
 		10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12730200CDE5500DE7F6D /* SubTimer.swift */; };
+		10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12737200D60CE00DE7F6D /* TextFieldView.xib */; };
+		10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12739200D637E00DE7F6D /* TextFieldView.swift */; };
+		10F1273C200D698B00DE7F6D /* NibFileOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1273B200D698B00DE7F6D /* NibFileOwnerLoadable.swift */; };
+		10F1273E200D7F0100DE7F6D /* SegmentControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F1273D200D7F0100DE7F6D /* SegmentControlView.xib */; };
+		10F12740200D809C00DE7F6D /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1273F200D809C00DE7F6D /* SegmentControlView.swift */; };
+		10F12742200D81B200DE7F6D /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12741200D81B200DE7F6D /* HeaderView.xib */; };
+		10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12743200D826E00DE7F6D /* HeaderView.swift */; };
+		10F12746200D8E2300DE7F6D /* HeaderSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12745200D8E2300DE7F6D /* HeaderSwitchView.xib */; };
+		10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */; };
+		10F1274A200D915C00DE7F6D /* PickerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12749200D915C00DE7F6D /* PickerControlView.xib */; };
+		10F1274C200D935000DE7F6D /* PickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1274B200D935000DE7F6D /* PickerControlView.swift */; };
+		10F1274E200E21DB00DE7F6D /* PickerControlExpansionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F1274D200E21DB00DE7F6D /* PickerControlExpansionView.xib */; };
+		10F12750200E237D00DE7F6D /* PickerControlExpansionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1274F200E237D00DE7F6D /* PickerControlExpansionView.swift */; };
 		DDF7FC73496A17B72E02E785 /* Pods_WorkoutHIITTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,27 +57,32 @@
 		1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
 		1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuTableViewCell.xib; sourceTree = "<group>"; };
 		1076F810200A388B0080E1D3 /* RoundTimerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTimerTableViewController.swift; sourceTree = "<group>"; };
-		1076F812200A3A400080E1D3 /* UITextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextTableViewCell.swift; sourceTree = "<group>"; };
-		1076F813200A3A400080E1D3 /* UITextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITextTableViewCell.xib; sourceTree = "<group>"; };
 		1076F820200B8AAE0080E1D3 /* UISwitchTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchTableViewHeader.swift; sourceTree = "<group>"; };
 		1076F822200B8B280080E1D3 /* UISwitchTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UISwitchTableViewHeader.xib; sourceTree = "<group>"; };
 		1076F824200B9DB20080E1D3 /* UITableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewHeader.swift; sourceTree = "<group>"; };
 		1076F826200B9DE50080E1D3 /* UITableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableViewHeader.xib; sourceTree = "<group>"; };
 		1076F828200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchTableViewHeaderDelegate.swift; sourceTree = "<group>"; };
 		1076F82A200BBF4E0080E1D3 /* CustomCellActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellActions.swift; sourceTree = "<group>"; };
-		1076F82C200BFB7E0080E1D3 /* UISegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentTableViewCell.swift; sourceTree = "<group>"; };
-		1076F82D200BFB7E0080E1D3 /* UISegmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UISegmentTableViewCell.xib; sourceTree = "<group>"; };
 		1076F830200C0DE90080E1D3 /* RoundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTimer.swift; sourceTree = "<group>"; };
 		1076F833200C0E5F0080E1D3 /* TimerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerType.swift; sourceTree = "<group>"; };
 		1076F835200C10D50080E1D3 /* TimerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInfo.swift; sourceTree = "<group>"; };
 		1076F839200C219F0080E1D3 /* TimerDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDirection.swift; sourceTree = "<group>"; };
 		1076F83D200C240B0080E1D3 /* TimerWarnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWarnings.swift; sourceTree = "<group>"; };
 		1076F83F200C26BA0080E1D3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		10F12728200CD05F00DE7F6D /* UIPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerTableViewCell.swift; sourceTree = "<group>"; };
-		10F12729200CD05F00DE7F6D /* UIPickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIPickerTableViewCell.xib; sourceTree = "<group>"; };
-		10F1272C200CD07600DE7F6D /* UIPickerExpansionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerExpansionTableViewCell.swift; sourceTree = "<group>"; };
-		10F1272D200CD07600DE7F6D /* UIPickerExpansionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIPickerExpansionTableViewCell.xib; sourceTree = "<group>"; };
 		10F12730200CDE5500DE7F6D /* SubTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTimer.swift; sourceTree = "<group>"; };
+		10F12737200D60CE00DE7F6D /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
+		10F12739200D637E00DE7F6D /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		10F1273B200D698B00DE7F6D /* NibFileOwnerLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibFileOwnerLoadable.swift; sourceTree = "<group>"; };
+		10F1273D200D7F0100DE7F6D /* SegmentControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentControlView.xib; sourceTree = "<group>"; };
+		10F1273F200D809C00DE7F6D /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
+		10F12741200D81B200DE7F6D /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		10F12743200D826E00DE7F6D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		10F12745200D8E2300DE7F6D /* HeaderSwitchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSwitchView.xib; sourceTree = "<group>"; };
+		10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSwitchView.swift; sourceTree = "<group>"; };
+		10F12749200D915C00DE7F6D /* PickerControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerControlView.xib; sourceTree = "<group>"; };
+		10F1274B200D935000DE7F6D /* PickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlView.swift; sourceTree = "<group>"; };
+		10F1274D200E21DB00DE7F6D /* PickerControlExpansionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerControlExpansionView.xib; sourceTree = "<group>"; };
+		10F1274F200E237D00DE7F6D /* PickerControlExpansionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlExpansionView.swift; sourceTree = "<group>"; };
 		7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.release.xcconfig"; sourceTree = "<group>"; };
 		DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutHIITTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +162,18 @@
 			children = (
 				107157452006E58B00BE3739 /* Main.storyboard */,
 				1071574D2006E58B00BE3739 /* LaunchScreen.storyboard */,
+				10F12737200D60CE00DE7F6D /* TextFieldView.xib */,
+				10F12739200D637E00DE7F6D /* TextFieldView.swift */,
+				10F1273D200D7F0100DE7F6D /* SegmentControlView.xib */,
+				10F1273F200D809C00DE7F6D /* SegmentControlView.swift */,
+				10F12741200D81B200DE7F6D /* HeaderView.xib */,
+				10F12743200D826E00DE7F6D /* HeaderView.swift */,
+				10F12745200D8E2300DE7F6D /* HeaderSwitchView.xib */,
+				10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */,
+				10F12749200D915C00DE7F6D /* PickerControlView.xib */,
+				10F1274B200D935000DE7F6D /* PickerControlView.swift */,
+				10F1274D200E21DB00DE7F6D /* PickerControlExpansionView.xib */,
+				10F1274F200E237D00DE7F6D /* PickerControlExpansionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,14 +191,6 @@
 			children = (
 				1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */,
 				1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */,
-				1076F812200A3A400080E1D3 /* UITextTableViewCell.swift */,
-				1076F813200A3A400080E1D3 /* UITextTableViewCell.xib */,
-				1076F82C200BFB7E0080E1D3 /* UISegmentTableViewCell.swift */,
-				1076F82D200BFB7E0080E1D3 /* UISegmentTableViewCell.xib */,
-				10F12728200CD05F00DE7F6D /* UIPickerTableViewCell.swift */,
-				10F12729200CD05F00DE7F6D /* UIPickerTableViewCell.xib */,
-				10F1272C200CD07600DE7F6D /* UIPickerExpansionTableViewCell.swift */,
-				10F1272D200CD07600DE7F6D /* UIPickerExpansionTableViewCell.xib */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -197,6 +211,7 @@
 			children = (
 				1076F828200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift */,
 				1076F82A200BBF4E0080E1D3 /* CustomCellActions.swift */,
+				10F1273B200D698B00DE7F6D /* NibFileOwnerLoadable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -290,15 +305,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1071574F2006E58B00BE3739 /* LaunchScreen.storyboard in Resources */,
-				1076F815200A3A400080E1D3 /* UITextTableViewCell.xib in Resources */,
 				1076F827200B9DE50080E1D3 /* UITableViewHeader.xib in Resources */,
-				10F1272F200CD07600DE7F6D /* UIPickerExpansionTableViewCell.xib in Resources */,
-				10F1272B200CD05F00DE7F6D /* UIPickerTableViewCell.xib in Resources */,
 				1076F823200B8B280080E1D3 /* UISwitchTableViewHeader.xib in Resources */,
 				1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */,
+				10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */,
 				107157472006E58B00BE3739 /* Main.storyboard in Resources */,
+				10F1274E200E21DB00DE7F6D /* PickerControlExpansionView.xib in Resources */,
+				10F12742200D81B200DE7F6D /* HeaderView.xib in Resources */,
+				10F12746200D8E2300DE7F6D /* HeaderSwitchView.xib in Resources */,
+				10F1273E200D7F0100DE7F6D /* SegmentControlView.xib in Resources */,
+				10F1274A200D915C00DE7F6D /* PickerControlView.xib in Resources */,
 				107157612006F61F00BE3739 /* MainMenuTableViewCell.xib in Resources */,
-				1076F82F200BFB7E0080E1D3 /* UISegmentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,23 +388,26 @@
 			files = (
 				10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */,
 				1076F82B200BBF4E0080E1D3 /* CustomCellActions.swift in Sources */,
-				10F1272A200CD05F00DE7F6D /* UIPickerTableViewCell.swift in Sources */,
 				1076F83A200C219F0080E1D3 /* TimerDirection.swift in Sources */,
-				1076F814200A3A400080E1D3 /* UITextTableViewCell.swift in Sources */,
 				1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */,
+				10F1274C200D935000DE7F6D /* PickerControlView.swift in Sources */,
 				1076F811200A388B0080E1D3 /* RoundTimerTableViewController.swift in Sources */,
 				1076F836200C10D50080E1D3 /* TimerInfo.swift in Sources */,
+				10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */,
+				10F12750200E237D00DE7F6D /* PickerControlExpansionView.swift in Sources */,
 				1076F83E200C240B0080E1D3 /* TimerWarnings.swift in Sources */,
 				1076F831200C0DE90080E1D3 /* RoundTimer.swift in Sources */,
 				1076F829200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift in Sources */,
 				1076F821200B8AAE0080E1D3 /* UISwitchTableViewHeader.swift in Sources */,
 				1076F825200B9DB20080E1D3 /* UITableViewHeader.swift in Sources */,
+				10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */,
 				1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */,
+				10F1273C200D698B00DE7F6D /* NibFileOwnerLoadable.swift in Sources */,
+				10F12740200D809C00DE7F6D /* SegmentControlView.swift in Sources */,
+				10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */,
 				107157422006E58B00BE3739 /* AppDelegate.swift in Sources */,
-				1076F82E200BFB7E0080E1D3 /* UISegmentTableViewCell.swift in Sources */,
 				1076F840200C26BA0080E1D3 /* Timer.swift in Sources */,
 				1076F834200C0E5F0080E1D3 /* TimerType.swift in Sources */,
-				10F1272E200CD07600DE7F6D /* UIPickerExpansionTableViewCell.swift in Sources */,
 				107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
