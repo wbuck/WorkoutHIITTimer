@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87z-pc-ZQ9">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87z-pc-ZQ9">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heY-rS-bgU">
@@ -72,13 +72,20 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTF-UV-lzC" userLabel="PickerContainer">
                             <rect key="frame" x="0.0" y="50" width="375" height="120"/>
                             <subviews>
-                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KxP-gx-Sqp">
+                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxP-gx-Sqp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" name="TimerBlack"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="O9Z-9K-vQ1"/>
+                                    </constraints>
                                 </pickerView>
                             </subviews>
                             <color key="backgroundColor" name="TimerGrey"/>
+                            <constraints>
+                                <constraint firstItem="KxP-gx-Sqp" firstAttribute="leading" secondItem="nTF-UV-lzC" secondAttribute="leading" id="0Bq-mF-5QV"/>
+                                <constraint firstAttribute="trailing" secondItem="KxP-gx-Sqp" secondAttribute="trailing" id="Rhi-sW-hdX"/>
+                                <constraint firstItem="KxP-gx-Sqp" firstAttribute="top" secondItem="nTF-UV-lzC" secondAttribute="top" id="uW2-Qe-9uK"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bne-PL-vxR" userLabel="Separator">
                             <rect key="frame" x="0.0" y="169" width="375" height="1"/>
@@ -90,16 +97,16 @@
                     </subviews>
                     <color key="backgroundColor" name="TimerGrey"/>
                     <constraints>
-                        <constraint firstItem="nTF-UV-lzC" firstAttribute="leading" secondItem="87z-pc-ZQ9" secondAttribute="leading" id="6F3-pS-13z"/>
+                        <constraint firstAttribute="bottom" secondItem="nTF-UV-lzC" secondAttribute="bottom" id="5J4-uk-et4"/>
                         <constraint firstAttribute="trailing" secondItem="Bne-PL-vxR" secondAttribute="trailing" id="71n-2z-Z0U"/>
-                        <constraint firstAttribute="trailing" secondItem="nTF-UV-lzC" secondAttribute="trailing" id="B6I-Xz-py6"/>
+                        <constraint firstItem="nTF-UV-lzC" firstAttribute="leading" secondItem="87z-pc-ZQ9" secondAttribute="leading" id="FFp-Zq-dMf"/>
                         <constraint firstItem="heY-rS-bgU" firstAttribute="top" secondItem="87z-pc-ZQ9" secondAttribute="top" id="FzU-1b-qcJ"/>
                         <constraint firstAttribute="bottom" secondItem="Bne-PL-vxR" secondAttribute="bottom" id="GgS-5Y-Yti"/>
-                        <constraint firstAttribute="bottom" secondItem="nTF-UV-lzC" secondAttribute="bottom" id="Tb4-OR-qhA"/>
                         <constraint firstItem="Bne-PL-vxR" firstAttribute="leading" secondItem="87z-pc-ZQ9" secondAttribute="leading" id="WI9-m8-Z3m"/>
                         <constraint firstAttribute="trailing" secondItem="heY-rS-bgU" secondAttribute="trailing" id="bOM-e9-Hdg"/>
+                        <constraint firstAttribute="trailing" secondItem="nTF-UV-lzC" secondAttribute="trailing" id="ds0-dw-m0w"/>
                         <constraint firstItem="heY-rS-bgU" firstAttribute="leading" secondItem="87z-pc-ZQ9" secondAttribute="leading" id="ehL-gg-p25"/>
-                        <constraint firstItem="nTF-UV-lzC" firstAttribute="top" secondItem="heY-rS-bgU" secondAttribute="bottom" id="hTg-0v-lc6"/>
+                        <constraint firstItem="nTF-UV-lzC" firstAttribute="top" secondItem="heY-rS-bgU" secondAttribute="bottom" id="rgM-9E-XUu"/>
                     </constraints>
                 </view>
             </subviews>

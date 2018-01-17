@@ -20,8 +20,6 @@
 		1076F823200B8B280080E1D3 /* UISwitchTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1076F822200B8B280080E1D3 /* UISwitchTableViewHeader.xib */; };
 		1076F825200B9DB20080E1D3 /* UITableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F824200B9DB20080E1D3 /* UITableViewHeader.swift */; };
 		1076F827200B9DE50080E1D3 /* UITableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1076F826200B9DE50080E1D3 /* UITableViewHeader.xib */; };
-		1076F829200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F828200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift */; };
-		1076F82B200BBF4E0080E1D3 /* CustomCellActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F82A200BBF4E0080E1D3 /* CustomCellActions.swift */; };
 		1076F831200C0DE90080E1D3 /* RoundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F830200C0DE90080E1D3 /* RoundTimer.swift */; };
 		1076F834200C0E5F0080E1D3 /* TimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F833200C0E5F0080E1D3 /* TimerType.swift */; };
 		1076F836200C10D50080E1D3 /* TimerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F835200C10D50080E1D3 /* TimerInfo.swift */; };
@@ -40,6 +38,7 @@
 		10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */; };
 		10F1274A200D915C00DE7F6D /* PickerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12749200D915C00DE7F6D /* PickerControlView.xib */; };
 		10F1274C200D935000DE7F6D /* PickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1274B200D935000DE7F6D /* PickerControlView.swift */; };
+		10F12756200EE59300DE7F6D /* PickerControlViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */; };
 		DDF7FC73496A17B72E02E785 /* Pods_WorkoutHIITTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +58,6 @@
 		1076F822200B8B280080E1D3 /* UISwitchTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UISwitchTableViewHeader.xib; sourceTree = "<group>"; };
 		1076F824200B9DB20080E1D3 /* UITableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewHeader.swift; sourceTree = "<group>"; };
 		1076F826200B9DE50080E1D3 /* UITableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableViewHeader.xib; sourceTree = "<group>"; };
-		1076F828200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchTableViewHeaderDelegate.swift; sourceTree = "<group>"; };
-		1076F82A200BBF4E0080E1D3 /* CustomCellActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellActions.swift; sourceTree = "<group>"; };
 		1076F830200C0DE90080E1D3 /* RoundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTimer.swift; sourceTree = "<group>"; };
 		1076F833200C0E5F0080E1D3 /* TimerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerType.swift; sourceTree = "<group>"; };
 		1076F835200C10D50080E1D3 /* TimerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInfo.swift; sourceTree = "<group>"; };
@@ -79,6 +76,7 @@
 		10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSwitchView.swift; sourceTree = "<group>"; };
 		10F12749200D915C00DE7F6D /* PickerControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerControlView.xib; sourceTree = "<group>"; };
 		10F1274B200D935000DE7F6D /* PickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlView.swift; sourceTree = "<group>"; };
+		10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlViewDelegate.swift; sourceTree = "<group>"; };
 		7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.release.xcconfig"; sourceTree = "<group>"; };
 		DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutHIITTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,9 +195,8 @@
 		1076F81F200B89FA0080E1D3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				1076F828200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift */,
-				1076F82A200BBF4E0080E1D3 /* CustomCellActions.swift */,
 				10F1273B200D698B00DE7F6D /* NibFileOwnerLoadable.swift */,
+				10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -411,8 +408,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F12756200EE59300DE7F6D /* PickerControlViewDelegate.swift in Sources */,
 				10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */,
-				1076F82B200BBF4E0080E1D3 /* CustomCellActions.swift in Sources */,
 				1076F83A200C219F0080E1D3 /* TimerDirection.swift in Sources */,
 				1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */,
 				10F1274C200D935000DE7F6D /* PickerControlView.swift in Sources */,
@@ -421,7 +418,6 @@
 				10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */,
 				1076F83E200C240B0080E1D3 /* TimerWarnings.swift in Sources */,
 				1076F831200C0DE90080E1D3 /* RoundTimer.swift in Sources */,
-				1076F829200BA61F0080E1D3 /* UISwitchTableViewHeaderDelegate.swift in Sources */,
 				1076F821200B8AAE0080E1D3 /* UISwitchTableViewHeader.swift in Sources */,
 				1076F825200B9DB20080E1D3 /* UITableViewHeader.swift in Sources */,
 				10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */,

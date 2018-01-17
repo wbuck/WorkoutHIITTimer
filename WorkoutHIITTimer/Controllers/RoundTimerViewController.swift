@@ -12,14 +12,45 @@ import RealmSwift
 class RoundTimerViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pickerControlView: PickerControlView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        pickerControlView.delegate = self
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension RoundTimerViewController: PickerControlViewDelegate {
+    
+    func pickerControlViewTapped(_ sender: PickerControlView) {
+        
+        var constraintName = String()
+        switch sender.tag {
+        case 0:
+            constraintName = "HeightConstraint"
+        default:
+            break;
+        }
+        
+        let heightConstraint = sender.constraints.filter { (constraint) -> Bool in
+            return constraint.identifier == constraintName
+        }
+        let height = Int(sender.frame.height) == sender.collapsedHeight ?
+            CGFloat(sender.expandedHeight) : CGFloat(sender.collapsedHeight)
+        
+        heightConstraint.first?.constant =  height
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 

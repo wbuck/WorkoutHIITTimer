@@ -9,13 +9,13 @@
 import UIKit
 
 class UISwitchTableViewHeader: UITableViewHeaderFooterView {    
-    weak var delegate: UISwitchTableViewHeaderDelegate?
+    
     var section: Int!
     @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var uiSwitch: UISwitch!
     
     @IBAction func uiSwitchValueChanged(_ sender: UISwitch) {
-        delegate?.switchToggled(sender, in: section)
+        
     }
     
 }

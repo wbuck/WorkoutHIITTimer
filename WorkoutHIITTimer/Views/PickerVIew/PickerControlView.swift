@@ -10,6 +10,11 @@ import UIKit
 
 class PickerControlView: UIView, NibFileOwnerLoadable  {
     
+    let collapsedHeight = 50
+    let expandedHeight = 170
+
+    weak var delegate: PickerControlViewDelegate?
+    
     var time: (Int, Int, Int) = (0, 0, 0) {
         didSet {
             let hour = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
@@ -23,9 +28,6 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var timeLabel: UILabel!
 
-    
-    
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadNibContent()
@@ -35,7 +37,11 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
     }
     
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.3) {
+            self.chevronImage.transform = self.chevronImage.transform.rotated(by: .pi / 1)
+        }
         
+        delegate?.pickerControlViewTapped(self)
     }
     
 }
