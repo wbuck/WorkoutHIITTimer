@@ -75,16 +75,15 @@
                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxP-gx-Sqp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                     <color key="backgroundColor" name="TimerBlack"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="120" id="O9Z-9K-vQ1"/>
-                                    </constraints>
                                 </pickerView>
                             </subviews>
                             <color key="backgroundColor" name="TimerGrey"/>
                             <constraints>
-                                <constraint firstItem="KxP-gx-Sqp" firstAttribute="leading" secondItem="nTF-UV-lzC" secondAttribute="leading" id="0Bq-mF-5QV"/>
-                                <constraint firstAttribute="trailing" secondItem="KxP-gx-Sqp" secondAttribute="trailing" id="Rhi-sW-hdX"/>
-                                <constraint firstItem="KxP-gx-Sqp" firstAttribute="top" secondItem="nTF-UV-lzC" secondAttribute="top" id="uW2-Qe-9uK"/>
+                                <constraint firstAttribute="height" constant="120" id="Bmn-ms-pKL"/>
+                                <constraint firstItem="KxP-gx-Sqp" firstAttribute="top" secondItem="nTF-UV-lzC" secondAttribute="top" id="Fyb-EY-1b9"/>
+                                <constraint firstItem="KxP-gx-Sqp" firstAttribute="leading" secondItem="nTF-UV-lzC" secondAttribute="leading" id="KDo-Ve-lco"/>
+                                <constraint firstAttribute="trailing" secondItem="KxP-gx-Sqp" secondAttribute="trailing" id="WDN-9V-itg"/>
+                                <constraint firstAttribute="bottom" secondItem="KxP-gx-Sqp" secondAttribute="bottom" id="ngI-NX-U6j"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bne-PL-vxR" userLabel="Separator">
@@ -97,16 +96,15 @@
                     </subviews>
                     <color key="backgroundColor" name="TimerGrey"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="nTF-UV-lzC" secondAttribute="bottom" id="5J4-uk-et4"/>
+                        <constraint firstItem="nTF-UV-lzC" firstAttribute="leading" secondItem="87z-pc-ZQ9" secondAttribute="leading" id="1P7-bt-XdA"/>
                         <constraint firstAttribute="trailing" secondItem="Bne-PL-vxR" secondAttribute="trailing" id="71n-2z-Z0U"/>
-                        <constraint firstItem="nTF-UV-lzC" firstAttribute="leading" secondItem="87z-pc-ZQ9" secondAttribute="leading" id="FFp-Zq-dMf"/>
                         <constraint firstItem="heY-rS-bgU" firstAttribute="top" secondItem="87z-pc-ZQ9" secondAttribute="top" id="FzU-1b-qcJ"/>
                         <constraint firstAttribute="bottom" secondItem="Bne-PL-vxR" secondAttribute="bottom" id="GgS-5Y-Yti"/>
+                        <constraint firstItem="nTF-UV-lzC" firstAttribute="top" secondItem="heY-rS-bgU" secondAttribute="bottom" id="OFz-gQ-21I"/>
                         <constraint firstItem="Bne-PL-vxR" firstAttribute="leading" secondItem="87z-pc-ZQ9" secondAttribute="leading" id="WI9-m8-Z3m"/>
                         <constraint firstAttribute="trailing" secondItem="heY-rS-bgU" secondAttribute="trailing" id="bOM-e9-Hdg"/>
-                        <constraint firstAttribute="trailing" secondItem="nTF-UV-lzC" secondAttribute="trailing" id="ds0-dw-m0w"/>
                         <constraint firstItem="heY-rS-bgU" firstAttribute="leading" secondItem="87z-pc-ZQ9" secondAttribute="leading" id="ehL-gg-p25"/>
-                        <constraint firstItem="nTF-UV-lzC" firstAttribute="top" secondItem="heY-rS-bgU" secondAttribute="bottom" id="rgM-9E-XUu"/>
+                        <constraint firstAttribute="trailing" secondItem="nTF-UV-lzC" secondAttribute="trailing" id="tvf-LW-2Pz"/>
                     </constraints>
                 </view>
             </subviews>
