@@ -22,6 +22,9 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
     @IBOutlet weak var chevronImage: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var timeLabel: UILabel!
+
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,6 +33,11 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
         pickerView.dataSource = self
         chevronImage.transform = chevronImage.transform.rotated(by: .pi / 2)
     }
+    
+    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
+        
+    }
+    
 }
 
 extension PickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -68,7 +76,7 @@ extension PickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = (view as? UILabel) ?? UILabel()
-        label.textColor = UIColor(named: "TimerOrange")
+        label.textColor = UIColor(named: "TimerTextGrey")
         label.font = UIFont.systemFont(ofSize: 17)
         label.textAlignment = .center
         switch component {
