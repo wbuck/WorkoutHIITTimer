@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderSwitchView" customModule="WorkoutHIITTimer" customModuleProvider="target">
             <connections>
+                <outlet property="enableSwitch" destination="7pn-ed-tfx" id="lgt-aA-9Ou"/>
                 <outlet property="headerLabel" destination="1fd-gE-a0w" id="fjT-P5-n6L"/>
             </connections>
         </placeholder>
@@ -23,6 +24,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWi-wH-7MN">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odQ-ul-EXE" userLabel="Saparator">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <color key="backgroundColor" name="TimerFadedGrey"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="JfP-Fb-VZl"/>
+                            </constraints>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fd-gE-a0w">
                             <rect key="frame" x="16" y="0.0" width="168" height="60"/>
                             <constraints>
@@ -36,14 +44,28 @@
                             <rect key="frame" x="310" y="15" width="51" height="31"/>
                             <color key="onTintColor" name="TimerOrange"/>
                         </switch>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-uT-Eud" userLabel="Saparator">
+                            <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                            <color key="backgroundColor" name="TimerFadedGrey"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="9vz-Mv-cTC"/>
+                                <constraint firstAttribute="height" constant="1" id="qbl-d3-X8x"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" name="TimerBlack"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="BOd-uT-Eud" secondAttribute="bottom" id="19F-04-LYC"/>
                         <constraint firstItem="7pn-ed-tfx" firstAttribute="centerY" secondItem="PWi-wH-7MN" secondAttribute="centerY" id="2ES-ZF-FA0"/>
                         <constraint firstItem="1fd-gE-a0w" firstAttribute="leading" secondItem="PWi-wH-7MN" secondAttribute="leading" constant="16" id="CMA-xe-tGz"/>
                         <constraint firstAttribute="bottom" secondItem="1fd-gE-a0w" secondAttribute="bottom" id="DK1-A2-yNn"/>
                         <constraint firstItem="1fd-gE-a0w" firstAttribute="top" secondItem="PWi-wH-7MN" secondAttribute="top" id="IdE-cR-j4z"/>
                         <constraint firstAttribute="trailing" secondItem="7pn-ed-tfx" secondAttribute="trailing" constant="16" id="KMS-Lm-AUM"/>
+                        <constraint firstItem="odQ-ul-EXE" firstAttribute="leading" secondItem="PWi-wH-7MN" secondAttribute="leading" id="SFQ-1R-xnT"/>
+                        <constraint firstAttribute="trailing" secondItem="BOd-uT-Eud" secondAttribute="trailing" id="adO-ml-nch"/>
+                        <constraint firstItem="odQ-ul-EXE" firstAttribute="top" secondItem="PWi-wH-7MN" secondAttribute="top" id="v9t-cX-MQa"/>
+                        <constraint firstItem="BOd-uT-Eud" firstAttribute="leading" secondItem="PWi-wH-7MN" secondAttribute="leading" id="wkS-iL-lis"/>
+                        <constraint firstAttribute="trailing" secondItem="odQ-ul-EXE" secondAttribute="trailing" id="zMm-Vz-asZ"/>
                     </constraints>
                 </view>
             </subviews>
@@ -62,6 +84,12 @@
     <resources>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999140000003" green="0.59600001570000005" blue="0.60399997230000002" alpha="0.40000000600000002" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TimerOrange">
             <color red="1" green="0.32499998807907104" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -8,7 +8,13 @@
 
 import UIKit
 
+@IBDesignable
 class PickerControlView: UIView, NibFileOwnerLoadable  {
+    
+    @IBOutlet weak var chevronImage: UIImageView!
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     let collapsedHeight = 50
     let expandedHeight = 170
@@ -24,9 +30,12 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
         }
     }
     
-    @IBOutlet weak var chevronImage: UIImageView!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBInspectable
+    var text: String? {
+        didSet {
+            titleLabel.text = text
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -38,8 +47,6 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
         delegate?.pickerControlViewTapped(self)
     }
-    
-
     
     func rotateArrow(in direction: Rotate) {
         // I multiplied the result to ensure the rotation
@@ -54,6 +61,7 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
 
 extension PickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
     
+    // Define the columns of the picker view.
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
@@ -61,7 +69,9 @@ extension PickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
+            // Hours.
             return 24
+            // Minutes and seconds.
         case 1,2:
             return 60
         default:

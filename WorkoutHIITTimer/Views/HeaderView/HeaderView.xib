@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="yti-KH-zh9" id="MQ2-lM-Fq0"/>
                 <outlet property="headerLabel" destination="loi-UP-TkK" id="OSN-iP-KoI"/>
             </connections>
         </placeholder>
@@ -20,21 +21,42 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yti-KH-zh9">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yti-KH-zh9" userLabel="Container">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-Gb-hnG" userLabel="Separator">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <color key="backgroundColor" name="TimerFadedGrey"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="bDE-Ne-nEl"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="rHL-7I-oec"/>
+                            </constraints>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEADER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loi-UP-TkK">
                             <rect key="frame" x="16" y="0.0" width="168" height="60"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="TimerTextGrey"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzO-PB-kKT" userLabel="Separator">
+                            <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                            <color key="backgroundColor" name="TimerFadedGrey"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Rzz-xP-W2D"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" name="TimerBlack"/>
                     <constraints>
+                        <constraint firstItem="F5Y-Gb-hnG" firstAttribute="top" secondItem="yti-KH-zh9" secondAttribute="top" id="15B-k4-34r"/>
                         <constraint firstItem="loi-UP-TkK" firstAttribute="leading" secondItem="yti-KH-zh9" secondAttribute="leading" constant="16" id="2yd-kU-PI9"/>
+                        <constraint firstAttribute="trailing" secondItem="F5Y-Gb-hnG" secondAttribute="trailing" id="7mD-fG-A2X"/>
                         <constraint firstItem="loi-UP-TkK" firstAttribute="top" secondItem="yti-KH-zh9" secondAttribute="top" id="BFN-WP-LaR"/>
                         <constraint firstAttribute="trailing" secondItem="loi-UP-TkK" secondAttribute="trailing" constant="191" id="FCC-nV-DqD"/>
+                        <constraint firstAttribute="trailing" secondItem="XzO-PB-kKT" secondAttribute="trailing" id="Hhj-JQ-YjL"/>
+                        <constraint firstItem="XzO-PB-kKT" firstAttribute="leading" secondItem="yti-KH-zh9" secondAttribute="leading" id="MMJ-QC-qHX"/>
+                        <constraint firstItem="F5Y-Gb-hnG" firstAttribute="leading" secondItem="yti-KH-zh9" secondAttribute="leading" id="iLo-qO-oau"/>
+                        <constraint firstAttribute="bottom" secondItem="XzO-PB-kKT" secondAttribute="bottom" id="n9a-wK-9fx"/>
                         <constraint firstAttribute="bottom" secondItem="loi-UP-TkK" secondAttribute="bottom" id="uxN-Vl-guf"/>
                     </constraints>
                 </view>
@@ -54,6 +76,12 @@
     <resources>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999140000003" green="0.59600001570000005" blue="0.60399997230000002" alpha="0.40000000600000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TimerTextGrey">
             <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

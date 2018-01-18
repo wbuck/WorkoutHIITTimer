@@ -8,12 +8,26 @@
 
 import UIKit
 
-class HeaderSwitchView: UIView, NibFileOwnerLoadable {
+@IBDesignable
+class HeaderSwitchView: HeaderBase {
 
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var enableSwitch: UISwitch!
+    
+    @IBInspectable
+    var text: String? {
+        didSet {
+            headerLabel.text = text
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        loadNibContent()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         loadNibContent()
     }
 }

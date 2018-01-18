@@ -8,12 +8,26 @@
 
 import UIKit
 
-class HeaderView: UIView, NibFileOwnerLoadable {
+@IBDesignable
+class HeaderView: HeaderBase {
     
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var contentView: UIView!
+    
+    @IBInspectable
+    var text: String? {
+        didSet {
+            headerLabel.text = text
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        loadNibContent()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         loadNibContent()
     }
 }

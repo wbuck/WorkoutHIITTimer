@@ -15,6 +15,7 @@
                 <outlet property="chevronImage" destination="aZI-MZ-1D0" id="nk3-zI-vdB"/>
                 <outlet property="pickerView" destination="KxP-gx-Sqp" id="y1G-oA-UP3"/>
                 <outlet property="timeLabel" destination="lxt-Ef-0G5" id="lHe-rY-3Tr"/>
+                <outlet property="titleLabel" destination="wkC-kr-Jwf" id="SgP-8d-LQd"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

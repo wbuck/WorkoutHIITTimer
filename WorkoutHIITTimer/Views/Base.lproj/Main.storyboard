@@ -63,7 +63,78 @@
                     <view key="view" contentMode="scaleToFill" id="h72-Rq-nLe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bk2-UD-tXQ" customClass="TextFieldView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="111" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kkj-C4-Eqk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Enter description"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Description"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06l-R5-kGm" userLabel="Inset Separator">
+                                <rect key="frame" x="16" y="110" width="359" height="1"/>
+                                <color key="backgroundColor" name="TimerFadedGrey"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="gw8-Ai-bM0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pp7-TF-1hZ" customClass="TextFieldView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="60" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iXN-h6-0gs"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Name"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Enter name"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17p-jL-h35" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="b0i-jG-ZF0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="TIMER"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDV-AX-SUS" customClass="HeaderSwitchView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="161" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Drd-0I-bNn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="yU2-Z1-mAq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="WARM UP"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" name="TimerGrey"/>
+                        <constraints>
+                            <constraint firstItem="VDV-AX-SUS" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="34n-CF-Bjn"/>
+                            <constraint firstItem="Bk2-UD-tXQ" firstAttribute="top" secondItem="06l-R5-kGm" secondAttribute="bottom" id="5eV-hq-jGK"/>
+                            <constraint firstItem="VDV-AX-SUS" firstAttribute="top" secondItem="Bk2-UD-tXQ" secondAttribute="bottom" id="BVY-ji-Q7b"/>
+                            <constraint firstItem="06l-R5-kGm" firstAttribute="leading" secondItem="h72-Rq-nLe" secondAttribute="leading" constant="16" id="Fn7-kC-oAy"/>
+                            <constraint firstItem="VDV-AX-SUS" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="Gcl-HO-Ep5"/>
+                            <constraint firstItem="Bk2-UD-tXQ" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="H5N-hU-9Rd"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="VDV-AX-SUS" secondAttribute="trailing" id="PF0-It-0gU"/>
+                            <constraint firstItem="pp7-TF-1hZ" firstAttribute="top" secondItem="17p-jL-h35" secondAttribute="bottom" id="QUX-2F-84A"/>
+                            <constraint firstAttribute="trailing" secondItem="06l-R5-kGm" secondAttribute="trailing" id="SMp-Pw-PlZ"/>
+                            <constraint firstItem="17p-jL-h35" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="TgS-W7-xuA"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="17p-jL-h35" secondAttribute="trailing" id="cMl-2n-Llp"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="pp7-TF-1hZ" secondAttribute="trailing" id="hcX-h5-SQa"/>
+                            <constraint firstItem="06l-R5-kGm" firstAttribute="top" secondItem="pp7-TF-1hZ" secondAttribute="bottom" id="hgF-RV-aXe"/>
+                            <constraint firstItem="pp7-TF-1hZ" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="io1-p8-sCX"/>
+                            <constraint firstItem="VDV-AX-SUS" firstAttribute="trailing" secondItem="NAi-NF-MJI" secondAttribute="trailing" id="sgZ-xt-PUY"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="Bk2-UD-tXQ" secondAttribute="trailing" id="ufz-g0-wJg"/>
+                            <constraint firstItem="17p-jL-h35" firstAttribute="top" secondItem="NAi-NF-MJI" secondAttribute="top" id="yiI-yc-qLE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NAi-NF-MJI"/>
                     </view>
                     <navigationItem key="navigationItem" id="BgI-az-xox"/>
@@ -76,6 +147,9 @@
     <resources>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TimerGrey">
             <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
