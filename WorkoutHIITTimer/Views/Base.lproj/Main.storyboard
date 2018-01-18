@@ -63,27 +63,10 @@
                     <view key="view" contentMode="scaleToFill" id="h72-Rq-nLe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxg-y0-jD7" customClass="PickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" identifier="HeightConstraint" id="Hyu-li-sF6"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="gxg-y0-jD7" firstAttribute="top" secondItem="NAi-NF-MJI" secondAttribute="top" id="Emo-72-6Sd"/>
-                            <constraint firstItem="gxg-y0-jD7" firstAttribute="trailing" secondItem="NAi-NF-MJI" secondAttribute="trailing" id="LOt-dS-3TV"/>
-                            <constraint firstItem="gxg-y0-jD7" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="gPK-mO-555"/>
-                        </constraints>
+                        <color key="backgroundColor" name="TimerGrey"/>
                         <viewLayoutGuide key="safeArea" id="NAi-NF-MJI"/>
                     </view>
                     <navigationItem key="navigationItem" id="BgI-az-xox"/>
-                    <connections>
-                        <outlet property="pickerControlView" destination="gxg-y0-jD7" id="EqT-sI-WN6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huu-q2-yOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,6 +76,9 @@
     <resources>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerGrey">
+            <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TimerTextGrey">
             <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

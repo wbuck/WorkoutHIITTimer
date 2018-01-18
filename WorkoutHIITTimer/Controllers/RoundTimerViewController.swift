@@ -21,7 +21,7 @@ class RoundTimerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        pickerControlView.delegate = self
+       // pickerControlView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,7 +47,11 @@ extension RoundTimerViewController: PickerControlViewDelegate {
         let height = Int(sender.frame.height) == sender.collapsedHeight ?
             CGFloat(sender.expandedHeight) : CGFloat(sender.collapsedHeight)
         
+        let rotation = Int(sender.frame.height) == sender.collapsedHeight ?
+            Rotate.clockwise : Rotate.counterClockwise
+        
         heightConstraint.first?.constant =  height
+        sender.rotateArrow(in: rotation)
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }

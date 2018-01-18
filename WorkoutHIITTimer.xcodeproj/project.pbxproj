@@ -39,6 +39,7 @@
 		10F1274A200D915C00DE7F6D /* PickerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12749200D915C00DE7F6D /* PickerControlView.xib */; };
 		10F1274C200D935000DE7F6D /* PickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1274B200D935000DE7F6D /* PickerControlView.swift */; };
 		10F12756200EE59300DE7F6D /* PickerControlViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */; };
+		10F1275A200F834200DE7F6D /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12759200F834200DE7F6D /* Rotate.swift */; };
 		DDF7FC73496A17B72E02E785 /* Pods_WorkoutHIITTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		10F12749200D915C00DE7F6D /* PickerControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerControlView.xib; sourceTree = "<group>"; };
 		10F1274B200D935000DE7F6D /* PickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlView.swift; sourceTree = "<group>"; };
 		10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlViewDelegate.swift; sourceTree = "<group>"; };
+		10F12759200F834200DE7F6D /* Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
 		7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.release.xcconfig"; sourceTree = "<group>"; };
 		DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutHIITTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +208,7 @@
 			children = (
 				1076F833200C0E5F0080E1D3 /* TimerType.swift */,
 				1076F839200C219F0080E1D3 /* TimerDirection.swift */,
+				10F12759200F834200DE7F6D /* Rotate.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				1076F825200B9DB20080E1D3 /* UITableViewHeader.swift in Sources */,
 				10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */,
 				1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */,
+				10F1275A200F834200DE7F6D /* Rotate.swift in Sources */,
 				10F1273C200D698B00DE7F6D /* NibFileOwnerLoadable.swift in Sources */,
 				10F12740200D809C00DE7F6D /* SegmentControlView.swift in Sources */,
 				10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */,

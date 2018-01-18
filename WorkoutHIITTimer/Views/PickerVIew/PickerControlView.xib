@@ -46,23 +46,25 @@
                                     <color key="textColor" name="TimerTextGrey"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightChevron" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-MZ-1D0">
-                                    <rect key="frame" x="351" y="15" width="8" height="20"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-MZ-1D0">
+                                    <rect key="frame" x="339" y="20" width="20" height="10"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="7Eu-ay-fDL"/>
+                                        <constraint firstAttribute="height" constant="10" id="V2c-5o-jpR"/>
+                                    </constraints>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" name="TimerGrey"/>
                             <gestureRecognizers/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="aZI-MZ-1D0" secondAttribute="trailing" constant="16" id="0R3-jY-Dxb"/>
+                                <constraint firstAttribute="trailing" secondItem="aZI-MZ-1D0" secondAttribute="trailing" constant="16" id="08o-Pd-NO2"/>
                                 <constraint firstItem="wkC-kr-Jwf" firstAttribute="top" secondItem="heY-rS-bgU" secondAttribute="top" id="2am-ff-uq8"/>
                                 <constraint firstAttribute="bottom" secondItem="wkC-kr-Jwf" secondAttribute="bottom" id="5m8-Qp-O9M"/>
                                 <constraint firstItem="lxt-Ef-0G5" firstAttribute="leading" secondItem="wkC-kr-Jwf" secondAttribute="trailing" constant="40" id="DBl-Xo-fHk"/>
+                                <constraint firstItem="aZI-MZ-1D0" firstAttribute="centerY" secondItem="heY-rS-bgU" secondAttribute="centerY" id="ICG-G5-1a1"/>
                                 <constraint firstItem="wkC-kr-Jwf" firstAttribute="leading" secondItem="heY-rS-bgU" secondAttribute="leading" constant="16" id="J0t-q7-pfM"/>
                                 <constraint firstAttribute="height" constant="50" id="LTf-As-4lb"/>
                                 <constraint firstAttribute="bottom" secondItem="lxt-Ef-0G5" secondAttribute="bottom" id="Rl3-Yb-Lv1"/>
-                                <constraint firstItem="aZI-MZ-1D0" firstAttribute="top" secondItem="heY-rS-bgU" secondAttribute="top" constant="15" id="XFm-tD-9iC"/>
-                                <constraint firstItem="aZI-MZ-1D0" firstAttribute="centerY" secondItem="heY-rS-bgU" secondAttribute="centerY" id="aro-yS-MwP"/>
-                                <constraint firstAttribute="bottom" secondItem="aZI-MZ-1D0" secondAttribute="bottom" constant="15" id="iiC-Cp-IHZ"/>
                                 <constraint firstItem="lxt-Ef-0G5" firstAttribute="top" secondItem="heY-rS-bgU" secondAttribute="top" id="qAO-VZ-TLs"/>
                             </constraints>
                             <connections>
@@ -126,7 +128,7 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="RightChevron" width="8" height="20"/>
+        <image name="DownArrow" width="20" height="13"/>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

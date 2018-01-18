@@ -12,9 +12,9 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
     
     let collapsedHeight = 50
     let expandedHeight = 170
-
     weak var delegate: PickerControlViewDelegate?
     
+    // Format and display time in label.
     var time: (Int, Int, Int) = (0, 0, 0) {
         didSet {
             let hour = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
@@ -33,15 +33,21 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
         loadNibContent()
         pickerView.delegate = self
         pickerView.dataSource = self
-        chevronImage.transform = chevronImage.transform.rotated(by: .pi / 2)
     }
     
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-        UIView.animate(withDuration: 0.3) {
-            self.chevronImage.transform = self.chevronImage.transform.rotated(by: .pi / 1)
-        }
-        
         delegate?.pickerControlViewTapped(self)
+    }
+    
+
+    
+    func rotateArrow(in direction: Rotate) {
+        // I multiplied the result to ensure the rotation
+        // back to its starting position moves ccw.
+        let angle = CGFloat(direction.rawValue) * CGFloat.pi * 0.999;
+        UIView.animate(withDuration: 0.3) {
+            self.chevronImage.transform = self.chevronImage.transform.rotated(by: angle)
+        }
     }
     
 }
