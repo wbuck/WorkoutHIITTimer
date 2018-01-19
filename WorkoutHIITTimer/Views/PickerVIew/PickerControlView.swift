@@ -13,20 +13,29 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
     
     @IBOutlet weak var chevronImage: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var selectionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
-    let collapsedHeight = 50
-    let expandedHeight = 170
     weak var delegate: PickerControlViewDelegate?
+    private var observer: NSKeyValueObservation?
+    
+    // Track the state (expanded or collapsed) of
+    // the view.
+    private(set) var pickerViewState = PickerViewState.collapsed {
+        didSet {
+            let rotate: Rotate = pickerViewState == .collapsed ?
+                .counterClockwise : .clockwise
+            rotateArrow(in: rotate)
+        }
+    }
     
     // Format and display time in label.
-    var time: (Int, Int, Int) = (0, 0, 0) {
+    private(set) var time: (Int, Int, Int) = (0, 0, 0) {
         didSet {
             let hour = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
             let minute = time.1 < 10 ? "0\(time.1)" : "\(time.1)"
             let second = time.2 < 10 ? "0\(time.2)" : "\(time.2)"
-            timeLabel.text = "\(hour):\(minute):\(second)"
+            selectionLabel.text = "\(hour):\(minute):\(second)"
         }
     }
     
@@ -36,26 +45,38 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
             titleLabel.text = text
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        loadNibContent()
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        initialize()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initialize()
+    }
+    
+    
+    
+    private func initialize() {
         loadNibContent()
         pickerView.delegate = self
         pickerView.dataSource = self
+        observer?.invalidate()
+        observer = self.layer.observe(\CALayer.bounds, changeHandler: {
+            (layer, _) in
+            if Int(layer.frame.height) != self.pickerViewState.rawValue {
+                self.pickerViewState = Int(layer.frame.height) > PickerViewState.collapsed.rawValue ?
+                    .expanded : .collapsed
+            }
+        })
     }
     
-    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-        delegate?.pickerControlViewTapped(self)
+    deinit {
+        print("De init")
     }
     
-    func rotateArrow(in direction: Rotate) {
+    private func rotateArrow(in direction: Rotate) {
         // I multiplied the result to ensure the rotation
         // back to its starting position moves ccw.
         let angle = CGFloat(direction.rawValue) * CGFloat.pi * 0.999;
@@ -64,6 +85,9 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
         }
     }
     
+    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
+        delegate?.pickerControlViewTapped(self)
+    }
 }
 
 extension PickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -78,7 +102,7 @@ extension PickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
         case 0:
             // Hours.
             return 24
-            // Minutes and seconds.
+        // Minutes and seconds.
         case 1,2:
             return 60
         default:

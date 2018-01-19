@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="chevronImage" destination="aZI-MZ-1D0" id="nk3-zI-vdB"/>
                 <outlet property="pickerView" destination="KxP-gx-Sqp" id="y1G-oA-UP3"/>
-                <outlet property="timeLabel" destination="lxt-Ef-0G5" id="lHe-rY-3Tr"/>
+                <outlet property="selectionLabel" destination="lxt-Ef-0G5" id="hQb-Za-NAx"/>
                 <outlet property="titleLabel" destination="wkC-kr-Jwf" id="SgP-8d-LQd"/>
             </connections>
         </placeholder>
@@ -29,7 +29,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heY-rS-bgU">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkC-kr-Jwf">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkC-kr-Jwf">
                                     <rect key="frame" x="16" y="0.0" width="47" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="47" id="C7U-iN-CUQ"/>

@@ -42,17 +42,17 @@ extension RoundTimerViewController: PickerControlViewDelegate {
             break;
         }
         
+        // Find constraint with the specified id.
         let heightConstraint = sender.constraints.filter { (constraint) -> Bool in
             return constraint.identifier == constraintName
         }
-        let height = Int(sender.frame.height) == sender.collapsedHeight ?
-            CGFloat(sender.expandedHeight) : CGFloat(sender.collapsedHeight)
         
-        let rotation = Int(sender.frame.height) == sender.collapsedHeight ?
-            Rotate.clockwise : Rotate.counterClockwise
+        // Determine next postion.
+        let nextPosition: PickerViewState = sender.pickerViewState == .collapsed ?
+            .expanded : .collapsed
         
-        heightConstraint.first?.constant =  height
-        sender.rotateArrow(in: rotation)
+        heightConstraint.first?.constant =  CGFloat(nextPosition.rawValue)
+
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
