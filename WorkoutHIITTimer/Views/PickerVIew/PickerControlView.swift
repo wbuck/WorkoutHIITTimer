@@ -44,6 +44,13 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
         pickerView.dataSource = self
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadNibContent()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+    }
+    
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
         delegate?.pickerControlViewTapped(self)
     }

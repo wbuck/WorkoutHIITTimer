@@ -34,10 +34,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n1U-hX-2NN">
-                            <rect key="frame" x="103" y="0.0" width="256" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="256" id="hx9-0g-6iD"/>
-                            </constraints>
+                            <rect key="frame" x="150" y="0.0" width="209" height="50"/>
                             <color key="textColor" name="TimerTextGrey"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -45,12 +42,13 @@
                     </subviews>
                     <color key="backgroundColor" name="TimerGrey"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="n1U-hX-2NN" secondAttribute="bottom" id="4GB-BO-pcY"/>
                         <constraint firstItem="yBm-FI-ZMo" firstAttribute="leading" secondItem="ca1-r7-tPA" secondAttribute="leading" constant="16" id="5LL-x5-DJc"/>
-                        <constraint firstAttribute="trailing" secondItem="n1U-hX-2NN" secondAttribute="trailing" constant="16" id="EBm-TM-qRS"/>
+                        <constraint firstAttribute="trailing" secondItem="n1U-hX-2NN" secondAttribute="trailing" constant="16" id="E6t-Fp-IpI"/>
+                        <constraint firstAttribute="bottom" secondItem="n1U-hX-2NN" secondAttribute="bottom" id="FBu-uF-hZN"/>
+                        <constraint firstItem="n1U-hX-2NN" firstAttribute="leading" secondItem="ca1-r7-tPA" secondAttribute="leading" constant="150" id="L9Q-FL-b4X"/>
                         <constraint firstItem="yBm-FI-ZMo" firstAttribute="top" secondItem="ca1-r7-tPA" secondAttribute="top" id="Lc0-8b-VUs"/>
-                        <constraint firstItem="n1U-hX-2NN" firstAttribute="top" secondItem="ca1-r7-tPA" secondAttribute="top" id="Q8q-vC-44s"/>
                         <constraint firstAttribute="bottom" secondItem="yBm-FI-ZMo" secondAttribute="bottom" id="bqB-z9-SKS"/>
+                        <constraint firstItem="n1U-hX-2NN" firstAttribute="top" secondItem="ca1-r7-tPA" secondAttribute="top" id="slk-RD-2ac"/>
                     </constraints>
                 </view>
             </subviews>

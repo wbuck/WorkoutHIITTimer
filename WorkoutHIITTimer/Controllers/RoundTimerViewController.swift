@@ -12,7 +12,8 @@ import RealmSwift
 class RoundTimerViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pickerControlView: PickerControlView!
+    @IBOutlet weak var warmupTimePickerView: PickerControlView!
+    
     
     
     override func viewDidLoad() {
@@ -21,7 +22,7 @@ class RoundTimerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       // pickerControlView.delegate = self
+       warmupTimePickerView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,7 +37,7 @@ extension RoundTimerViewController: PickerControlViewDelegate {
         var constraintName = String()
         switch sender.tag {
         case 0:
-            constraintName = "HeightConstraint"
+            constraintName = "WarmupTimePickerHeight"
         default:
             break;
         }
