@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class PickerControlView: UIView, NibFileOwnerLoadable  {
+class TimePickerControlView: UIView, NibFileOwnerLoadable  {
     
     @IBOutlet weak var chevronImage: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -90,7 +90,7 @@ class PickerControlView: UIView, NibFileOwnerLoadable  {
     }
 }
 
-extension PickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
+extension TimePickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
     
     // Define the columns of the picker view.
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimePickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
             <connections>
-                <outlet property="chevronImage" destination="aZI-MZ-1D0" id="nk3-zI-vdB"/>
-                <outlet property="pickerView" destination="KxP-gx-Sqp" id="y1G-oA-UP3"/>
+                <outlet property="chevronImage" destination="aZI-MZ-1D0" id="pdG-My-aJ6"/>
+                <outlet property="pickerView" destination="KxP-gx-Sqp" id="0Es-um-zfo"/>
                 <outlet property="selectionLabel" destination="lxt-Ef-0G5" id="hQb-Za-NAx"/>
                 <outlet property="titleLabel" destination="wkC-kr-Jwf" id="SgP-8d-LQd"/>
             </connections>

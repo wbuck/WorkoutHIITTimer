@@ -11,10 +11,7 @@ import RealmSwift
 
 class RoundTimerViewController: UIViewController {
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var warmupTimePickerView: PickerControlView!
-    
-    
+    @IBOutlet weak var warmupTimePickerView: TimePickerControlView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +29,7 @@ class RoundTimerViewController: UIViewController {
 
 extension RoundTimerViewController: PickerControlViewDelegate {
     
-    func pickerControlViewTapped(_ sender: PickerControlView) {
+    func pickerControlViewTapped(_ sender: TimePickerControlView) {
         
         var constraintName = String()
         switch sender.tag {

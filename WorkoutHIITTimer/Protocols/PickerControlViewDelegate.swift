@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PickerControlViewDelegate: NSObjectProtocol  {
-    func pickerControlViewTapped(_ sender: PickerControlView)
+    func pickerControlViewTapped(_ sender: TimePickerControlView)
 }
