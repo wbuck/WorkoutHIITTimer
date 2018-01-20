@@ -22,6 +22,7 @@ class RoundTimerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         warmupTimePickerView.delegate = self
         warmupSoundPickerView.delegate = self
+        warmupSoundPickerView.separatorIsHidden = true
     }
     
     override func didReceiveMemoryWarning() {

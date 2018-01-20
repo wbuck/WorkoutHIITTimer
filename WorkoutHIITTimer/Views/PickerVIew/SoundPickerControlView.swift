@@ -15,7 +15,8 @@ class SoundPickerControlView: UIView, PickerView, NibFileOwnerLoadable {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var selectionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-
+    @IBOutlet weak var separatorView: UIView!
+    
     weak var delegate: PickerControlViewDelegate?
     private var observer: NSKeyValueObservation?
     let sounds = ["Beep", "Bloop", "Space", "Boxing Bell", "Laser", "Sound1", "Sound2", "Sound3"]
@@ -38,6 +39,12 @@ class SoundPickerControlView: UIView, PickerView, NibFileOwnerLoadable {
     var text: String? {
         didSet {
             titleLabel.text = text
+        }
+    }
+    
+    var separatorIsHidden: Bool = false {
+        didSet {
+             separatorView.isHidden = separatorIsHidden
         }
     }
     

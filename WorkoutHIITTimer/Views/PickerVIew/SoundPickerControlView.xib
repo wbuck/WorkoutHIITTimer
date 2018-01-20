@@ -15,6 +15,7 @@
                 <outlet property="chevronImage" destination="G1y-AK-Rdx" id="wkH-lt-3Ri"/>
                 <outlet property="pickerView" destination="Zu5-nF-qAO" id="YxD-gL-K8X"/>
                 <outlet property="selectionLabel" destination="cNX-5C-myx" id="nVr-nn-J6g"/>
+                <outlet property="separatorView" destination="s4B-Jg-Do3" id="mJS-Rd-iAV"/>
                 <outlet property="titleLabel" destination="raL-T3-4eg" id="sxw-8J-2OU"/>
             </connections>
         </placeholder>

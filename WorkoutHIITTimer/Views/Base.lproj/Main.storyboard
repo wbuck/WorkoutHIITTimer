@@ -141,22 +141,35 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="WARM UP"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFH-QN-6jj" customClass="SoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IX-5G-0jL" customClass="SoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="322" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" identifier="WarmupSoundPickerHeight" id="g0I-F0-A6v"/>
+                                    <constraint firstAttribute="height" constant="50" identifier="WarmupSoundPickerHeight" id="lAB-xW-tG0"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sound"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNi-K0-TUg" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="372" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ymW-pl-MXO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="ROUNDS"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="TimerGrey"/>
                         <constraints>
+                            <constraint firstItem="7IX-5G-0jL" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="2c6-mi-C1d"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="34n-CF-Bjn"/>
                             <constraint firstItem="Bk2-UD-tXQ" firstAttribute="top" secondItem="06l-R5-kGm" secondAttribute="bottom" id="5eV-hq-jGK"/>
                             <constraint firstItem="dqC-aR-I3T" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" constant="16" id="8fI-dP-qlA"/>
+                            <constraint firstItem="JNi-K0-TUg" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="9b4-5K-7MX"/>
+                            <constraint firstItem="JNi-K0-TUg" firstAttribute="top" secondItem="7IX-5G-0jL" secondAttribute="bottom" id="A9H-oJ-ydo"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="top" secondItem="Bk2-UD-tXQ" secondAttribute="bottom" id="BVY-ji-Q7b"/>
                             <constraint firstItem="06l-R5-kGm" firstAttribute="leading" secondItem="h72-Rq-nLe" secondAttribute="leading" constant="16" id="Fn7-kC-oAy"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="Gcl-HO-Ep5"/>
@@ -166,16 +179,16 @@
                             <constraint firstItem="pp7-TF-1hZ" firstAttribute="top" secondItem="17p-jL-h35" secondAttribute="bottom" id="QUX-2F-84A"/>
                             <constraint firstAttribute="trailing" secondItem="06l-R5-kGm" secondAttribute="trailing" id="SMp-Pw-PlZ"/>
                             <constraint firstItem="17p-jL-h35" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="TgS-W7-xuA"/>
-                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="vFH-QN-6jj" secondAttribute="trailing" id="ULE-aV-dgl"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="dqC-aR-I3T" secondAttribute="trailing" id="c98-fZ-Ydo"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="17p-jL-h35" secondAttribute="trailing" id="cMl-2n-Llp"/>
                             <constraint firstItem="hdw-Br-83q" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="eLs-lh-BJG"/>
-                            <constraint firstItem="vFH-QN-6jj" firstAttribute="top" secondItem="dqC-aR-I3T" secondAttribute="bottom" id="eNw-8j-I4A"/>
-                            <constraint firstItem="vFH-QN-6jj" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="fn4-61-Kjz"/>
                             <constraint firstItem="hdw-Br-83q" firstAttribute="top" secondItem="X1W-Dc-VPW" secondAttribute="bottom" id="gQJ-RR-Zu2"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="pp7-TF-1hZ" secondAttribute="trailing" id="hcX-h5-SQa"/>
                             <constraint firstItem="06l-R5-kGm" firstAttribute="top" secondItem="pp7-TF-1hZ" secondAttribute="bottom" id="hgF-RV-aXe"/>
                             <constraint firstItem="pp7-TF-1hZ" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="io1-p8-sCX"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="7IX-5G-0jL" secondAttribute="trailing" id="mMJ-Ll-xSG"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="JNi-K0-TUg" secondAttribute="trailing" id="oRJ-VP-0TL"/>
+                            <constraint firstItem="7IX-5G-0jL" firstAttribute="top" secondItem="dqC-aR-I3T" secondAttribute="bottom" id="qMs-c7-WwG"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="trailing" secondItem="NAi-NF-MJI" secondAttribute="trailing" id="sgZ-xt-PUY"/>
                             <constraint firstItem="dqC-aR-I3T" firstAttribute="top" secondItem="hdw-Br-83q" secondAttribute="bottom" id="swl-2E-hzq"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="X1W-Dc-VPW" secondAttribute="trailing" id="ua2-J3-fw3"/>
@@ -188,7 +201,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BgI-az-xox"/>
                     <connections>
-                        <outlet property="warmupSoundPickerView" destination="vFH-QN-6jj" id="X1g-hS-B9o"/>
+                        <outlet property="warmupSoundPickerView" destination="7IX-5G-0jL" id="CzC-NK-HBd"/>
                         <outlet property="warmupTimePickerView" destination="X1W-Dc-VPW" id="X1g-eT-D4u"/>
                     </connections>
                 </viewController>
