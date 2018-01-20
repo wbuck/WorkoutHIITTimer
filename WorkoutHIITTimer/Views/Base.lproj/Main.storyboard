@@ -141,6 +141,16 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="WARM UP"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFH-QN-6jj" customClass="SoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="322" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" identifier="WarmupSoundPickerHeight" id="g0I-F0-A6v"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sound"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="TimerGrey"/>
                         <constraints>
@@ -156,9 +166,12 @@
                             <constraint firstItem="pp7-TF-1hZ" firstAttribute="top" secondItem="17p-jL-h35" secondAttribute="bottom" id="QUX-2F-84A"/>
                             <constraint firstAttribute="trailing" secondItem="06l-R5-kGm" secondAttribute="trailing" id="SMp-Pw-PlZ"/>
                             <constraint firstItem="17p-jL-h35" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="TgS-W7-xuA"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="vFH-QN-6jj" secondAttribute="trailing" id="ULE-aV-dgl"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="dqC-aR-I3T" secondAttribute="trailing" id="c98-fZ-Ydo"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="17p-jL-h35" secondAttribute="trailing" id="cMl-2n-Llp"/>
                             <constraint firstItem="hdw-Br-83q" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="eLs-lh-BJG"/>
+                            <constraint firstItem="vFH-QN-6jj" firstAttribute="top" secondItem="dqC-aR-I3T" secondAttribute="bottom" id="eNw-8j-I4A"/>
+                            <constraint firstItem="vFH-QN-6jj" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="fn4-61-Kjz"/>
                             <constraint firstItem="hdw-Br-83q" firstAttribute="top" secondItem="X1W-Dc-VPW" secondAttribute="bottom" id="gQJ-RR-Zu2"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="pp7-TF-1hZ" secondAttribute="trailing" id="hcX-h5-SQa"/>
                             <constraint firstItem="06l-R5-kGm" firstAttribute="top" secondItem="pp7-TF-1hZ" secondAttribute="bottom" id="hgF-RV-aXe"/>
@@ -175,6 +188,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BgI-az-xox"/>
                     <connections>
+                        <outlet property="warmupSoundPickerView" destination="vFH-QN-6jj" id="X1g-hS-B9o"/>
                         <outlet property="warmupTimePickerView" destination="X1W-Dc-VPW" id="X1g-eT-D4u"/>
                     </connections>
                 </viewController>

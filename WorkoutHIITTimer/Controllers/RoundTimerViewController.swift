@@ -12,6 +12,7 @@ import RealmSwift
 class RoundTimerViewController: UIViewController {
     
     @IBOutlet weak var warmupTimePickerView: TimePickerControlView!
+    @IBOutlet weak var warmupSoundPickerView: SoundPickerControlView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,8 @@ class RoundTimerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       warmupTimePickerView.delegate = self
+        warmupTimePickerView.delegate = self
+        warmupSoundPickerView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,6 +37,8 @@ extension RoundTimerViewController: PickerControlViewDelegate {
         switch sender.id {
         case 0:
             constraintName = "WarmupTimePickerHeight"
+        case 1:
+            constraintName = "WarmupSoundPickerHeight"
         default:
             break;
         }
@@ -49,7 +53,7 @@ extension RoundTimerViewController: PickerControlViewDelegate {
             .expanded : .collapsed
         
         heightConstraint.first?.constant =  CGFloat(nextPosition.rawValue)
-
+        
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
