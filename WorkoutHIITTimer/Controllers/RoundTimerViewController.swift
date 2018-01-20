@@ -29,10 +29,10 @@ class RoundTimerViewController: UIViewController {
 
 extension RoundTimerViewController: PickerControlViewDelegate {
     
-    func pickerControlViewTapped(_ sender: TimePickerControlView) {
+    func pickerControlViewTapped(_ sender: PickerView) {
         
         var constraintName = String()
-        switch sender.tag {
+        switch sender.id {
         case 0:
             constraintName = "WarmupTimePickerHeight"
         default:

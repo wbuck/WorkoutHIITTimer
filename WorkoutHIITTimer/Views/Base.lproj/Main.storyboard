@@ -119,6 +119,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AhZ-ln-h0J"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Count"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqC-aR-I3T" userLabel="Inset Separator">
                                 <rect key="frame" x="16" y="321" width="359" height="1"/>

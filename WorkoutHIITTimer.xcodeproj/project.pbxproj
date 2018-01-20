@@ -22,6 +22,8 @@
 		1076F83A200C219F0080E1D3 /* TimerDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F839200C219F0080E1D3 /* TimerDirection.swift */; };
 		1076F83E200C240B0080E1D3 /* TimerWarnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F83D200C240B0080E1D3 /* TimerWarnings.swift */; };
 		1076F840200C26BA0080E1D3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F83F200C26BA0080E1D3 /* Timer.swift */; };
+		1087E43A2012F47D0075FDE6 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087E4392012F47D0075FDE6 /* PickerView.swift */; };
+		108B1C112013DFD800803855 /* SoundPickerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108B1C102013DFD800803855 /* SoundPickerControlView.xib */; };
 		10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12730200CDE5500DE7F6D /* SubTimer.swift */; };
 		10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12737200D60CE00DE7F6D /* TextFieldView.xib */; };
 		10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12739200D637E00DE7F6D /* TextFieldView.swift */; };
@@ -59,6 +61,8 @@
 		1076F839200C219F0080E1D3 /* TimerDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDirection.swift; sourceTree = "<group>"; };
 		1076F83D200C240B0080E1D3 /* TimerWarnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWarnings.swift; sourceTree = "<group>"; };
 		1076F83F200C26BA0080E1D3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		1087E4392012F47D0075FDE6 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		108B1C102013DFD800803855 /* SoundPickerControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoundPickerControlView.xib; sourceTree = "<group>"; };
 		10F12730200CDE5500DE7F6D /* SubTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTimer.swift; sourceTree = "<group>"; };
 		10F12737200D60CE00DE7F6D /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		10F12739200D637E00DE7F6D /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				10F1273B200D698B00DE7F6D /* NibFileOwnerLoadable.swift */,
 				10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */,
+				1087E4392012F47D0075FDE6 /* PickerView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			children = (
 				10F12749200D915C00DE7F6D /* TimePickerControlView.xib */,
 				10F1274B200D935000DE7F6D /* TimePickerControlView.swift */,
+				108B1C102013DFD800803855 /* SoundPickerControlView.xib */,
 			);
 			path = PickerVIew;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108B1C112013DFD800803855 /* SoundPickerControlView.xib in Resources */,
 				1071574F2006E58B00BE3739 /* LaunchScreen.storyboard in Resources */,
 				1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */,
 				10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */,
@@ -414,6 +421,7 @@
 				10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */,
 				107157422006E58B00BE3739 /* AppDelegate.swift in Sources */,
 				1076F840200C26BA0080E1D3 /* Timer.swift in Sources */,
+				1087E43A2012F47D0075FDE6 /* PickerView.swift in Sources */,
 				1076F834200C0E5F0080E1D3 /* TimerType.swift in Sources */,
 				10F1275E20117C5A00DE7F6D /* PickerViewState.swift in Sources */,
 				107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */,

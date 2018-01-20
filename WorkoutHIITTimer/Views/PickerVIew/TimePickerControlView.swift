@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class TimePickerControlView: UIView, NibFileOwnerLoadable  {
+class TimePickerControlView: UIView, PickerView, NibFileOwnerLoadable  {
     
     @IBOutlet weak var chevronImage: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -18,6 +18,10 @@ class TimePickerControlView: UIView, NibFileOwnerLoadable  {
     
     weak var delegate: PickerControlViewDelegate?
     private var observer: NSKeyValueObservation?
+    
+    var id: Int {
+        return self.tag
+    }
     
     // Track the state (expanded or collapsed) of
     // the view.
@@ -72,10 +76,6 @@ class TimePickerControlView: UIView, NibFileOwnerLoadable  {
         })
     }
     
-    deinit {
-        print("De init")
-    }
-    
     private func rotateArrow(in direction: Rotate) {
         // I multiplied the result to ensure the rotation
         // back to its starting position moves ccw.
@@ -99,8 +99,8 @@ extension TimePickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
+        // Hours.
         case 0:
-            // Hours.
             return 24
         // Minutes and seconds.
         case 1,2:
