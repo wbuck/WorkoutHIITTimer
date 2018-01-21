@@ -11,7 +11,8 @@ import UIKit
 @IBDesignable
 class RoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    var rounds = [Int]()
+    var rounds = [Int](1...100)
+    
     @IBInspectable
     var title: String? {
         didSet {
@@ -32,9 +33,14 @@ class RoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
     private func initialize() {
         pickerView.delegate = self
         pickerView.dataSource = self
-        selectedValueLabel.text = String(1)
-        for round in 1...100 {
-            rounds.append(round)
+        value = 1
+    }
+    
+    var value: Int = 0 {
+        didSet {
+            if !rounds.contains(value) { return }
+            selectedValueLabel.text = String(value)
+            pickerView.selectRow(value - 1, inComponent: 0, animated: false)
         }
     }
     

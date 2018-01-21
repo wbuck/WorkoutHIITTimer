@@ -33,6 +33,15 @@ class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
     private func initialize() {
         pickerView.delegate = self
         pickerView.dataSource = self
+        value = sounds[0]
+    }
+    
+    var value: String = String() {
+        didSet {
+            guard let index = sounds.index(of: value) else { return }
+            pickerView.selectRow(index, inComponent: 0, animated: false)
+            selectedValueLabel.text = value
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -13,12 +13,16 @@ class TimePickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPic
     
     
     // Format and display time in label.
-    private(set) var time: (Int, Int, Int) = (0, 0, 0) {
+    var value: (UInt, UInt, UInt) = (0, 0, 0) {
         didSet {
-            let hour = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
-            let minute = time.1 < 10 ? "0\(time.1)" : "\(time.1)"
-            let second = time.2 < 10 ? "0\(time.2)" : "\(time.2)"
+            if value.0 > 23 || value.1 > 59 || value.2 > 59 { return }
+            let hour = value.0 < 10 ? "0\(value.0)" : "\(value.0)"
+            let minute = value.1 < 10 ? "0\(value.1)" : "\(value.1)"
+            let second = value.2 < 10 ? "0\(value.2)" : "\(value.2)"
             selectedValueLabel.text = "\(hour):\(minute):\(second)"
+            pickerView.selectRow(Int(value.0), inComponent: 0, animated: false)
+            pickerView.selectRow(Int(value.1), inComponent: 1, animated: false)
+            pickerView.selectRow(Int(value.2), inComponent: 2, animated: false)
         }
     }
     
@@ -42,7 +46,7 @@ class TimePickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPic
     private func initialize() {
         pickerView.delegate = self
         pickerView.dataSource = self
-        time = (0, 0, 0)
+        value = (0, 0, 0)
     }
     
     // Define the columns of the picker view.
@@ -70,11 +74,11 @@ class TimePickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
-            time.0 = row
+            value.0 = UInt(row)
         case 1:
-            time.1 = row
+            value.1 = UInt(row)
         case 2:
-            time.2 = row
+            value.2 = UInt(row)
         default:
             break
         }

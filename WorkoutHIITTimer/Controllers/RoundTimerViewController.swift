@@ -11,15 +11,20 @@ import RealmSwift
 
 class RoundTimerViewController: UIViewController {
     
-    @IBOutlet weak var warmupTimePickerView: TimePickerControlView!
-    @IBOutlet weak var warmupSoundPickerView: SoundPickerControlView!
-    @IBOutlet weak var roundPickerView: RoundPickerControlView!
-    @IBOutlet weak var roundTimerPickerView: TimePickerControlView!
+    @IBOutlet weak var contentView: UIView!
     
-    let pickerHeightConstraintNames = ["WarmupTimePickerHeight",
-                                       "WarmupSoundPickerHeight",
-                                       "RoundPickerHeight",
-                                       "RoundTimePickerHeight"]
+    // The key represents the tag of each picker
+    // view control. The value is the name of
+    // the height constraint.
+    let pickerHeightConstraintNames = [2 : "WarmupTimePickerHeight",
+                                       4 : "WarmupSoundPickerHeight",
+                                       5 : "RoundPickerHeight",
+                                       6 : "RoundTimePickerHeight",
+                                       8 : "RoundSoundPickerHeight",
+                                       9 : "RestTimePickerHeight",
+                                       11 : "RestSoundPickerHeight",
+                                       12 : "CoolDownTimePickerHeight",
+                                       14 : "CoolDownSoundPickerHeight"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +32,17 @@ class RoundTimerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        warmupTimePickerView.delegate = self
-        warmupSoundPickerView.delegate = self
-        roundPickerView.delegate = self
-        roundTimerPickerView.delegate = self
-        warmupSoundPickerView.separatorIsHidden = true
+        
+        // Find all of the subviews which are ExpandablePickerViews.
+        contentView.subviews.filter({ (control) -> Bool in
+            return control.self is ExpandablePickerView
+        }).forEach { (control) in
+            let picker = control as! ExpandablePickerView
+            // Set delegate and hide separator on specfic
+            // picker views.
+            picker.delegate = self
+            picker.separatorIsHidden = (picker.id == 4 || picker.id == 8 || picker.id == 11 || picker.id == 14)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,7 +55,6 @@ extension RoundTimerViewController: PickerControlViewDelegate {
     func pickerControlViewTapped(_ sender: PickerView) {
         
         let constraintName = pickerHeightConstraintNames[sender.id]
-        
         // Find constraint with the specified id.
         let heightConstraint = sender.constraints.filter { (constraint) -> Bool in
             return constraint.identifier == constraintName
