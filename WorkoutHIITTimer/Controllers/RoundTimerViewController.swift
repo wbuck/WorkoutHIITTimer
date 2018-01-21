@@ -14,6 +14,12 @@ class RoundTimerViewController: UIViewController {
     @IBOutlet weak var warmupTimePickerView: TimePickerControlView!
     @IBOutlet weak var warmupSoundPickerView: SoundPickerControlView!
     @IBOutlet weak var roundPickerView: RoundPickerControlView!
+    @IBOutlet weak var roundTimerPickerView: TimePickerControlView!
+    
+    let pickerHeightConstraintNames = ["WarmupTimePickerHeight",
+                                       "WarmupSoundPickerHeight",
+                                       "RoundPickerHeight",
+                                       "RoundTimePickerHeight"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,7 @@ class RoundTimerViewController: UIViewController {
         warmupTimePickerView.delegate = self
         warmupSoundPickerView.delegate = self
         roundPickerView.delegate = self
+        roundTimerPickerView.delegate = self
         warmupSoundPickerView.separatorIsHidden = true
     }
     
@@ -36,24 +43,14 @@ extension RoundTimerViewController: PickerControlViewDelegate {
     
     func pickerControlViewTapped(_ sender: PickerView) {
         
-        var constraintName = String()
-        switch sender.id {
-        case 0:
-            constraintName = "WarmupTimePickerHeight"
-        case 1:
-            constraintName = "WarmupSoundPickerHeight"
-        case 2:
-            constraintName = "RoundPickerHeight"
-        default:
-            break;
-        }
+        let constraintName = pickerHeightConstraintNames[sender.id]
         
         // Find constraint with the specified id.
         let heightConstraint = sender.constraints.filter { (constraint) -> Bool in
             return constraint.identifier == constraintName
         }
         
-        // Determine next postion.
+        // Determine next postion (expanded or collapsed).
         let nextPosition: PickerViewState = sender.pickerViewState == .collapsed ?
             .expanded : .collapsed
         

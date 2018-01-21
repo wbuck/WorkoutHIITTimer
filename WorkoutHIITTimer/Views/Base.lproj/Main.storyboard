@@ -171,9 +171,30 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="ROUNDS"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejq-Jn-Lmg" customClass="TimePickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="482" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" identifier="RoundTimePickerHeight" id="4OT-gI-RQc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Time"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-w7-XIq" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="532" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NHM-JK-9Dw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Count"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="TimerGrey"/>
                         <constraints>
+                            <constraint firstItem="Ejq-Jn-Lmg" firstAttribute="top" secondItem="aBx-a2-Y3y" secondAttribute="bottom" id="1rS-rs-bhp"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="34n-CF-Bjn"/>
                             <constraint firstItem="Bk2-UD-tXQ" firstAttribute="top" secondItem="06l-R5-kGm" secondAttribute="bottom" id="5eV-hq-jGK"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="0Si-Le-sN4" secondAttribute="trailing" id="5ma-Z6-Gsh"/>
@@ -192,7 +213,9 @@
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="vX0-vs-VFw" secondAttribute="trailing" id="UCh-KK-4Kc"/>
                             <constraint firstItem="eb4-iU-Ryd" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="V2M-FT-5By"/>
                             <constraint firstItem="vX0-vs-VFw" firstAttribute="top" secondItem="iQh-53-HBQ" secondAttribute="bottom" id="W0k-BB-OOT"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="lCp-w7-XIq" secondAttribute="trailing" id="WZa-y9-0Xd"/>
                             <constraint firstItem="0Si-Le-sN4" firstAttribute="top" secondItem="vX0-vs-VFw" secondAttribute="bottom" id="Wxo-OC-3sD"/>
+                            <constraint firstItem="lCp-w7-XIq" firstAttribute="top" secondItem="Ejq-Jn-Lmg" secondAttribute="bottom" id="Xlo-ph-ZDY"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="17p-jL-h35" secondAttribute="trailing" id="cMl-2n-Llp"/>
                             <constraint firstItem="mNg-Pi-fNv" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="evk-eF-mdb"/>
                             <constraint firstItem="iQh-53-HBQ" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" constant="16" id="fmI-Ma-8Ul"/>
@@ -203,18 +226,22 @@
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="mNg-Pi-fNv" secondAttribute="trailing" id="hmb-UE-xVv"/>
                             <constraint firstItem="pp7-TF-1hZ" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="io1-p8-sCX"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="aBx-a2-Y3y" secondAttribute="trailing" id="jxW-Ye-z0S"/>
+                            <constraint firstItem="Ejq-Jn-Lmg" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="mSm-5s-Q4k"/>
                             <constraint firstItem="aBx-a2-Y3y" firstAttribute="top" secondItem="0Si-Le-sN4" secondAttribute="bottom" id="ovG-9v-ekp"/>
                             <constraint firstItem="vX0-vs-VFw" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="p7N-xf-Xhz"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="trailing" secondItem="NAi-NF-MJI" secondAttribute="trailing" id="sgZ-xt-PUY"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="Bk2-UD-tXQ" secondAttribute="trailing" id="ufz-g0-wJg"/>
                             <constraint firstItem="eb4-iU-Ryd" firstAttribute="top" secondItem="mNg-Pi-fNv" secondAttribute="bottom" id="x5f-Qi-TKX"/>
+                            <constraint firstItem="lCp-w7-XIq" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="y8d-dy-sgm"/>
                             <constraint firstItem="17p-jL-h35" firstAttribute="top" secondItem="NAi-NF-MJI" secondAttribute="top" id="yiI-yc-qLE"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="Ejq-Jn-Lmg" secondAttribute="trailing" id="zze-fV-92L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NAi-NF-MJI"/>
                     </view>
                     <navigationItem key="navigationItem" id="BgI-az-xox"/>
                     <connections>
                         <outlet property="roundPickerView" destination="aBx-a2-Y3y" id="qXm-Pg-b0M"/>
+                        <outlet property="roundTimerPickerView" destination="Ejq-Jn-Lmg" id="7px-Fe-zId"/>
                         <outlet property="warmupSoundPickerView" destination="vX0-vs-VFw" id="4ga-Jp-yYE"/>
                         <outlet property="warmupTimePickerView" destination="mNg-Pi-fNv" id="Ugz-d6-3Kn"/>
                     </connections>
