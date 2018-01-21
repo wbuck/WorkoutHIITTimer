@@ -93,7 +93,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Enter name"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17p-jL-h35" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17p-jL-h35" userLabel="Timer Header" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -103,34 +103,34 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="TIMER"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1W-Dc-VPW" customClass="TimePickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNg-Pi-fNv" customClass="TimePickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="221" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" identifier="WarmupTimePickerHeight" id="Y6x-L6-uJS"/>
+                                    <constraint firstAttribute="height" constant="50" identifier="WarmupTimePickerHeight" id="8nD-0G-e88"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Time"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Time"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdw-Br-83q" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eb4-iU-Ryd" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="271" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="AhZ-ln-h0J"/>
+                                    <constraint firstAttribute="height" constant="50" id="B3z-RM-rdZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Count"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqC-aR-I3T" userLabel="Inset Separator">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQh-53-HBQ" userLabel="Inset Separator">
                                 <rect key="frame" x="16" y="321" width="359" height="1"/>
                                 <color key="backgroundColor" name="TimerFadedGrey"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="3gQ-kk-STu"/>
+                                    <constraint firstAttribute="height" constant="1" id="kxv-LV-AQr"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDV-AX-SUS" customClass="HeaderSwitchView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDV-AX-SUS" userLabel="Warmup Header" customClass="HeaderSwitchView" customModule="WorkoutHIITTimer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="161" width="375" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -141,21 +141,31 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="WARM UP"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IX-5G-0jL" customClass="SoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vX0-vs-VFw" customClass="SoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="322" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" identifier="WarmupSoundPickerHeight" id="lAB-xW-tG0"/>
+                                    <constraint firstAttribute="height" constant="50" identifier="WarmupSoundPickerHeight" id="i2i-zJ-dzQ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Sound"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Sound"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNi-K0-TUg" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBx-a2-Y3y" customClass="RoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="432" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" identifier="RoundPickerHeight" id="aWt-RJ-Ety"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Rounds"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Si-Le-sN4" userLabel="Round Header" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="372" width="375" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="ymW-pl-MXO"/>
+                                    <constraint firstAttribute="height" constant="60" id="in8-wG-vM7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="ROUNDS"/>
@@ -164,45 +174,49 @@
                         </subviews>
                         <color key="backgroundColor" name="TimerGrey"/>
                         <constraints>
-                            <constraint firstItem="7IX-5G-0jL" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="2c6-mi-C1d"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="34n-CF-Bjn"/>
                             <constraint firstItem="Bk2-UD-tXQ" firstAttribute="top" secondItem="06l-R5-kGm" secondAttribute="bottom" id="5eV-hq-jGK"/>
-                            <constraint firstItem="dqC-aR-I3T" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" constant="16" id="8fI-dP-qlA"/>
-                            <constraint firstItem="JNi-K0-TUg" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="9b4-5K-7MX"/>
-                            <constraint firstItem="JNi-K0-TUg" firstAttribute="top" secondItem="7IX-5G-0jL" secondAttribute="bottom" id="A9H-oJ-ydo"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="0Si-Le-sN4" secondAttribute="trailing" id="5ma-Z6-Gsh"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="top" secondItem="Bk2-UD-tXQ" secondAttribute="bottom" id="BVY-ji-Q7b"/>
+                            <constraint firstItem="0Si-Le-sN4" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="CRE-mR-N4p"/>
+                            <constraint firstItem="aBx-a2-Y3y" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="EMq-Sk-fC7"/>
                             <constraint firstItem="06l-R5-kGm" firstAttribute="leading" secondItem="h72-Rq-nLe" secondAttribute="leading" constant="16" id="Fn7-kC-oAy"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="Gcl-HO-Ep5"/>
                             <constraint firstItem="Bk2-UD-tXQ" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="H5N-hU-9Rd"/>
-                            <constraint firstItem="X1W-Dc-VPW" firstAttribute="top" secondItem="VDV-AX-SUS" secondAttribute="bottom" id="HhV-Qc-PqY"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="iQh-53-HBQ" secondAttribute="trailing" id="I9y-rI-Qqq"/>
+                            <constraint firstItem="mNg-Pi-fNv" firstAttribute="top" secondItem="VDV-AX-SUS" secondAttribute="bottom" id="O3b-VG-KnU"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="VDV-AX-SUS" secondAttribute="trailing" id="PF0-It-0gU"/>
                             <constraint firstItem="pp7-TF-1hZ" firstAttribute="top" secondItem="17p-jL-h35" secondAttribute="bottom" id="QUX-2F-84A"/>
                             <constraint firstAttribute="trailing" secondItem="06l-R5-kGm" secondAttribute="trailing" id="SMp-Pw-PlZ"/>
                             <constraint firstItem="17p-jL-h35" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="TgS-W7-xuA"/>
-                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="dqC-aR-I3T" secondAttribute="trailing" id="c98-fZ-Ydo"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="vX0-vs-VFw" secondAttribute="trailing" id="UCh-KK-4Kc"/>
+                            <constraint firstItem="eb4-iU-Ryd" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="V2M-FT-5By"/>
+                            <constraint firstItem="vX0-vs-VFw" firstAttribute="top" secondItem="iQh-53-HBQ" secondAttribute="bottom" id="W0k-BB-OOT"/>
+                            <constraint firstItem="0Si-Le-sN4" firstAttribute="top" secondItem="vX0-vs-VFw" secondAttribute="bottom" id="Wxo-OC-3sD"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="17p-jL-h35" secondAttribute="trailing" id="cMl-2n-Llp"/>
-                            <constraint firstItem="hdw-Br-83q" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="eLs-lh-BJG"/>
-                            <constraint firstItem="hdw-Br-83q" firstAttribute="top" secondItem="X1W-Dc-VPW" secondAttribute="bottom" id="gQJ-RR-Zu2"/>
+                            <constraint firstItem="mNg-Pi-fNv" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="evk-eF-mdb"/>
+                            <constraint firstItem="iQh-53-HBQ" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" constant="16" id="fmI-Ma-8Ul"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="eb4-iU-Ryd" secondAttribute="trailing" id="gYK-8b-PSu"/>
+                            <constraint firstItem="iQh-53-HBQ" firstAttribute="top" secondItem="eb4-iU-Ryd" secondAttribute="bottom" id="gtZ-od-FSY"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="pp7-TF-1hZ" secondAttribute="trailing" id="hcX-h5-SQa"/>
                             <constraint firstItem="06l-R5-kGm" firstAttribute="top" secondItem="pp7-TF-1hZ" secondAttribute="bottom" id="hgF-RV-aXe"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="mNg-Pi-fNv" secondAttribute="trailing" id="hmb-UE-xVv"/>
                             <constraint firstItem="pp7-TF-1hZ" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="io1-p8-sCX"/>
-                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="7IX-5G-0jL" secondAttribute="trailing" id="mMJ-Ll-xSG"/>
-                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="JNi-K0-TUg" secondAttribute="trailing" id="oRJ-VP-0TL"/>
-                            <constraint firstItem="7IX-5G-0jL" firstAttribute="top" secondItem="dqC-aR-I3T" secondAttribute="bottom" id="qMs-c7-WwG"/>
+                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="aBx-a2-Y3y" secondAttribute="trailing" id="jxW-Ye-z0S"/>
+                            <constraint firstItem="aBx-a2-Y3y" firstAttribute="top" secondItem="0Si-Le-sN4" secondAttribute="bottom" id="ovG-9v-ekp"/>
+                            <constraint firstItem="vX0-vs-VFw" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="p7N-xf-Xhz"/>
                             <constraint firstItem="VDV-AX-SUS" firstAttribute="trailing" secondItem="NAi-NF-MJI" secondAttribute="trailing" id="sgZ-xt-PUY"/>
-                            <constraint firstItem="dqC-aR-I3T" firstAttribute="top" secondItem="hdw-Br-83q" secondAttribute="bottom" id="swl-2E-hzq"/>
-                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="X1W-Dc-VPW" secondAttribute="trailing" id="ua2-J3-fw3"/>
                             <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="Bk2-UD-tXQ" secondAttribute="trailing" id="ufz-g0-wJg"/>
-                            <constraint firstItem="X1W-Dc-VPW" firstAttribute="leading" secondItem="NAi-NF-MJI" secondAttribute="leading" id="yf9-mF-TWo"/>
+                            <constraint firstItem="eb4-iU-Ryd" firstAttribute="top" secondItem="mNg-Pi-fNv" secondAttribute="bottom" id="x5f-Qi-TKX"/>
                             <constraint firstItem="17p-jL-h35" firstAttribute="top" secondItem="NAi-NF-MJI" secondAttribute="top" id="yiI-yc-qLE"/>
-                            <constraint firstItem="NAi-NF-MJI" firstAttribute="trailing" secondItem="hdw-Br-83q" secondAttribute="trailing" id="zsL-r2-Qv7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NAi-NF-MJI"/>
                     </view>
                     <navigationItem key="navigationItem" id="BgI-az-xox"/>
                     <connections>
-                        <outlet property="warmupSoundPickerView" destination="7IX-5G-0jL" id="CzC-NK-HBd"/>
-                        <outlet property="warmupTimePickerView" destination="X1W-Dc-VPW" id="X1g-eT-D4u"/>
+                        <outlet property="roundPickerView" destination="aBx-a2-Y3y" id="qXm-Pg-b0M"/>
+                        <outlet property="warmupSoundPickerView" destination="vX0-vs-VFw" id="4ga-Jp-yYE"/>
+                        <outlet property="warmupTimePickerView" destination="mNg-Pi-fNv" id="Ugz-d6-3Kn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huu-q2-yOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,6 +230,9 @@
         </namedColor>
         <namedColor name="TimerFadedGrey">
             <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerFadedGrey">
+            <color red="0.58399999140000003" green="0.59600001570000005" blue="0.60399997230000002" alpha="0.40000000600000002" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TimerGrey">
             <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

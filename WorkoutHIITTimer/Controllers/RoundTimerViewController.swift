@@ -13,6 +13,7 @@ class RoundTimerViewController: UIViewController {
     
     @IBOutlet weak var warmupTimePickerView: TimePickerControlView!
     @IBOutlet weak var warmupSoundPickerView: SoundPickerControlView!
+    @IBOutlet weak var roundPickerView: RoundPickerControlView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class RoundTimerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         warmupTimePickerView.delegate = self
         warmupSoundPickerView.delegate = self
+        roundPickerView.delegate = self
         warmupSoundPickerView.separatorIsHidden = true
     }
     
@@ -40,6 +42,8 @@ extension RoundTimerViewController: PickerControlViewDelegate {
             constraintName = "WarmupTimePickerHeight"
         case 1:
             constraintName = "WarmupSoundPickerHeight"
+        case 2:
+            constraintName = "RoundPickerHeight"
         default:
             break;
         }

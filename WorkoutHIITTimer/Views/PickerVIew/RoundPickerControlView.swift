@@ -1,5 +1,5 @@
 //
-//  SoundPickerControlView.swift
+//  RoundPickerControlView.swift
 //  WorkoutHIITTimer
 //
 //  Created by Warren Buckley on 2018-01-20.
@@ -9,10 +9,9 @@
 import UIKit
 
 @IBDesignable
-class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPickerViewDelegate {
+class RoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    let sounds = ["Beep", "Bloop", "Space", "Boxing Bell", "Laser", "Sound1", "Sound2", "Sound3"]
-    
+    var rounds = [Int]()
     @IBInspectable
     var title: String? {
         didSet {
@@ -20,19 +19,23 @@ class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         initialize()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         initialize()
     }
     
     private func initialize() {
         pickerView.delegate = self
         pickerView.dataSource = self
+        selectedValueLabel.text = String(1)
+        for round in 1...100 {
+            rounds.append(round)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -40,11 +43,11 @@ class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sounds.count
+        return 100
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedValueLabel.text = sounds[row]
+        selectedValueLabel.text = String(rounds[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -52,9 +55,7 @@ class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
         label.textColor = UIColor(named: "TimerTextGrey")
         label.font = UIFont.systemFont(ofSize: 17)
         label.textAlignment = .center
-        label.text = sounds[row]
+        label.text = String(rounds[row])
         return label
     }
 }
-
-

@@ -9,29 +9,8 @@
 import UIKit
 
 @IBDesignable
-class TimePickerControlView: UIView, PickerView, NibFileOwnerLoadable  {
+class TimePickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPickerViewDelegate  {
     
-    @IBOutlet weak var chevronImage: UIImageView!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var selectionLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    weak var delegate: PickerControlViewDelegate?
-    private var observer: NSKeyValueObservation?
-    
-    var id: Int {
-        return self.tag
-    }
-    
-    // Track the state (expanded or collapsed) of
-    // the view.
-    private(set) var pickerViewState = PickerViewState.collapsed {
-        didSet {
-            let rotate: Rotate = pickerViewState == .collapsed ?
-                .counterClockwise : .clockwise
-            rotateArrow(in: rotate)
-        }
-    }
     
     // Format and display time in label.
     private(set) var time: (Int, Int, Int) = (0, 0, 0) {
@@ -39,14 +18,14 @@ class TimePickerControlView: UIView, PickerView, NibFileOwnerLoadable  {
             let hour = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
             let minute = time.1 < 10 ? "0\(time.1)" : "\(time.1)"
             let second = time.2 < 10 ? "0\(time.2)" : "\(time.2)"
-            selectionLabel.text = "\(hour):\(minute):\(second)"
+            selectedValueLabel.text = "\(hour):\(minute):\(second)"
         }
     }
     
     @IBInspectable
-    var text: String? {
+    var title: String? {
         didSet {
-            titleLabel.text = text
+            titleLabel.text = title
         }
     }
     
@@ -60,37 +39,11 @@ class TimePickerControlView: UIView, PickerView, NibFileOwnerLoadable  {
         initialize()
     }
     
-    
-    
     private func initialize() {
-        loadNibContent()
         pickerView.delegate = self
         pickerView.dataSource = self
-        observer?.invalidate()
-        observer = self.layer.observe(\CALayer.bounds, changeHandler: {
-            (layer, _) in
-            if Int(layer.frame.height) != self.pickerViewState.rawValue {
-                self.pickerViewState = Int(layer.frame.height) > PickerViewState.collapsed.rawValue ?
-                    .expanded : .collapsed
-            }
-        })
+        time = (0, 0, 0)
     }
-    
-    private func rotateArrow(in direction: Rotate) {
-        // I multiplied the result to ensure the rotation
-        // back to its starting position moves ccw.
-        let angle = CGFloat(direction.rawValue) * CGFloat.pi * 0.999;
-        UIView.animate(withDuration: 0.3) {
-            self.chevronImage.transform = self.chevronImage.transform.rotated(by: angle)
-        }
-    }
-    
-    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-        delegate?.pickerControlViewTapped(self)
-    }
-}
-
-extension TimePickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
     
     // Define the columns of the picker view.
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -145,3 +98,5 @@ extension TimePickerControlView: UIPickerViewDataSource, UIPickerViewDelegate {
         return label
     }
 }
+
+

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10175DBD20140FD200784B26 /* ExpandablePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10175DBC20140FD200784B26 /* ExpandablePickerView.xib */; };
+		10175DBF2014108900784B26 /* ExpandablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10175DBE2014108900784B26 /* ExpandablePickerView.swift */; };
+		10175DC1201415AD00784B26 /* RoundPickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10175DC0201415AD00784B26 /* RoundPickerControlView.swift */; };
 		107157422006E58B00BE3739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107157412006E58B00BE3739 /* AppDelegate.swift */; };
 		107157472006E58B00BE3739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107157452006E58B00BE3739 /* Main.storyboard */; };
 		1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107157482006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld */; };
@@ -23,7 +26,6 @@
 		1076F83E200C240B0080E1D3 /* TimerWarnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F83D200C240B0080E1D3 /* TimerWarnings.swift */; };
 		1076F840200C26BA0080E1D3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F83F200C26BA0080E1D3 /* Timer.swift */; };
 		1087E43A2012F47D0075FDE6 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087E4392012F47D0075FDE6 /* PickerView.swift */; };
-		108B1C112013DFD800803855 /* SoundPickerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108B1C102013DFD800803855 /* SoundPickerControlView.xib */; };
 		108B1C132013E2BC00803855 /* SoundPickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1C122013E2BC00803855 /* SoundPickerControlView.swift */; };
 		10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12730200CDE5500DE7F6D /* SubTimer.swift */; };
 		10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12737200D60CE00DE7F6D /* TextFieldView.xib */; };
@@ -35,7 +37,6 @@
 		10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12743200D826E00DE7F6D /* HeaderView.swift */; };
 		10F12746200D8E2300DE7F6D /* HeaderSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12745200D8E2300DE7F6D /* HeaderSwitchView.xib */; };
 		10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */; };
-		10F1274A200D915C00DE7F6D /* TimePickerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12749200D915C00DE7F6D /* TimePickerControlView.xib */; };
 		10F1274C200D935000DE7F6D /* TimePickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1274B200D935000DE7F6D /* TimePickerControlView.swift */; };
 		10F12756200EE59300DE7F6D /* PickerControlViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */; };
 		10F1275A200F834200DE7F6D /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12759200F834200DE7F6D /* Rotate.swift */; };
@@ -45,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10175DBC20140FD200784B26 /* ExpandablePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandablePickerView.xib; sourceTree = "<group>"; };
+		10175DBE2014108900784B26 /* ExpandablePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandablePickerView.swift; sourceTree = "<group>"; };
+		10175DC0201415AD00784B26 /* RoundPickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundPickerControlView.swift; sourceTree = "<group>"; };
 		1071573E2006E58B00BE3739 /* WorkoutHIITTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutHIITTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107157412006E58B00BE3739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		107157462006E58B00BE3739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,7 +67,6 @@
 		1076F83D200C240B0080E1D3 /* TimerWarnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWarnings.swift; sourceTree = "<group>"; };
 		1076F83F200C26BA0080E1D3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		1087E4392012F47D0075FDE6 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
-		108B1C102013DFD800803855 /* SoundPickerControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoundPickerControlView.xib; sourceTree = "<group>"; };
 		108B1C122013E2BC00803855 /* SoundPickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerControlView.swift; sourceTree = "<group>"; };
 		10F12730200CDE5500DE7F6D /* SubTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTimer.swift; sourceTree = "<group>"; };
 		10F12737200D60CE00DE7F6D /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
@@ -75,7 +78,6 @@
 		10F12743200D826E00DE7F6D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		10F12745200D8E2300DE7F6D /* HeaderSwitchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSwitchView.xib; sourceTree = "<group>"; };
 		10F12747200D8F6600DE7F6D /* HeaderSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSwitchView.swift; sourceTree = "<group>"; };
-		10F12749200D915C00DE7F6D /* TimePickerControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimePickerControlView.xib; sourceTree = "<group>"; };
 		10F1274B200D935000DE7F6D /* TimePickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerControlView.swift; sourceTree = "<group>"; };
 		10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlViewDelegate.swift; sourceTree = "<group>"; };
 		10F12759200F834200DE7F6D /* Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
@@ -208,10 +210,11 @@
 		10F12751200E322200DE7F6D /* PickerVIew */ = {
 			isa = PBXGroup;
 			children = (
-				10F12749200D915C00DE7F6D /* TimePickerControlView.xib */,
 				10F1274B200D935000DE7F6D /* TimePickerControlView.swift */,
-				108B1C102013DFD800803855 /* SoundPickerControlView.xib */,
 				108B1C122013E2BC00803855 /* SoundPickerControlView.swift */,
+				10175DBC20140FD200784B26 /* ExpandablePickerView.xib */,
+				10175DBE2014108900784B26 /* ExpandablePickerView.swift */,
+				10175DC0201415AD00784B26 /* RoundPickerControlView.swift */,
 			);
 			path = PickerVIew;
 			sourceTree = "<group>";
@@ -325,7 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				108B1C112013DFD800803855 /* SoundPickerControlView.xib in Resources */,
+				10175DBD20140FD200784B26 /* ExpandablePickerView.xib in Resources */,
 				1071574F2006E58B00BE3739 /* LaunchScreen.storyboard in Resources */,
 				1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */,
 				10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */,
@@ -333,7 +336,6 @@
 				10F12742200D81B200DE7F6D /* HeaderView.xib in Resources */,
 				10F12746200D8E2300DE7F6D /* HeaderSwitchView.xib in Resources */,
 				10F1273E200D7F0100DE7F6D /* SegmentControlView.xib in Resources */,
-				10F1274A200D915C00DE7F6D /* TimePickerControlView.xib in Resources */,
 				107157612006F61F00BE3739 /* MainMenuTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +422,8 @@
 				1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */,
 				10F1275A200F834200DE7F6D /* Rotate.swift in Sources */,
 				10F1275C2010CF2800DE7F6D /* HeaderBase.swift in Sources */,
+				10175DC1201415AD00784B26 /* RoundPickerControlView.swift in Sources */,
+				10175DBF2014108900784B26 /* ExpandablePickerView.swift in Sources */,
 				10F1273C200D698B00DE7F6D /* NibFileOwnerLoadable.swift in Sources */,
 				10F12740200D809C00DE7F6D /* SegmentControlView.swift in Sources */,
 				10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */,
