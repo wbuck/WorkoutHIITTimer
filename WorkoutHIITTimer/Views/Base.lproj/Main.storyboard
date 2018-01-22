@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="386.39999999999998" y="240.62968515742131"/>
         </scene>
-        <!--Round Timer View Controller-->
+        <!--Round Timer-->
         <scene sceneID="5VY-jk-BVf">
             <objects>
                 <viewController id="LX3-ta-hBQ" customClass="RoundTimerViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -420,7 +420,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NAi-NF-MJI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BgI-az-xox"/>
+                    <navigationItem key="navigationItem" title="Round Timer" id="BgI-az-xox">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="8rk-te-dxN"/>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="contentView" destination="sG2-p1-lBl" id="Q8w-Kj-9Qr"/>

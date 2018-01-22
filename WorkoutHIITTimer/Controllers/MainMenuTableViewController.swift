@@ -24,7 +24,8 @@ class MainMenuTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.separatorStyle = .none
-        //updateTableContentInset()
+        guard let nav = navigationController?.navigationBar else { return }
+        nav.tintColor = UIColor(named: "TimerOrange")
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,6 +75,7 @@ class MainMenuTableViewController: UITableViewController {
     // MARK: - Navigation
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
          performSegue(withIdentifier: segueIds[indexPath.row], sender: self)
     }
     
