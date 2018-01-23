@@ -33,13 +33,37 @@ class TextFieldView: UIView, NibFileOwnerLoadable {
         }
     }
     
+    var value: String? {
+        get {
+            return inputTextField.text
+        }
+        set {
+            inputTextField.text = newValue
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadNibContent()
+        initialize()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNibContent()
+        initialize()
+    }
+    
+    private func initialize() {
+        inputTextField.returnKeyType = .done
+        inputTextField.delegate = self
+    }
+}
+
+extension TextFieldView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

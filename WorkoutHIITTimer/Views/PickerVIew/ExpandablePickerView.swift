@@ -52,6 +52,7 @@ class ExpandablePickerView: UIView, PickerView, NibFileOwnerLoadable {
     
     private func initializeView() {
         loadNibContent()
+        
         observer?.invalidate()
         observer = self.layer.observe(\CALayer.bounds, changeHandler: {
             (layer, _) in
@@ -60,6 +61,7 @@ class ExpandablePickerView: UIView, PickerView, NibFileOwnerLoadable {
                     .expanded : .collapsed
             }
         })
+        
     }
     
     private func rotateArrow(in direction: Rotate) {

@@ -24,7 +24,9 @@ class RoundTimerViewController: UIViewController {
                                        9 : "RestTimePickerHeight",
                                        11 : "RestSoundPickerHeight",
                                        12 : "CoolDownTimePickerHeight",
-                                       14 : "CoolDownSoundPickerHeight"]
+                                       14 : "CoolDownSoundPickerHeight",
+                                       16 : "HalfwayWarningSoundPickerHeight",
+                                       18 : "EndWarningSoundPickerHeight"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,18 @@ class RoundTimerViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        print("ROUND MEMORY WARNING")
     }
+    
+    @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
+        let controls = contentView.subviews.filter { (control) -> Bool in
+            return control is TextFieldView
+        }
+        if let textView = controls.first as? TextFieldView {
+            print(textView.value!)
+        }
+    }
+    
 }
 
 extension RoundTimerViewController: PickerControlViewDelegate {
