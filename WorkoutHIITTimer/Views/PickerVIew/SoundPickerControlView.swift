@@ -11,7 +11,14 @@ import UIKit
 @IBDesignable
 class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    let sounds = ["Beep", "Bloop", "Space", "Boxing Bell", "Laser", "Sound1", "Sound2", "Sound3"]
+    let sounds = ["Boxing Bell",
+                  "Car Wash Buzzer",
+                  "Game Show Chime",
+                  "Hockey Horn",
+                  "Police Whistle",
+                  "Prison Buzzer",
+                  "Space Engine Alarm",
+                  "Tech Beeps"]
     
     @IBInspectable
     var title: String? {
@@ -19,6 +26,9 @@ class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
             titleLabel.text = title
         }
     }
+    
+    @IBInspectable
+    var section: String = String()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -21,6 +21,17 @@ class SegmentControlView: UIView, NibFileOwnerLoadable {
         }
     }
     
+    @IBInspectable
+    var isEnabled: Bool = true {
+        didSet {
+            titleLabel.isEnabled = isEnabled
+            segmentView.isEnabled = isEnabled
+        }
+    }
+    
+    @IBInspectable
+    var section: String = String()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadNibContent()

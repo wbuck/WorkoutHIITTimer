@@ -21,6 +21,9 @@ class HeaderView: HeaderBase {
         }
     }
     
+    @IBInspectable
+    var section: String = String()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadNibContent()

@@ -42,6 +42,14 @@
 		10F1275A200F834200DE7F6D /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12759200F834200DE7F6D /* Rotate.swift */; };
 		10F1275C2010CF2800DE7F6D /* HeaderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1275B2010CF2800DE7F6D /* HeaderBase.swift */; };
 		10F1275E20117C5A00DE7F6D /* PickerViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1275D20117C5A00DE7F6D /* PickerViewState.swift */; };
+		10F8B86C2016BCDD00C4B037 /* Tech Beeps.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10F8B8642016BCDB00C4B037 /* Tech Beeps.wav */; };
+		10F8B86D2016BCDD00C4B037 /* Prison Buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10F8B8652016BCDB00C4B037 /* Prison Buzzer.wav */; };
+		10F8B86E2016BCDD00C4B037 /* Game Show Chime.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10F8B8662016BCDC00C4B037 /* Game Show Chime.wav */; };
+		10F8B86F2016BCDD00C4B037 /* Police Whistle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10F8B8672016BCDC00C4B037 /* Police Whistle.wav */; };
+		10F8B8702016BCDD00C4B037 /* Hockey Horn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10F8B8682016BCDC00C4B037 /* Hockey Horn.wav */; };
+		10F8B8712016BCDD00C4B037 /* Car Wash Buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10F8B8692016BCDD00C4B037 /* Car Wash Buzzer.wav */; };
+		10F8B8722016BCDD00C4B037 /* Space Engine Alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10F8B86A2016BCDD00C4B037 /* Space Engine Alarm.wav */; };
+		10F8B8732016BCDD00C4B037 /* Boxing Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10F8B86B2016BCDD00C4B037 /* Boxing Bell.wav */; };
 		DDF7FC73496A17B72E02E785 /* Pods_WorkoutHIITTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +91,14 @@
 		10F12759200F834200DE7F6D /* Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
 		10F1275B2010CF2800DE7F6D /* HeaderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBase.swift; sourceTree = "<group>"; };
 		10F1275D20117C5A00DE7F6D /* PickerViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewState.swift; sourceTree = "<group>"; };
+		10F8B8642016BCDB00C4B037 /* Tech Beeps.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Tech Beeps.wav"; sourceTree = "<group>"; };
+		10F8B8652016BCDB00C4B037 /* Prison Buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Prison Buzzer.wav"; sourceTree = "<group>"; };
+		10F8B8662016BCDC00C4B037 /* Game Show Chime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Game Show Chime.wav"; sourceTree = "<group>"; };
+		10F8B8672016BCDC00C4B037 /* Police Whistle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Police Whistle.wav"; sourceTree = "<group>"; };
+		10F8B8682016BCDC00C4B037 /* Hockey Horn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Hockey Horn.wav"; sourceTree = "<group>"; };
+		10F8B8692016BCDD00C4B037 /* Car Wash Buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Car Wash Buzzer.wav"; sourceTree = "<group>"; };
+		10F8B86A2016BCDD00C4B037 /* Space Engine Alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Space Engine Alarm.wav"; sourceTree = "<group>"; };
+		10F8B86B2016BCDD00C4B037 /* Boxing Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Boxing Bell.wav"; sourceTree = "<group>"; };
 		7CDEFFFE7DAA826FC84037D4 /* Pods-WorkoutHIITTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		C85C14771EB66BAE0D570D96 /* Pods-WorkoutHIITTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutHIITTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer.release.xcconfig"; sourceTree = "<group>"; };
 		DEDD5326F1F367F10C356E3F /* Pods_WorkoutHIITTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutHIITTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +145,7 @@
 				107157562006E60500BE3739 /* Controllers */,
 				1071575D2006F5AE00BE3739 /* Custom Cells */,
 				107157582006E62300BE3739 /* Views */,
+				10F8B8632016BC9700C4B037 /* Sound Files */,
 				107157592006E64300BE3739 /* Supporting Files */,
 			);
 			path = WorkoutHIITTimer;
@@ -249,6 +266,21 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
+		10F8B8632016BC9700C4B037 /* Sound Files */ = {
+			isa = PBXGroup;
+			children = (
+				10F8B86B2016BCDD00C4B037 /* Boxing Bell.wav */,
+				10F8B8692016BCDD00C4B037 /* Car Wash Buzzer.wav */,
+				10F8B8662016BCDC00C4B037 /* Game Show Chime.wav */,
+				10F8B8682016BCDC00C4B037 /* Hockey Horn.wav */,
+				10F8B8672016BCDC00C4B037 /* Police Whistle.wav */,
+				10F8B8652016BCDB00C4B037 /* Prison Buzzer.wav */,
+				10F8B86A2016BCDD00C4B037 /* Space Engine Alarm.wav */,
+				10F8B8642016BCDB00C4B037 /* Tech Beeps.wav */,
+			);
+			path = "Sound Files";
+			sourceTree = "<group>";
+		};
 		25E795BF8FA8E1E9D522F6C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,14 +361,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				10175DBD20140FD200784B26 /* ExpandablePickerView.xib in Resources */,
+				10F8B8722016BCDD00C4B037 /* Space Engine Alarm.wav in Resources */,
+				10F8B8702016BCDD00C4B037 /* Hockey Horn.wav in Resources */,
 				1071574F2006E58B00BE3739 /* LaunchScreen.storyboard in Resources */,
 				1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */,
+				10F8B8712016BCDD00C4B037 /* Car Wash Buzzer.wav in Resources */,
+				10F8B8732016BCDD00C4B037 /* Boxing Bell.wav in Resources */,
 				10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */,
+				10F8B86F2016BCDD00C4B037 /* Police Whistle.wav in Resources */,
+				10F8B86E2016BCDD00C4B037 /* Game Show Chime.wav in Resources */,
 				107157472006E58B00BE3739 /* Main.storyboard in Resources */,
 				10F12742200D81B200DE7F6D /* HeaderView.xib in Resources */,
 				10F12746200D8E2300DE7F6D /* HeaderSwitchView.xib in Resources */,
 				10F1273E200D7F0100DE7F6D /* SegmentControlView.xib in Resources */,
 				107157612006F61F00BE3739 /* MainMenuTableViewCell.xib in Resources */,
+				10F8B86C2016BCDD00C4B037 /* Tech Beeps.wav in Resources */,
+				10F8B86D2016BCDD00C4B037 /* Prison Buzzer.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,14 +423,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WorkoutHIITTimer/Pods-WorkoutHIITTimer-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",

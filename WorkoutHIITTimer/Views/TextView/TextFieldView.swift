@@ -19,7 +19,7 @@ class TextFieldView: UIView, NibFileOwnerLoadable {
     var placeHolder: String? {
         didSet {
             guard let text = placeHolder else { return }
-            let color = UIColor(named: "TimerFadedGrey") ?? UIColor.flatGray
+            let color = UIColor(named: "TimerFadedGrey") ?? UIColor.gray
             inputTextField.attributedPlaceholder =
                 NSAttributedString(string: text,
                                    attributes: [NSAttributedStringKey.foregroundColor : color])
@@ -32,6 +32,17 @@ class TextFieldView: UIView, NibFileOwnerLoadable {
             titleLabel.text = text
         }
     }
+    
+    @IBInspectable
+    var isEnabled: Bool = true {
+        didSet {
+            titleLabel.isEnabled = isEnabled
+            inputTextField.isEnabled = isEnabled
+        }
+    }
+    
+    @IBInspectable
+    var section: String = String()
     
     var value: String? {
         get {

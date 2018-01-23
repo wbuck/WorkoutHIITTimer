@@ -33,6 +33,18 @@ class TimePickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPic
         }
     }
     
+    @IBInspectable
+    var isEnabled: Bool = true {
+        didSet {
+            titleLabel.isEnabled = isEnabled
+            selectedValueLabel.isEnabled = isEnabled
+            pickerView.isUserInteractionEnabled = isEnabled
+        }
+    }
+    
+    @IBInspectable
+    var section: String = String()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()

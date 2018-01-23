@@ -20,6 +20,9 @@ class RoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
         }
     }
     
+    @IBInspectable
+    var section: String = String()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
