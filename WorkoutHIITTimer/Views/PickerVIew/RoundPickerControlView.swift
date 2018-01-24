@@ -21,7 +21,27 @@ class RoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
     }
     
     @IBInspectable
+    var isEnabled: Bool = true {
+        didSet {
+            titleLabel.isEnabled = isEnabled
+            selectedValueLabel.isEnabled = isEnabled
+            pickerView.isUserInteractionEnabled = isEnabled
+        }
+    }
+    
+    @IBInspectable
     var section: String = String()
+    
+    var value: Int {
+        get {
+            return rounds[pickerView.selectedRow(inComponent: 0)]
+        }
+        set {
+            if newValue < 1 || newValue > 100 { return }
+            selectedValueLabel.text = String(newValue)
+            pickerView.selectRow(newValue - 1, inComponent: 0, animated: false)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,14 +57,6 @@ class RoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
         pickerView.delegate = self
         pickerView.dataSource = self
         value = 1
-    }
-    
-    var value: Int = 0 {
-        didSet {
-            if !rounds.contains(value) { return }
-            selectedValueLabel.text = String(value)
-            pickerView.selectRow(value - 1, inComponent: 0, animated: false)
-        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -15,14 +15,31 @@ class HeaderSwitchView: HeaderBase {
     @IBOutlet weak var enableSwitch: UISwitch!
     
     @IBInspectable
-    var text: String? {
+    var title: String? {
         didSet {
-            headerLabel.text = text
+            headerLabel.text = title
+        }
+    }
+    
+    @IBInspectable
+    var isEnabled: Bool = true {
+        didSet {
+            headerLabel.isEnabled = isEnabled
+            enableSwitch.isEnabled = isEnabled
         }
     }
     
     @IBInspectable
     var section: String = String()
+    
+    var value: Bool {
+        get {
+            return enableSwitch.isOn
+        }
+        set {
+            enableSwitch.isOn = newValue
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -10,22 +10,7 @@ import UIKit
 
 @IBDesignable
 class TimePickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPickerViewDelegate  {
-    
-    
-    // Format and display time in label.
-    var value: (UInt, UInt, UInt) = (0, 0, 0) {
-        didSet {
-            if value.0 > 23 || value.1 > 59 || value.2 > 59 { return }
-            let hour = value.0 < 10 ? "0\(value.0)" : "\(value.0)"
-            let minute = value.1 < 10 ? "0\(value.1)" : "\(value.1)"
-            let second = value.2 < 10 ? "0\(value.2)" : "\(value.2)"
-            selectedValueLabel.text = "\(hour):\(minute):\(second)"
-            pickerView.selectRow(Int(value.0), inComponent: 0, animated: false)
-            pickerView.selectRow(Int(value.1), inComponent: 1, animated: false)
-            pickerView.selectRow(Int(value.2), inComponent: 2, animated: false)
-        }
-    }
-    
+
     @IBInspectable
     var title: String? {
         didSet {
@@ -44,6 +29,26 @@ class TimePickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPic
     
     @IBInspectable
     var section: String = String()
+    
+    // Format and display time in label.
+    var value: (UInt, UInt, UInt) {
+        get {
+            let hour = UInt(pickerView.selectedRow(inComponent: 0))
+            let minute = UInt(pickerView.selectedRow(inComponent: 1))
+            let second = UInt(pickerView.selectedRow(inComponent: 2))
+            return (hour, minute, second)
+        }
+        set {
+            if newValue.0 > 23 || newValue.1 > 59 || newValue.2 > 59 { return }
+            let hour = newValue.0 < 10 ? "0\(newValue.0)" : "\(newValue.0)"
+            let minute = newValue.1 < 10 ? "0\(newValue.1)" : "\(newValue.1)"
+            let second = newValue.2 < 10 ? "0\(newValue.2)" : "\(newValue.2)"
+            selectedValueLabel.text = "\(hour):\(minute):\(second)"
+            pickerView.selectRow(Int(newValue.0), inComponent: 0, animated: false)
+            pickerView.selectRow(Int(newValue.1), inComponent: 1, animated: false)
+            pickerView.selectRow(Int(newValue.2), inComponent: 2, animated: false)
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

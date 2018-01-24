@@ -15,9 +15,9 @@ class SegmentControlView: UIView, NibFileOwnerLoadable {
     @IBOutlet weak var segmentView: UISegmentedControl!
     
     @IBInspectable
-    var text: String? {
+    var title: String? {
         didSet {
-            titleLabel.text = text
+            titleLabel.text = title
         }
     }
     
@@ -32,6 +32,16 @@ class SegmentControlView: UIView, NibFileOwnerLoadable {
     @IBInspectable
     var section: String = String()
     
+
+    var value: Count {
+        get {
+            return Count(rawValue: segmentView.selectedSegmentIndex)!
+        }
+        set {
+            segmentView.selectedSegmentIndex = newValue.rawValue
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadNibContent()
@@ -40,7 +50,5 @@ class SegmentControlView: UIView, NibFileOwnerLoadable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNibContent()
-    }
-    @IBAction func segmentViewValueChanged(_ sender: UISegmentedControl) {
     }
 }

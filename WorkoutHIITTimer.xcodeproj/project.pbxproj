@@ -27,6 +27,8 @@
 		1076F840200C26BA0080E1D3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F83F200C26BA0080E1D3 /* Timer.swift */; };
 		1087E43A2012F47D0075FDE6 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087E4392012F47D0075FDE6 /* PickerView.swift */; };
 		108B1C132013E2BC00803855 /* SoundPickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1C122013E2BC00803855 /* SoundPickerControlView.swift */; };
+		10A51A152018AE8900F08029 /* End Beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10A51A142018AE8800F08029 /* End Beep.wav */; };
+		10A51A172018B10E00F08029 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A51A162018B10E00F08029 /* Count.swift */; };
 		10CF297D20180FF200BA9499 /* SwitchControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CF297C20180FF200BA9499 /* SwitchControlView.xib */; };
 		10CF297F2018106000BA9499 /* SwitchControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF297E2018106000BA9499 /* SwitchControlView.swift */; };
 		10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12730200CDE5500DE7F6D /* SubTimer.swift */; };
@@ -78,6 +80,8 @@
 		1076F83F200C26BA0080E1D3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		1087E4392012F47D0075FDE6 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		108B1C122013E2BC00803855 /* SoundPickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerControlView.swift; sourceTree = "<group>"; };
+		10A51A142018AE8800F08029 /* End Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "End Beep.wav"; sourceTree = "<group>"; };
+		10A51A162018B10E00F08029 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		10CF297C20180FF200BA9499 /* SwitchControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchControlView.xib; sourceTree = "<group>"; };
 		10CF297E2018106000BA9499 /* SwitchControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchControlView.swift; sourceTree = "<group>"; };
 		10F12730200CDE5500DE7F6D /* SubTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTimer.swift; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				1076F839200C219F0080E1D3 /* TimerDirection.swift */,
 				10F12759200F834200DE7F6D /* Rotate.swift */,
 				10F1275D20117C5A00DE7F6D /* PickerViewState.swift */,
+				10A51A162018B10E00F08029 /* Count.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 		10F8B8632016BC9700C4B037 /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
+				10A51A142018AE8800F08029 /* End Beep.wav */,
 				10F8B86B2016BCDD00C4B037 /* Boxing Bell.wav */,
 				10F8B8692016BCDD00C4B037 /* Car Wash Buzzer.wav */,
 				10F8B8662016BCDC00C4B037 /* Game Show Chime.wav */,
@@ -380,6 +386,7 @@
 				1071574F2006E58B00BE3739 /* LaunchScreen.storyboard in Resources */,
 				1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */,
 				10F8B8712016BCDD00C4B037 /* Car Wash Buzzer.wav in Resources */,
+				10A51A152018AE8900F08029 /* End Beep.wav in Resources */,
 				10F8B8732016BCDD00C4B037 /* Boxing Bell.wav in Resources */,
 				10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */,
 				10F8B86F2016BCDD00C4B037 /* Police Whistle.wav in Resources */,
@@ -471,6 +478,7 @@
 				1076F836200C10D50080E1D3 /* TimerInfo.swift in Sources */,
 				10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */,
 				1076F83E200C240B0080E1D3 /* TimerWarnings.swift in Sources */,
+				10A51A172018B10E00F08029 /* Count.swift in Sources */,
 				1076F831200C0DE90080E1D3 /* RoundTimer.swift in Sources */,
 				10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */,
 				1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */,

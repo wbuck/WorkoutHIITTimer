@@ -28,7 +28,27 @@ class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
     }
     
     @IBInspectable
+    var isEnabled: Bool = true {
+        didSet {
+            titleLabel.isEnabled = isEnabled
+            selectedValueLabel.isEnabled = isEnabled
+            pickerView.isUserInteractionEnabled = isEnabled
+        }
+    }
+    
+    @IBInspectable
     var section: String = String()
+    
+    var value: String {
+        get {
+            return sounds[pickerView.selectedRow(inComponent: 0)]
+        }
+        set {
+            guard let index = sounds.index(of: newValue) else { return }
+            pickerView.selectRow(index, inComponent: 0, animated: false)
+            selectedValueLabel.text = newValue
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -44,14 +64,6 @@ class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
         pickerView.delegate = self
         pickerView.dataSource = self
         value = sounds[0]
-    }
-    
-    var value: String = String() {
-        didSet {
-            guard let index = sounds.index(of: value) else { return }
-            pickerView.selectRow(index, inComponent: 0, animated: false)
-            selectedValueLabel.text = value
-        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

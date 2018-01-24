@@ -40,9 +40,6 @@
                                 <segment title="Down"/>
                             </segments>
                             <color key="tintColor" name="TimerOrange"/>
-                            <connections>
-                                <action selector="segmentViewValueChanged:" destination="-1" eventType="valueChanged" id="SSQ-6p-mFi"/>
-                            </connections>
                         </segmentedControl>
                     </subviews>
                     <color key="backgroundColor" name="TimerGrey"/>

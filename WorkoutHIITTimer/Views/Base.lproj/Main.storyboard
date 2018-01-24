@@ -80,6 +80,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Enter description"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Description"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="Timer"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Description"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06l-R5-kGm" userLabel="Timer Details Inset Separator">
@@ -99,6 +100,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Name"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Enter name"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="Timer"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17p-jL-h35" userLabel="Timer Details Header" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -110,6 +112,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="TIMER"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="Timer"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="DETAILS"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eb4-iU-Ryd" userLabel="Warmup Segment Control View" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -121,6 +124,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Count"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="Warmup"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Count"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNg-Pi-fNv" customClass="TimePickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -142,6 +146,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="WARM UP"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="WARM UP"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-w7-XIq" userLabel="Round Segment Control View" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -153,6 +158,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Count"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="Rounds"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Count"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejq-Jn-Lmg" customClass="TimePickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -186,6 +192,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="ROUNDS"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="ROUNDS"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuu-2U-pzW" userLabel="Rest Segment Control View" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -197,6 +204,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Count"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="Rest"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Count"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzA-xN-671" userLabel="Rest Time Picker Control View" customClass="TimePickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -220,6 +228,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="REST"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="Rest"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="REST"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDR-PH-1qZ" userLabel="Cool Down Segment Control View" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -231,6 +240,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Count"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="CoolDown"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Count"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EY-Uu-hbv" userLabel="Cool Down Time Picker Control View" customClass="TimePickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -254,6 +264,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="COOL DOWN"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="CoolDown"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="COOL DOWN"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-fG-yNl" userLabel="Alerts Inset Separator">
@@ -272,6 +283,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Round Starting"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Round Starting"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmD-4g-tmp" userLabel="Alerts Header View" customClass="HeaderView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -284,6 +296,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="ALERTS"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="section" value="Warnings"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="ALERTS"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rs-p3-HVi" customClass="SoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
@@ -304,7 +317,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Round Halfway"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Round Halfway"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dme-Gf-2aN">
@@ -322,7 +335,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="Round Ending (3s)"/>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isEnabled" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Round Ending (3s)"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqx-xo-qoy" customClass="SoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">

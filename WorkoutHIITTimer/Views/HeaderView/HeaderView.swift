@@ -15,9 +15,9 @@ class HeaderView: HeaderBase {
     @IBOutlet weak var contentView: UIView!
     
     @IBInspectable
-    var text: String? {
+    var title: String? {
         didSet {
-            headerLabel.text = text
+            headerLabel.text = title
         }
     }
     

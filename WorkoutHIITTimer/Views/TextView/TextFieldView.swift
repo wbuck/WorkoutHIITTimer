@@ -27,9 +27,9 @@ class TextFieldView: UIView, NibFileOwnerLoadable {
     }
     
     @IBInspectable
-    var text: String? {
+    var title: String? {
         didSet {
-            titleLabel.text = text
+            titleLabel.text = title
         }
     }
     

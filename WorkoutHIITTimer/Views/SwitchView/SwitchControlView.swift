@@ -15,14 +15,24 @@ class SwitchControlView: UIView, NibFileOwnerLoadable {
     @IBOutlet weak var enableSwitch: UISwitch!
     
     @IBInspectable
-    var text: String? {
+    var title: String? {
         didSet {
-            titleLabel.text = text
+            titleLabel.text = title
         }
     }
     
     @IBInspectable
-    var isEnabled: Bool {
+    var isEnabled: Bool = true {
+        didSet {
+            titleLabel.isEnabled = isEnabled
+            enableSwitch.isEnabled = isEnabled
+        }
+    }
+    
+    @IBInspectable
+    var section: String = String()
+    
+    var value: Bool {
         get {
             return enableSwitch.isOn
         }
@@ -30,9 +40,6 @@ class SwitchControlView: UIView, NibFileOwnerLoadable {
             enableSwitch.isOn = newValue
         }
     }
-    
-    @IBInspectable
-    var section: String = String()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
