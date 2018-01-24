@@ -16,17 +16,13 @@ class RoundTimerViewController: UIViewController {
     // The key represents the tag of each picker
     // view control. The value is the name of
     // the height constraint.
-    let pickerHeightConstraintNames = [2 : "WarmupTimePickerHeight",
-                                       4 : "WarmupSoundPickerHeight",
-                                       5 : "RoundPickerHeight",
-                                       6 : "RoundTimePickerHeight",
-                                       8 : "RoundSoundPickerHeight",
-                                       9 : "RestTimePickerHeight",
-                                       11 : "RestSoundPickerHeight",
-                                       12 : "CoolDownTimePickerHeight",
-                                       14 : "CoolDownSoundPickerHeight",
-                                       16 : "HalfwayWarningSoundPickerHeight",
-                                       18 : "EndWarningSoundPickerHeight"]
+    let pickerHeightConstraintNames = [1 : "WarmupTimePickerHeight",
+                                       2 : "RoundPickerHeight",
+                                       3 : "RoundTimePickerHeight",
+                                       4 : "RestTimePickerHeight",
+                                       5 : "CoolDownTimePickerHeight",
+                                       6 : "AlertStartingSoundPickerHeight",
+                                       7 : "AlertHalfwaySoundPickerHeight"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +39,6 @@ class RoundTimerViewController: UIViewController {
             // Set delegate and hide separator on specfic
             // picker views.
             picker.delegate = self
-            picker.separatorIsHidden = (picker.id == 4 || picker.id == 8 || picker.id == 11 || picker.id == 14)
         }
     }
     

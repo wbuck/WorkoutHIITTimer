@@ -55,17 +55,16 @@ class TextFieldView: UIView, NibFileOwnerLoadable {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        loadNibContent()
         initialize()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadNibContent()
         initialize()
     }
     
     private func initialize() {
+        loadNibContent()
         inputTextField.returnKeyType = .done
         inputTextField.delegate = self
     }

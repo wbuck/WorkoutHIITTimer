@@ -15,6 +15,7 @@
                 <outlet property="arrow" destination="dD9-TC-e0D" id="uf5-b9-kPF"/>
                 <outlet property="pickerView" destination="tSo-eS-nGM" id="kUY-0X-Wkd"/>
                 <outlet property="selectedValueLabel" destination="m76-bi-0qK" id="jy9-Xe-pYN"/>
+                <outlet property="separatorLeadingConstraint" destination="bpR-Wg-klE" id="jTm-GM-BUS"/>
                 <outlet property="separatorView" destination="WMk-aB-EAU" id="loS-HE-JwF"/>
                 <outlet property="titleLabel" destination="3Rw-kV-UT5" id="ndb-ny-2GU"/>
             </connections>
@@ -31,9 +32,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rw-kV-UT5">
-                                    <rect key="frame" x="16" y="0.0" width="100" height="50"/>
+                                    <rect key="frame" x="16" y="0.0" width="120" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="100" id="WrD-Tx-d4j"/>
+                                        <constraint firstAttribute="width" constant="120" id="WrD-Tx-d4j"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" name="TimerTextGrey"/>

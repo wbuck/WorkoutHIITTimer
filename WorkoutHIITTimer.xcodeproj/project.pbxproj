@@ -27,6 +27,8 @@
 		1076F840200C26BA0080E1D3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F83F200C26BA0080E1D3 /* Timer.swift */; };
 		1087E43A2012F47D0075FDE6 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087E4392012F47D0075FDE6 /* PickerView.swift */; };
 		108B1C132013E2BC00803855 /* SoundPickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1C122013E2BC00803855 /* SoundPickerControlView.swift */; };
+		10CF297D20180FF200BA9499 /* SwitchControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CF297C20180FF200BA9499 /* SwitchControlView.xib */; };
+		10CF297F2018106000BA9499 /* SwitchControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF297E2018106000BA9499 /* SwitchControlView.swift */; };
 		10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12730200CDE5500DE7F6D /* SubTimer.swift */; };
 		10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12737200D60CE00DE7F6D /* TextFieldView.xib */; };
 		10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12739200D637E00DE7F6D /* TextFieldView.swift */; };
@@ -76,6 +78,8 @@
 		1076F83F200C26BA0080E1D3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		1087E4392012F47D0075FDE6 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		108B1C122013E2BC00803855 /* SoundPickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerControlView.swift; sourceTree = "<group>"; };
+		10CF297C20180FF200BA9499 /* SwitchControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchControlView.xib; sourceTree = "<group>"; };
+		10CF297E2018106000BA9499 /* SwitchControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchControlView.swift; sourceTree = "<group>"; };
 		10F12730200CDE5500DE7F6D /* SubTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTimer.swift; sourceTree = "<group>"; };
 		10F12737200D60CE00DE7F6D /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		10F12739200D637E00DE7F6D /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			children = (
 				107157452006E58B00BE3739 /* Main.storyboard */,
 				1071574D2006E58B00BE3739 /* LaunchScreen.storyboard */,
+				10F8B8742017FEC700C4B037 /* SwitchView */,
 				10F12754200E324900DE7F6D /* TextView */,
 				10F12753200E323F00DE7F6D /* SegmentView */,
 				10F12752200E323200DE7F6D /* HeaderView */,
@@ -281,6 +286,15 @@
 			path = "Sound Files";
 			sourceTree = "<group>";
 		};
+		10F8B8742017FEC700C4B037 /* SwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				10CF297C20180FF200BA9499 /* SwitchControlView.xib */,
+				10CF297E2018106000BA9499 /* SwitchControlView.swift */,
+			);
+			path = SwitchView;
+			sourceTree = "<group>";
+		};
 		25E795BF8FA8E1E9D522F6C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +388,7 @@
 				10F12742200D81B200DE7F6D /* HeaderView.xib in Resources */,
 				10F12746200D8E2300DE7F6D /* HeaderSwitchView.xib in Resources */,
 				10F1273E200D7F0100DE7F6D /* SegmentControlView.xib in Resources */,
+				10CF297D20180FF200BA9499 /* SwitchControlView.xib in Resources */,
 				107157612006F61F00BE3739 /* MainMenuTableViewCell.xib in Resources */,
 				10F8B86C2016BCDD00C4B037 /* Tech Beeps.wav in Resources */,
 				10F8B86D2016BCDD00C4B037 /* Prison Buzzer.wav in Resources */,
@@ -451,6 +466,7 @@
 				1076F83A200C219F0080E1D3 /* TimerDirection.swift in Sources */,
 				1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */,
 				10F1274C200D935000DE7F6D /* TimePickerControlView.swift in Sources */,
+				10CF297F2018106000BA9499 /* SwitchControlView.swift in Sources */,
 				1076F811200A388B0080E1D3 /* RoundTimerViewController.swift in Sources */,
 				1076F836200C10D50080E1D3 /* TimerInfo.swift in Sources */,
 				10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */,

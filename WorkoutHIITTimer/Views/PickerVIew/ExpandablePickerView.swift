@@ -15,6 +15,7 @@ class ExpandablePickerView: UIView, PickerView, NibFileOwnerLoadable {
     @IBOutlet weak var selectedValueLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var separatorLeadingConstraint: NSLayoutConstraint!
     
     weak var delegate: PickerControlViewDelegate?
     private var observer: NSKeyValueObservation?
@@ -30,7 +31,16 @@ class ExpandablePickerView: UIView, PickerView, NibFileOwnerLoadable {
         didSet {
             let rotate: Rotate = pickerViewState == .collapsed ?
                 .counterClockwise : .clockwise
-            rotateArrow(in: rotate)
+            
+            // I multiplied the result to ensure the rotation
+            // back to its starting position moves ccw.
+            let angle = CGFloat(rotate.rawValue) * CGFloat.pi * 0.999;
+            let leadingDistance = pickerViewState == .expanded ? 0 : 16
+            UIView.animate(withDuration: 0.3) {
+                self.arrow.transform = self.arrow.transform.rotated(by: angle)
+                self.separatorLeadingConstraint.constant = CGFloat(leadingDistance)
+                self.layoutIfNeeded()
+            }
         }
     }
     
