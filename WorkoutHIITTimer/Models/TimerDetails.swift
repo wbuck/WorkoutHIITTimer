@@ -9,13 +9,13 @@
 import Foundation
 import RealmSwift
 
-class TimerInfo: Object {
-    @objc private dynamic var _timerType: Int = TimerType.stopwatch.rawValue
+class TimerDetails: Object {
+    @objc private dynamic var typeOfTimer: Int = TimerType.stopwatch.rawValue
     @objc dynamic var timerName: String = String()
     @objc dynamic var timerDescription: String = String()
     var timerType: TimerType {
-        get { return TimerType(rawValue: _timerType)! }
-        set { _timerType = newValue.rawValue }
+        get { return TimerType(rawValue: typeOfTimer)! }
+        set { typeOfTimer = newValue.rawValue }
     }
     
 }

@@ -10,8 +10,13 @@ import Foundation
 import RealmSwift
 
 class Timer: Object {
-    @objc dynamic var timerInfo: TimerInfo = TimerInfo()
-    @objc dynamic var warmupTimer: SubTimer = SubTimer()
-    @objc dynamic var cooldownTimer: SubTimer = SubTimer()
-    @objc dynamic var timerWarnings: TimerWarnings = TimerWarnings()
+    @objc dynamic var timerInfo: TimerDetails?
+    @objc dynamic var warmupTimerEnabled: Bool = false
+    @objc dynamic var warmupTimer: SubTimer?
+    @objc dynamic var restTimerEnabled: Bool = false
+    @objc dynamic var restTimer: SubTimer?
+    @objc dynamic var coolDownTimerEnabled: Bool = false
+    @objc dynamic var cooldownTimer: SubTimer?
+    @objc dynamic var timerAlerts: TimerAlerts?
+    @objc dynamic var dateCreated: Date = Date()
 }

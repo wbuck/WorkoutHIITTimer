@@ -12,6 +12,8 @@ import RealmSwift
 class RoundTimerViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
+    var roundTimer: RoundTimer?
+    let realm = try! Realm()
     
     // The key represents the tag of each picker
     // view control. The value is the name of
@@ -48,12 +50,49 @@ class RoundTimerViewController: UIViewController {
     }
     
     @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
-        let controls = contentView.subviews.filter { (control) -> Bool in
-            return control is TextFieldView
+        
+        let timer = RoundTimer()
+        // Timer details.
+        timer.timerInfo = TimerDetails()
+        timer.timerInfo?.timerName = "TestTimer"
+        timer.timerInfo?.timerDescription = "My description"
+        timer.timerInfo?.timerType = .round
+        // Setup warmup timer.
+        let warmupTime = SubTimer()
+        timer.warmupTimerEnabled = true
+        timer.warmupTimer = SubTimer()
+        timer.warmupTimer?.intervalInSeconds = 12000
+        warmupTime.timerDirection = .up
+        timer.warmupTimer = warmupTime
+        // Setup rounds.
+        timer.rounds = 5
+        timer.roundTimer = SubTimer()
+        timer.roundTimer?.intervalInSeconds = 3600
+        timer.roundTimer?.timerDirection = .down
+        // Setup rest.
+        timer.restTimerEnabled = false
+        // Setup cooldown.
+        timer.coolDownTimerEnabled = true
+        let cooldownTime = SubTimer()
+        cooldownTime.intervalInSeconds = 2400
+        cooldownTime.timerDirection = .down
+        timer.cooldownTimer = cooldownTime
+        // Alerts
+        timer.timerAlerts = TimerAlerts()
+        timer.timerAlerts?.endAlertEnabled = true
+        timer.timerAlerts?.endAlertSound = "Beep"
+        timer.timerAlerts?.halfwayAlertEnabled = false
+        timer.timerAlerts?.startAlertEnabled = false
+        do {
+            try self.realm.write {
+                realm.add(timer)
+            }
         }
-        if let textView = controls.first as? TextFieldView {
-            print(textView.value!)
+        catch {
+            print("Failed to save data to DB. \((error as NSError).userInfo.description)")
         }
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
 }

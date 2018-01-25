@@ -10,11 +10,6 @@ import Foundation
 import RealmSwift
 
 class RoundTimer: Timer {
-    @objc private dynamic var _timerDirection: Int = TimerDirection.up.rawValue
-    @objc dynamic var rounds: Int = 0
-    @objc dynamic var roundTime: TimeInterval = TimeInterval()
-    var timerDirection: TimerDirection {
-        get { return TimerDirection(rawValue: _timerDirection)! }
-        set { _timerDirection = newValue.rawValue }
-    }
+    @objc dynamic var rounds: Int = 1
+    @objc dynamic var roundTimer: SubTimer?
 }
