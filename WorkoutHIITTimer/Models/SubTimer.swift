@@ -11,7 +11,7 @@ import RealmSwift
 
 class SubTimer: Object {
     @objc private dynamic var countDirection: Int = Count.up.rawValue
-    @objc dynamic var intervalInSeconds: Int = 0
+    @objc dynamic var intervalInSeconds: TimeInterval = 0
     var timerDirection: Count {
         get { return Count(rawValue: countDirection)! }
         set { countDirection = newValue.rawValue }

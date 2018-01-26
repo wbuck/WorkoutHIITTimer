@@ -12,7 +12,6 @@
 		10175DC1201415AD00784B26 /* RoundPickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10175DC0201415AD00784B26 /* RoundPickerControlView.swift */; };
 		107157422006E58B00BE3739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107157412006E58B00BE3739 /* AppDelegate.swift */; };
 		107157472006E58B00BE3739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107157452006E58B00BE3739 /* Main.storyboard */; };
-		1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107157482006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld */; };
 		1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1071574B2006E58B00BE3739 /* Assets.xcassets */; };
 		1071574F2006E58B00BE3739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1071574D2006E58B00BE3739 /* LaunchScreen.storyboard */; };
 		1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */; };
@@ -30,6 +29,7 @@
 		10A51A172018B10E00F08029 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A51A162018B10E00F08029 /* Count.swift */; };
 		10CF297D20180FF200BA9499 /* SwitchControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CF297C20180FF200BA9499 /* SwitchControlView.xib */; };
 		10CF297F2018106000BA9499 /* SwitchControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF297E2018106000BA9499 /* SwitchControlView.swift */; };
+		10EBE20F201A421B00A553E9 /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBE20E201A421B00A553E9 /* TimeIntervalExtensions.swift */; };
 		10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12730200CDE5500DE7F6D /* SubTimer.swift */; };
 		10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12737200D60CE00DE7F6D /* TextFieldView.xib */; };
 		10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12739200D637E00DE7F6D /* TextFieldView.swift */; };
@@ -63,7 +63,6 @@
 		1071573E2006E58B00BE3739 /* WorkoutHIITTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutHIITTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107157412006E58B00BE3739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		107157462006E58B00BE3739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		107157492006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutHIITTimer.xcdatamodel; sourceTree = "<group>"; };
 		1071574B2006E58B00BE3739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1071574E2006E58B00BE3739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		107157502006E58B00BE3739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		10A51A162018B10E00F08029 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		10CF297C20180FF200BA9499 /* SwitchControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchControlView.xib; sourceTree = "<group>"; };
 		10CF297E2018106000BA9499 /* SwitchControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchControlView.swift; sourceTree = "<group>"; };
+		10EBE20E201A421B00A553E9 /* TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensions.swift; sourceTree = "<group>"; };
 		10F12730200CDE5500DE7F6D /* SubTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTimer.swift; sourceTree = "<group>"; };
 		10F12737200D60CE00DE7F6D /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		10F12739200D637E00DE7F6D /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -143,6 +143,7 @@
 		107157402006E58B00BE3739 /* WorkoutHIITTimer */ = {
 			isa = PBXGroup;
 			children = (
+				10EBE20D201A41F400A553E9 /* Extensions */,
 				1076F832200C0E230080E1D3 /* Enums */,
 				1076F81F200B89FA0080E1D3 /* Protocols */,
 				107157502006E58B00BE3739 /* Info.plist */,
@@ -169,7 +170,6 @@
 		107157572006E61400BE3739 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				107157482006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld */,
 				1076F830200C0DE90080E1D3 /* RoundTimer.swift */,
 				1076F835200C10D50080E1D3 /* TimerDetails.swift */,
 				1076F83D200C240B0080E1D3 /* TimerAlerts.swift */,
@@ -229,6 +229,14 @@
 				10A51A162018B10E00F08029 /* Count.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		10EBE20D201A41F400A553E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10EBE20E201A421B00A553E9 /* TimeIntervalExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		10F12751200E322200DE7F6D /* PickerVIew */ = {
@@ -467,7 +475,6 @@
 				10F12756200EE59300DE7F6D /* PickerControlViewDelegate.swift in Sources */,
 				10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */,
 				108B1C132013E2BC00803855 /* SoundPickerControlView.swift in Sources */,
-				1071574A2006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld in Sources */,
 				10F1274C200D935000DE7F6D /* TimePickerControlView.swift in Sources */,
 				10CF297F2018106000BA9499 /* SwitchControlView.swift in Sources */,
 				1076F811200A388B0080E1D3 /* RoundTimerViewController.swift in Sources */,
@@ -491,6 +498,7 @@
 				1076F834200C0E5F0080E1D3 /* TimerType.swift in Sources */,
 				10F1275E20117C5A00DE7F6D /* PickerViewState.swift in Sources */,
 				107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */,
+				10EBE20F201A421B00A553E9 /* TimeIntervalExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,19 +687,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		107157482006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				107157492006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodel */,
-			);
-			currentVersion = 107157492006E58B00BE3739 /* WorkoutHIITTimer.xcdatamodel */;
-			path = WorkoutHIITTimer.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 107157362006E58B00BE3739 /* Project object */;
 }
