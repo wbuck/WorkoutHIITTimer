@@ -12,7 +12,7 @@ import RealmSwift
 class TimerDetails: Object {
     @objc private dynamic var typeOfTimer: Int = TimerType.stopwatch.rawValue
     @objc dynamic var timerName: String = String()
-    @objc dynamic var timerDescription: String = String()
+    @objc dynamic var timerDescription: String? = String()
     var timerType: TimerType {
         get { return TimerType(rawValue: typeOfTimer)! }
         set { typeOfTimer = newValue.rawValue }

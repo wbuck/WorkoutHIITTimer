@@ -10,10 +10,10 @@ import UIKit
 
 @IBDesignable
 class HeaderSwitchView: HeaderBase {
-
+    
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var enableSwitch: UISwitch!
-    
+    var delegate: HeaderSwitchViewDelegate?
     @IBInspectable
     var title: String? {
         didSet {
@@ -49,5 +49,9 @@ class HeaderSwitchView: HeaderBase {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNibContent()
+    }
+    
+    @IBAction func uiSwitchValueChanged(_ sender: UISwitch) {
+        delegate?.headerValueChanged(self, value: sender.isOn)
     }
 }

@@ -50,11 +50,104 @@
                     <navigationItem key="navigationItem" title="Main" id="64x-Qm-DoN"/>
                     <connections>
                         <segue destination="LX3-ta-hBQ" kind="show" identifier="GoToRoundTimer" id="cBR-b4-A52"/>
+                        <segue destination="iNt-6y-T7g" kind="show" identifier="GoToMyTimers" id="F4J-CK-A9K"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTo-v8-S1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="386.39999999999998" y="240.62968515742131"/>
+        </scene>
+        <!--My Timers Table View Controller-->
+        <scene sceneID="fUL-co-uAJ">
+            <objects>
+                <tableViewController id="iNt-6y-T7g" customClass="MyTimersTableViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Xv-kN-3Zk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="TimerBlack"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyTimerCell" rowHeight="86" id="hTd-dW-gXZ" customClass="MyTimersTableViewCell" customModule="WorkoutHIITTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="86"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hTd-dW-gXZ" id="Wtm-i3-N07">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEz-2N-jye">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-12-08" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVu-SD-QOW">
+                                                    <rect key="frame" x="251" y="7" width="82" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="149-3H-s30"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                    <color key="textColor" name="TimerTextGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-SD-v2I">
+                                                    <rect key="frame" x="349" y="7" width="10" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="10" id="9ia-ic-o2R"/>
+                                                        <constraint firstAttribute="height" constant="15" id="egs-Kg-Pec"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDc-Jv-bnh">
+                                                    <rect key="frame" x="16" y="29" width="343" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" name="TimerTextGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rj-HE-ufe">
+                                                    <rect key="frame" x="16" y="54" width="343" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="TimerTextGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="oDc-Jv-bnh" secondAttribute="trailing" constant="16" id="34Y-mp-1mR"/>
+                                                <constraint firstAttribute="bottom" secondItem="9rj-HE-ufe" secondAttribute="bottom" constant="16" id="4kF-PN-ORi"/>
+                                                <constraint firstItem="lQc-SD-v2I" firstAttribute="leading" secondItem="ZVu-SD-QOW" secondAttribute="trailing" constant="16" id="58F-ow-te0"/>
+                                                <constraint firstAttribute="trailing" secondItem="lQc-SD-v2I" secondAttribute="trailing" constant="16" id="BFK-gh-Ddg"/>
+                                                <constraint firstItem="lQc-SD-v2I" firstAttribute="top" secondItem="UEz-2N-jye" secondAttribute="top" constant="7" id="QHi-LH-ibA"/>
+                                                <constraint firstItem="ZVu-SD-QOW" firstAttribute="leading" secondItem="UEz-2N-jye" secondAttribute="leading" constant="251" id="jIU-X4-AIg"/>
+                                                <constraint firstItem="ZVu-SD-QOW" firstAttribute="top" secondItem="UEz-2N-jye" secondAttribute="top" constant="7" id="mSe-se-3ae"/>
+                                                <constraint firstItem="9rj-HE-ufe" firstAttribute="leading" secondItem="UEz-2N-jye" secondAttribute="leading" constant="16" id="pSY-Fp-YJE"/>
+                                                <constraint firstAttribute="trailing" secondItem="9rj-HE-ufe" secondAttribute="trailing" constant="16" id="s2c-Io-WEA"/>
+                                                <constraint firstItem="9rj-HE-ufe" firstAttribute="top" secondItem="oDc-Jv-bnh" secondAttribute="bottom" constant="7" id="uf8-KM-cjM"/>
+                                                <constraint firstItem="oDc-Jv-bnh" firstAttribute="leading" secondItem="UEz-2N-jye" secondAttribute="leading" constant="16" id="wPz-A9-UUY"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" name="TimerGrey"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="UEz-2N-jye" secondAttribute="trailing" id="BNP-5J-QjG"/>
+                                        <constraint firstItem="UEz-2N-jye" firstAttribute="top" secondItem="Wtm-i3-N07" secondAttribute="top" id="aIU-Wj-MoB"/>
+                                        <constraint firstItem="UEz-2N-jye" firstAttribute="leading" secondItem="Wtm-i3-N07" secondAttribute="leading" id="fve-C6-K34"/>
+                                        <constraint firstAttribute="bottom" secondItem="UEz-2N-jye" secondAttribute="bottom" id="mKX-TF-2sf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellContentView" destination="UEz-2N-jye" id="EAL-JK-0e7"/>
+                                    <outlet property="dateLabel" destination="ZVu-SD-QOW" id="Aox-V3-dS9"/>
+                                    <outlet property="descriptionLabel" destination="9rj-HE-ufe" id="jKf-qs-OA4"/>
+                                    <outlet property="nameLabel" destination="oDc-Jv-bnh" id="Fce-3l-RAB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iNt-6y-T7g" id="MCm-fX-O0l"/>
+                            <outlet property="delegate" destination="iNt-6y-T7g" id="as9-EQ-yqg"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="LX3-ta-hBQ" kind="show" identifier="GoToEditRoundTimer" id="CTJ-Pu-KI5"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQv-II-dWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="998.95052473763121"/>
         </scene>
         <!--Round Timer-->
         <scene sceneID="5VY-jk-BVf">
@@ -450,15 +543,38 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1600"/>
                     <connections>
+                        <outlet property="alertRoundEndingSwitchView" destination="Hed-YI-t95" id="ewB-vg-Yfu"/>
+                        <outlet property="alertRoundHalfwaySoundPicker" destination="Fqx-xo-qoy" id="7kk-hF-DgB"/>
+                        <outlet property="alertRoundHalfwaySwitchView" destination="VSH-ir-Cyq" id="PJ5-dp-c2n"/>
+                        <outlet property="alertRoundStartingSoundPicker" destination="8rs-p3-HVi" id="yfp-S8-G2f"/>
+                        <outlet property="alertRoundStartingSwitchView" destination="u0v-Aq-PBF" id="QIR-Fz-EsI"/>
                         <outlet property="contentView" destination="sG2-p1-lBl" id="Q8w-Kj-9Qr"/>
+                        <outlet property="coolDownCountDirection" destination="YDR-PH-1qZ" id="yYn-nP-uiu"/>
+                        <outlet property="coolDownHeader" destination="UWm-1U-QaU" id="MZ4-JJ-7wY"/>
+                        <outlet property="coolDownTimePicker" destination="3EY-Uu-hbv" id="eZz-Qk-fHL"/>
+                        <outlet property="descriptionTextView" destination="Bk2-UD-tXQ" id="3tG-rz-3n2"/>
+                        <outlet property="nameTextView" destination="pp7-TF-1hZ" id="n2E-cf-SVf"/>
+                        <outlet property="restCountDirection" destination="yuu-2U-pzW" id="2uU-sv-kgk"/>
+                        <outlet property="restHeader" destination="JY0-fx-EsU" id="nyb-yu-BCk"/>
+                        <outlet property="restTimePicker" destination="nzA-xN-671" id="o4z-do-4ns"/>
+                        <outlet property="roundCountDirection" destination="lCp-w7-XIq" id="dkf-fL-daP"/>
+                        <outlet property="roundPicker" destination="aBx-a2-Y3y" id="9Z0-7d-bL4"/>
+                        <outlet property="roundTimePicker" destination="Ejq-Jn-Lmg" id="rdy-fF-qlQ"/>
+                        <outlet property="warmupCountDirection" destination="eb4-iU-Ryd" id="oUN-es-Pmd"/>
+                        <outlet property="warmupHeader" destination="VDV-AX-SUS" id="yeb-eh-oxw"/>
+                        <outlet property="warmupTimePicker" destination="mNg-Pi-fNv" id="UOa-5g-S4V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huu-q2-yOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="239.28035982008998"/>
+            <point key="canvasLocation" x="1166" y="264"/>
         </scene>
     </scenes>
     <resources>
+        <image name="RightArrow" width="13" height="20"/>
+        <namedColor name="TimerBlack">
+            <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -468,8 +584,17 @@
         <namedColor name="TimerGrey">
             <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="TimerGrey">
+            <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerTextGrey">
+            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TimerTextGrey">
             <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="CTJ-Pu-KI5"/>
+    </inferredMetricsTieBreakers>
 </document>

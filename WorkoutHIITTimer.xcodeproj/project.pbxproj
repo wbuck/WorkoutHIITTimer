@@ -10,6 +10,11 @@
 		10175DBD20140FD200784B26 /* ExpandablePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10175DBC20140FD200784B26 /* ExpandablePickerView.xib */; };
 		10175DBF2014108900784B26 /* ExpandablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10175DBE2014108900784B26 /* ExpandablePickerView.swift */; };
 		10175DC1201415AD00784B26 /* RoundPickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10175DC0201415AD00784B26 /* RoundPickerControlView.swift */; };
+		10525D59201B666C00D5F403 /* MyTimersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10525D58201B666C00D5F403 /* MyTimersTableViewController.swift */; };
+		10525D5B201B6F3E00D5F403 /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10525D5A201B6F3E00D5F403 /* Timers.swift */; };
+		10525D5D201B7F0000D5F403 /* TimersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10525D5C201B7F0000D5F403 /* TimersController.swift */; };
+		10525D5F201B91B500D5F403 /* MyTimersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10525D5E201B91B500D5F403 /* MyTimersTableViewCell.swift */; };
+		10525D61201BCF3E00D5F403 /* HeaderSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10525D60201BCF3E00D5F403 /* HeaderSections.swift */; };
 		107157422006E58B00BE3739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107157412006E58B00BE3739 /* AppDelegate.swift */; };
 		107157472006E58B00BE3739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107157452006E58B00BE3739 /* Main.storyboard */; };
 		1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1071574B2006E58B00BE3739 /* Assets.xcassets */; };
@@ -30,6 +35,7 @@
 		10CF297D20180FF200BA9499 /* SwitchControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CF297C20180FF200BA9499 /* SwitchControlView.xib */; };
 		10CF297F2018106000BA9499 /* SwitchControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF297E2018106000BA9499 /* SwitchControlView.swift */; };
 		10EBE20F201A421B00A553E9 /* TimeIntervalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBE20E201A421B00A553E9 /* TimeIntervalExtensions.swift */; };
+		10EBE211201AD1FC00A553E9 /* HeaderSwitchViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBE210201AD1FC00A553E9 /* HeaderSwitchViewDelegate.swift */; };
 		10F12731200CDE5500DE7F6D /* SubTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12730200CDE5500DE7F6D /* SubTimer.swift */; };
 		10F12738200D60CE00DE7F6D /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F12737200D60CE00DE7F6D /* TextFieldView.xib */; };
 		10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F12739200D637E00DE7F6D /* TextFieldView.swift */; };
@@ -60,6 +66,11 @@
 		10175DBC20140FD200784B26 /* ExpandablePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandablePickerView.xib; sourceTree = "<group>"; };
 		10175DBE2014108900784B26 /* ExpandablePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandablePickerView.swift; sourceTree = "<group>"; };
 		10175DC0201415AD00784B26 /* RoundPickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundPickerControlView.swift; sourceTree = "<group>"; };
+		10525D58201B666C00D5F403 /* MyTimersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimersTableViewController.swift; sourceTree = "<group>"; };
+		10525D5A201B6F3E00D5F403 /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
+		10525D5C201B7F0000D5F403 /* TimersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersController.swift; sourceTree = "<group>"; };
+		10525D5E201B91B500D5F403 /* MyTimersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimersTableViewCell.swift; sourceTree = "<group>"; };
+		10525D60201BCF3E00D5F403 /* HeaderSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSections.swift; sourceTree = "<group>"; };
 		1071573E2006E58B00BE3739 /* WorkoutHIITTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutHIITTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107157412006E58B00BE3739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		107157462006E58B00BE3739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +93,7 @@
 		10CF297C20180FF200BA9499 /* SwitchControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchControlView.xib; sourceTree = "<group>"; };
 		10CF297E2018106000BA9499 /* SwitchControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchControlView.swift; sourceTree = "<group>"; };
 		10EBE20E201A421B00A553E9 /* TimeIntervalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtensions.swift; sourceTree = "<group>"; };
+		10EBE210201AD1FC00A553E9 /* HeaderSwitchViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSwitchViewDelegate.swift; sourceTree = "<group>"; };
 		10F12730200CDE5500DE7F6D /* SubTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTimer.swift; sourceTree = "<group>"; };
 		10F12737200D60CE00DE7F6D /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		10F12739200D637E00DE7F6D /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -163,6 +175,7 @@
 			children = (
 				1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */,
 				1076F810200A388B0080E1D3 /* RoundTimerViewController.swift */,
+				10525D58201B666C00D5F403 /* MyTimersTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +188,7 @@
 				1076F83D200C240B0080E1D3 /* TimerAlerts.swift */,
 				1076F83F200C26BA0080E1D3 /* Timer.swift */,
 				10F12730200CDE5500DE7F6D /* SubTimer.swift */,
+				10525D5A201B6F3E00D5F403 /* Timers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +220,7 @@
 			children = (
 				1071575E2006F61F00BE3739 /* MainMenuTableViewCell.swift */,
 				1071575F2006F61F00BE3739 /* MainMenuTableViewCell.xib */,
+				10525D5E201B91B500D5F403 /* MyTimersTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -216,6 +231,8 @@
 				10F1273B200D698B00DE7F6D /* NibFileOwnerLoadable.swift */,
 				10F12755200EE59300DE7F6D /* PickerControlViewDelegate.swift */,
 				1087E4392012F47D0075FDE6 /* PickerView.swift */,
+				10EBE210201AD1FC00A553E9 /* HeaderSwitchViewDelegate.swift */,
+				10525D5C201B7F0000D5F403 /* TimersController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -227,6 +244,7 @@
 				10F12759200F834200DE7F6D /* Rotate.swift */,
 				10F1275D20117C5A00DE7F6D /* PickerViewState.swift */,
 				10A51A162018B10E00F08029 /* Count.swift */,
+				10525D60201BCF3E00D5F403 /* HeaderSections.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -482,6 +500,8 @@
 				10F1273A200D637E00DE7F6D /* TextFieldView.swift in Sources */,
 				1076F83E200C240B0080E1D3 /* TimerAlerts.swift in Sources */,
 				10A51A172018B10E00F08029 /* Count.swift in Sources */,
+				10EBE211201AD1FC00A553E9 /* HeaderSwitchViewDelegate.swift in Sources */,
+				10525D61201BCF3E00D5F403 /* HeaderSections.swift in Sources */,
 				1076F831200C0DE90080E1D3 /* RoundTimer.swift in Sources */,
 				10F12748200D8F6600DE7F6D /* HeaderSwitchView.swift in Sources */,
 				1071575B2006EBC000BE3739 /* MainMenuTableViewController.swift in Sources */,
@@ -489,13 +509,17 @@
 				10F1275C2010CF2800DE7F6D /* HeaderBase.swift in Sources */,
 				10175DC1201415AD00784B26 /* RoundPickerControlView.swift in Sources */,
 				10175DBF2014108900784B26 /* ExpandablePickerView.swift in Sources */,
+				10525D5D201B7F0000D5F403 /* TimersController.swift in Sources */,
+				10525D5F201B91B500D5F403 /* MyTimersTableViewCell.swift in Sources */,
 				10F1273C200D698B00DE7F6D /* NibFileOwnerLoadable.swift in Sources */,
+				10525D5B201B6F3E00D5F403 /* Timers.swift in Sources */,
 				10F12740200D809C00DE7F6D /* SegmentControlView.swift in Sources */,
 				10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */,
 				107157422006E58B00BE3739 /* AppDelegate.swift in Sources */,
 				1076F840200C26BA0080E1D3 /* Timer.swift in Sources */,
 				1087E43A2012F47D0075FDE6 /* PickerView.swift in Sources */,
 				1076F834200C0E5F0080E1D3 /* TimerType.swift in Sources */,
+				10525D59201B666C00D5F403 /* MyTimersTableViewController.swift in Sources */,
 				10F1275E20117C5A00DE7F6D /* PickerViewState.swift in Sources */,
 				107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */,
 				10EBE20F201A421B00A553E9 /* TimeIntervalExtensions.swift in Sources */,

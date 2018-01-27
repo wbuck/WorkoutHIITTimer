@@ -7,12 +7,16 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 class MainMenuTableViewController: UITableViewController {
     
+    var realm = try! Realm()
+    var timers: Timers?
+    
     let mainMenuCellId = "MainMenuCell"
     let segueIds = ["GoToMyTimers", "GoToRoundTimer", "GoToEmomTimer", "GoToStopWatch", "GoToTabataTimer", "GoToIntervalTimer"]
+    
     let menuOptions = ["My Timers", "Round Timer", "EMOM Timer", "Stopwatch", "Tabata Timer", "Interval Timer"]
     
     override func viewDidLoad() {
@@ -20,6 +24,9 @@ class MainMenuTableViewController: UITableViewController {
         
         // Register custom table view cell.
         tableView.register(UINib(nibName: "MainMenuTableViewCell", bundle: nil), forCellReuseIdentifier: mainMenuCellId)
+        // Only occurs when app first starts up.
+        createTimersTable()
+        fetchTimers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,14 +34,36 @@ class MainMenuTableViewController: UITableViewController {
         guard let nav = navigationController?.navigationBar else { return }
         nav.tintColor = UIColor(named: "TimerOrange")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("MEMORY WARNING")
     }
-
+    
+    private func createTimersTable() {
+        // Only create the timers table when the
+        // application first starts up.
+        
+        if realm.objects(Timers.self).isEmpty {
+            print("Creating timers table")
+            do {
+                try realm.write {
+                    let timers = Timers()
+                    realm.add(timers)
+                }
+            }
+            catch {
+                print("Error creating timers table. \(error)")
+            }
+        }
+    }
+    
+    private func fetchTimers() {
+        timers = realm.objects(Timers.self).first
+    }
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuOptions.count
     }
@@ -50,7 +79,7 @@ class MainMenuTableViewController: UITableViewController {
         }
         tableView.contentInset = UIEdgeInsetsMake(contentInsetTop, 0, 0, 0)
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mainMenuCellId, for: indexPath) as! MainMenuTableViewCell
@@ -73,18 +102,15 @@ class MainMenuTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
- 
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-         performSegue(withIdentifier: segueIds[indexPath.row], sender: self)
+        performSegue(withIdentifier: segueIds[indexPath.row], sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let destination = segue.destination as?
-//            TimerSetupTableViewController else { return }
-//        if let indexPath = tableView.indexPathForSelectedRow {
-//            destination.timerTitle = menuOptions[indexPath.row]
-//        }
+        guard var destination = segue.destination as?
+            TimersController else { return }
+        destination.timers = timers
     }
 }
 

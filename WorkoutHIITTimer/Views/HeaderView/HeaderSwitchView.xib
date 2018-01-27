@@ -43,6 +43,9 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pn-ed-tfx">
                             <rect key="frame" x="310" y="15" width="51" height="31"/>
                             <color key="onTintColor" name="TimerOrange"/>
+                            <connections>
+                                <action selector="uiSwitchValueChanged:" destination="-1" eventType="valueChanged" id="31D-5A-x6G"/>
+                            </connections>
                         </switch>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-uT-Eud" userLabel="Saparator">
                             <rect key="frame" x="0.0" y="59" width="375" height="1"/>

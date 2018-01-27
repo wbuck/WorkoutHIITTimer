@@ -12,4 +12,5 @@ import RealmSwift
 class RoundTimer: Timer {
     @objc dynamic var rounds: Int = 1
     @objc dynamic var roundTimer: SubTimer?
+    var timers = LinkingObjects(fromType: Timers.self, property: "roundTimers")
 }
