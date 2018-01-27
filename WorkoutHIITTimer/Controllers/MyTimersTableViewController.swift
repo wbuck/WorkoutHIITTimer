@@ -12,7 +12,8 @@ import SwipeCellKit
 
 class MyTimersTableViewController: UITableViewController, TimersController, SwipeTableViewCellDelegate {
     
-    let roundTimerSegue = "GoToEditRoundTimer"
+    let segueIds = ["GoToEditRoundTimer"]
+    let headerTitles = ["ROUND TIMERS", "EMOM TIMERS", "STOPWATCHES", "TABATA TIMERS", "INTERVAL TIMERS"]
     var realm = try! Realm()
     var timers: Timers? {
         didSet { loadTimers() }
@@ -57,7 +58,6 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
         // Remove the selection highlight from cell.
         cell.selectionStyle = .none
         var timer: Timer?
-        
         switch indexPath.section {
         case HeaderSections.roundTimers.rawValue:
             timer = roundTimers?[indexPath.row]
@@ -79,7 +79,6 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             cell.dateLabel.text = formatter.string(from: timer!.dateCreated)
-            print(indexPath.row)
             cell.cellContentView.backgroundColor = indexPath.row % 2 == 0 ?
                 UIColor(named: "TimerGrey") : UIColor(named: "TimerLightGrey")
         }
@@ -110,45 +109,23 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
         }
         let editAction = SwipeAction(style: .default, title: "Edit") {
             (action, indexPath) in
-            switch indexPath.section {
-            case HeaderSections.roundTimers.rawValue:
-                self.selectedIndex = indexPath.row
-                self.performSegue(withIdentifier: self.roundTimerSegue, sender: self)
-            case HeaderSections.emomTimers.rawValue:
-                print("Emom timer")
-            case HeaderSections.stopWatches.rawValue:
-                print("Stopwatches")
-            case HeaderSections.tabataTimers.rawValue:
-                print("Tabata")
-            case HeaderSections.intervalTimers.rawValue:
-                print("Interval")
-            default:
-                break
-            }
+            self.selectedIndex = indexPath.row
+            self.performSegue(indexPath.section)
         }
-        //        editAction.backgroundColor = UIColor(hexString: "FF530D")
-        //        deleteAction.image = UIImage(named: "delete-icon")
+        //  editAction.backgroundColor = UIColor(hexString: "FF530D")
+        //  deleteAction.image = UIImage(named: "delete-icon")
         editAction.backgroundColor = UIColor(named: "TimerFadedGrey")
         deleteAction.backgroundColor = UIColor(named: "TimerOrange")
         return [deleteAction, editAction]
     }
     
+    private func performSegue(_ section: Int){
+        self.performSegue(withIdentifier: segueIds[section], sender: self)
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HeaderView()
-        switch section {
-        case HeaderSections.roundTimers.rawValue:
-            header.title = "ROUND TIMERS"
-        case HeaderSections.emomTimers.rawValue:
-            header.title = "EMOM TIMERS"
-        case HeaderSections.stopWatches.rawValue:
-            header.title = "STOPWATCHES"
-        case HeaderSections.tabataTimers.rawValue:
-            header.title = "TABATA TIMERS"
-        case HeaderSections.intervalTimers.rawValue:
-            header.title = "INTERVAL TIMERS"
-        default:
-            break
-        }
+        header.title = headerTitles[section]
         return header
     }
     
@@ -159,7 +136,7 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueId = segue.identifier else { return }
         switch segueId {
-        case roundTimerSegue:
+        case segueIds[0]:
             if let destination = segue.destination as? RoundTimerViewController {
                 destination.roundTimer = roundTimers?[selectedIndex!]
                 destination.timers = timers

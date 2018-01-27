@@ -77,7 +77,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-12-08" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVu-SD-QOW">
-                                                    <rect key="frame" x="251" y="7" width="82" height="16"/>
+                                                    <rect key="frame" x="251" y="10" width="82" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="149-3H-s30"/>
                                                     </constraints>
@@ -86,7 +86,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-SD-v2I">
-                                                    <rect key="frame" x="349" y="7" width="10" height="15"/>
+                                                    <rect key="frame" x="349" y="10" width="10" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="10" id="9ia-ic-o2R"/>
                                                         <constraint firstAttribute="height" constant="15" id="egs-Kg-Pec"/>
@@ -94,7 +94,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDc-Jv-bnh">
                                                     <rect key="frame" x="16" y="29" width="343" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <color key="textColor" name="TimerTextGrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -106,17 +106,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="oDc-Jv-bnh" secondAttribute="trailing" constant="16" id="34Y-mp-1mR"/>
                                                 <constraint firstAttribute="bottom" secondItem="9rj-HE-ufe" secondAttribute="bottom" constant="16" id="4kF-PN-ORi"/>
                                                 <constraint firstItem="lQc-SD-v2I" firstAttribute="leading" secondItem="ZVu-SD-QOW" secondAttribute="trailing" constant="16" id="58F-ow-te0"/>
                                                 <constraint firstAttribute="trailing" secondItem="lQc-SD-v2I" secondAttribute="trailing" constant="16" id="BFK-gh-Ddg"/>
-                                                <constraint firstItem="lQc-SD-v2I" firstAttribute="top" secondItem="UEz-2N-jye" secondAttribute="top" constant="7" id="QHi-LH-ibA"/>
+                                                <constraint firstAttribute="trailing" secondItem="oDc-Jv-bnh" secondAttribute="trailing" constant="16" id="CJX-8M-qDI"/>
+                                                <constraint firstItem="lQc-SD-v2I" firstAttribute="top" secondItem="UEz-2N-jye" secondAttribute="top" constant="10" id="QHi-LH-ibA"/>
                                                 <constraint firstItem="ZVu-SD-QOW" firstAttribute="leading" secondItem="UEz-2N-jye" secondAttribute="leading" constant="251" id="jIU-X4-AIg"/>
-                                                <constraint firstItem="ZVu-SD-QOW" firstAttribute="top" secondItem="UEz-2N-jye" secondAttribute="top" constant="7" id="mSe-se-3ae"/>
+                                                <constraint firstItem="ZVu-SD-QOW" firstAttribute="top" secondItem="UEz-2N-jye" secondAttribute="top" constant="10" id="mSe-se-3ae"/>
                                                 <constraint firstItem="9rj-HE-ufe" firstAttribute="leading" secondItem="UEz-2N-jye" secondAttribute="leading" constant="16" id="pSY-Fp-YJE"/>
+                                                <constraint firstAttribute="bottom" secondItem="oDc-Jv-bnh" secondAttribute="bottom" constant="39" id="pqH-O5-Jpc"/>
                                                 <constraint firstAttribute="trailing" secondItem="9rj-HE-ufe" secondAttribute="trailing" constant="16" id="s2c-Io-WEA"/>
-                                                <constraint firstItem="9rj-HE-ufe" firstAttribute="top" secondItem="oDc-Jv-bnh" secondAttribute="bottom" constant="7" id="uf8-KM-cjM"/>
-                                                <constraint firstItem="oDc-Jv-bnh" firstAttribute="leading" secondItem="UEz-2N-jye" secondAttribute="leading" constant="16" id="wPz-A9-UUY"/>
+                                                <constraint firstItem="oDc-Jv-bnh" firstAttribute="top" secondItem="UEz-2N-jye" secondAttribute="top" constant="29" id="wg5-dg-0kS"/>
+                                                <constraint firstItem="oDc-Jv-bnh" firstAttribute="leading" secondItem="UEz-2N-jye" secondAttribute="leading" constant="16" id="zBr-7f-F1g"/>
                                             </constraints>
                                         </view>
                                     </subviews>
