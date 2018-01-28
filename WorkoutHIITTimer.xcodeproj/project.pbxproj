@@ -27,6 +27,8 @@
 		1076F834200C0E5F0080E1D3 /* TimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1076F833200C0E5F0080E1D3 /* TimerType.swift */; };
 		1087E43A2012F47D0075FDE6 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087E4392012F47D0075FDE6 /* PickerView.swift */; };
 		1087F0B8201D275300345382 /* TimerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087F0B7201D275300345382 /* TimerBase.swift */; };
+		1087F0BA201E2CF400345382 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087F0B9201E2CF400345382 /* UIButtonExtensions.swift */; };
+		1087F0BC201E72FA00345382 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087F0BB201E72FA00345382 /* TimerViewController.swift */; };
 		108B1C132013E2BC00803855 /* SoundPickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1C122013E2BC00803855 /* SoundPickerControlView.swift */; };
 		10A51A152018AE8900F08029 /* End Beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10A51A142018AE8800F08029 /* End Beep.wav */; };
 		10A51A172018B10E00F08029 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A51A162018B10E00F08029 /* Count.swift */; };
@@ -82,6 +84,8 @@
 		1076F833200C0E5F0080E1D3 /* TimerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerType.swift; sourceTree = "<group>"; };
 		1087E4392012F47D0075FDE6 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		1087F0B7201D275300345382 /* TimerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBase.swift; sourceTree = "<group>"; };
+		1087F0B9201E2CF400345382 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		1087F0BB201E72FA00345382 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		108B1C122013E2BC00803855 /* SoundPickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerControlView.swift; sourceTree = "<group>"; };
 		10A51A142018AE8800F08029 /* End Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "End Beep.wav"; sourceTree = "<group>"; };
 		10A51A162018B10E00F08029 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				1071575A2006EBC000BE3739 /* MainMenuTableViewController.swift */,
 				1076F810200A388B0080E1D3 /* RoundTimerViewController.swift */,
 				10525D58201B666C00D5F403 /* MyTimersTableViewController.swift */,
+				1087F0BB201E72FA00345382 /* TimerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				10EBE20E201A421B00A553E9 /* TimeIntervalExtensions.swift */,
+				1087F0B9201E2CF400345382 /* UIButtonExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 				10525D5D201B7F0000D5F403 /* TimersController.swift in Sources */,
 				10525D5F201B91B500D5F403 /* MyTimersTableViewCell.swift in Sources */,
 				10F1273C200D698B00DE7F6D /* NibFileOwnerLoadable.swift in Sources */,
+				1087F0BC201E72FA00345382 /* TimerViewController.swift in Sources */,
 				10525D5B201B6F3E00D5F403 /* Timers.swift in Sources */,
 				10F12740200D809C00DE7F6D /* SegmentControlView.swift in Sources */,
 				10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */,
@@ -510,6 +517,7 @@
 				10525D59201B666C00D5F403 /* MyTimersTableViewController.swift in Sources */,
 				10F1275E20117C5A00DE7F6D /* PickerViewState.swift in Sources */,
 				107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */,
+				1087F0BA201E2CF400345382 /* UIButtonExtensions.swift in Sources */,
 				10EBE20F201A421B00A553E9 /* TimeIntervalExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

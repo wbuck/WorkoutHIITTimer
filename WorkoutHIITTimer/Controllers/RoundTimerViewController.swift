@@ -173,6 +173,7 @@ class RoundTimerViewController: UIViewController, TimersController {
         catch {
             print("Failed to save data to DB. \((error as NSError).userInfo.description)")
         }
+        performSegue(withIdentifier: "GoToTimer", sender: self)
     }
 }
 
