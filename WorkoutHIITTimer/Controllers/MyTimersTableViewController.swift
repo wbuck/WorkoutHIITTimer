@@ -18,9 +18,8 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     var timers: Timers? {
         didSet { loadTimers() }
     }
-    
-    var roundTimers: List<RoundTimer>?
-    var selectedIndex: Int?
+    var workoutTimers = [HeaderSections: [TimerBase]]()
+    var selectedSectionAndIndex: (section: HeaderSections, index: Int)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     
     private func loadTimers() {
         guard let allTimers = timers else { return }
-        roundTimers = allTimers.roundTimers
+        workoutTimers[.roundTimers] = allTimers.roundTimers.map{ $0 as TimerBase }
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,70 +45,59 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return roundTimers?.count ?? 0
+        if let section = HeaderSections(rawValue: section) {
+            return (workoutTimers[section]?.count)!
+        }
+        return 0
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyTimerCell", for: indexPath)
-            as! MyTimersTableViewCell
+        let cell =
+            tableView.dequeueReusableCell(withIdentifier: "MyTimerCell", for: indexPath) as! MyTimersTableViewCell
         cell.delegate = self
-        // Remove the selection highlight from cell.
         cell.selectionStyle = .none
-        var timer: Timer?
-        switch indexPath.section {
-        case HeaderSections.roundTimers.rawValue:
-            timer = roundTimers?[indexPath.row]
-        case HeaderSections.emomTimers.rawValue:
-            print("Emom timer")
-        case HeaderSections.stopWatches.rawValue:
-            print("Stopwatches")
-        case HeaderSections.tabataTimers.rawValue:
-            print("Tabata")
-        case HeaderSections.intervalTimers.rawValue:
-            print("Interval")
-        default:
-            break
-        }
+        let section = HeaderSections(rawValue: indexPath.section)!
+        let timer = workoutTimers[section]![indexPath.row]
+        cell.nameLabel.text = timer.timerName
+        cell.descriptionLabel.text = timer.timerDescription
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        cell.dateLabel.text = formatter.string(from: timer.dateCreated)
+        cell.cellContentView.backgroundColor = indexPath.row % 2 == 0 ?
+            UIColor(named: "TimerGrey") : UIColor(named: "TimerLightGrey")
         
-        if timer != nil {
-            cell.nameLabel.text = timer!.timerDetails?.timerName
-            cell.descriptionLabel.text = timer!.timerDetails?.timerDescription
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-            cell.dateLabel.text = formatter.string(from: timer!.dateCreated)
-            cell.cellContentView.backgroundColor = indexPath.row % 2 == 0 ?
-                UIColor(named: "TimerGrey") : UIColor(named: "TimerLightGrey")
-        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
         guard orientation == .right else { return nil }
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") {
             (action, indexPath) in
             
-            switch indexPath.section {
-            case HeaderSections.roundTimers.rawValue:
-                if let timer = self.roundTimers?[indexPath.row] {
-                    self.remove(timer: timer)
-                }
-            case HeaderSections.emomTimers.rawValue:
+            guard let section = HeaderSections(rawValue: indexPath.section) else { return }
+            guard let timer = self.workoutTimers[section]?[indexPath.row] else { return }
+            
+            switch section {
+            case HeaderSections.roundTimers:
+                guard let roundTimer = timer as? RoundTimer else { return }
+                self.remove(timer: roundTimer)
+                self.workoutTimers[section]!.remove(at: indexPath.row)
+            case HeaderSections.emomTimers:
                 print("Emom timer")
-            case HeaderSections.stopWatches.rawValue:
+            case HeaderSections.stopWatches:
                 print("Stopwatches")
-            case HeaderSections.tabataTimers.rawValue:
+            case HeaderSections.tabataTimers:
                 print("Tabata")
-            case HeaderSections.intervalTimers.rawValue:
+            case HeaderSections.intervalTimers:
                 print("Interval")
-            default:
-                break
             }
+           
         }
         let editAction = SwipeAction(style: .default, title: "Edit") {
             (action, indexPath) in
-            self.selectedIndex = indexPath.row
+            self.selectedSectionAndIndex = (HeaderSections(rawValue: indexPath.section)!, indexPath.row)
             self.performSegue(indexPath.section)
         }
         //  editAction.backgroundColor = UIColor(hexString: "FF530D")
@@ -135,10 +123,12 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueId = segue.identifier else { return }
+        guard let (section, index) = selectedSectionAndIndex else { return }
+        
         switch segueId {
         case segueIds[0]:
             if let destination = segue.destination as? RoundTimerViewController {
-                destination.roundTimer = roundTimers?[selectedIndex!]
+                destination.roundTimer = workoutTimers[section]?[index] as? RoundTimer
                 destination.timers = timers
             }
         default:
@@ -154,7 +144,13 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     }
     
     private func remove<T: Object>(timer: T) {
-        do { try realm.write { realm.delete(timer) } }
-        catch { print("Failed to remove todo item. \(error)") }
+        do {
+            try realm.write {
+                realm.delete(timer)
+            }
+        }
+        catch {
+            print("Failed to remove todo item. \(error)")
+        }
     }
 }

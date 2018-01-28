@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class RoundTimerViewController: UIViewController, TimersController {
-
+    
     @IBOutlet weak var nameTextView: TextFieldView!
     @IBOutlet weak var descriptionTextView: TextFieldView!
     @IBOutlet weak var warmupHeader: HeaderSwitchView!
@@ -85,90 +85,74 @@ class RoundTimerViewController: UIViewController, TimersController {
     
     private func assignRoundTimerValues() {
         guard let timer = roundTimer else { return }
-        nameTextView.value = timer.timerDetails?.timerName
-        descriptionTextView.value = timer.timerDetails?.timerDescription
+        nameTextView.value = timer.timerName
+        descriptionTextView.value = timer.timerDescription
         // Warmup timer set up.
         warmupHeader.value = timer.warmupTimerEnabled
-        if let warmupTimer = timer.warmupTimer {
-            warmupTimePicker.value = warmupTimer.intervalInSeconds.toTuple()
-            warmupCountDirection.value = warmupTimer.timerDirection
-        }
+        warmupTimePicker.value = timer.warmupIntervalInSeconds.toTuple()
+        warmupCountDirection.value = timer.warmupCountDirection
+        
         // Round timer set up.
         roundPicker.value = timer.rounds
-        if let mainTimer = timer.roundTimer {
-            roundTimePicker.value = mainTimer.intervalInSeconds.toTuple()
-            roundCountDirection.value = mainTimer.timerDirection
-        }
+        roundTimePicker.value = timer.roundsIntervalInSeconds.toTuple()
+        roundCountDirection.value = timer.roundsCountDirection
+        
         // Rest timer set up.
         restHeader.value = timer.restTimerEnabled
-        if let restTimer = timer.restTimer {
-            restTimePicker.value = restTimer.intervalInSeconds.toTuple()
-            restCountDirection.value = restTimer.timerDirection
-        }
+        restTimePicker.value = timer.restIntervalInSeconds.toTuple()
+        restCountDirection.value = timer.restCountDirection
+        
         // Cool down timer setup.
         coolDownHeader.value = timer.coolDownTimerEnabled
-        if let coolDownTimer = timer.coolDownTimer {
-            coolDownTimePicker.value = coolDownTimer.intervalInSeconds.toTuple()
-            coolDownCountDirection.value = coolDownTimer.timerDirection
-        }
+        coolDownTimePicker.value = timer.coolDownIntervalInSeconds.toTuple()
+        coolDownCountDirection.value = timer.coolDownCountDirection
+        
         // Alerts set up.
-        alertRoundStartingSwitchView.value = (timer.timerAlerts?.startAlertEnabled)!
-        alertRoundStartingSoundPicker.value = (timer.timerAlerts?.startAlertSound)!
-        alertRoundHalfwaySwitchView.value = (timer.timerAlerts?.halfwayAlertEnabled)!
-        alertRoundHalfwaySoundPicker.value = (timer.timerAlerts?.halfwayAlertSound)!
-        alertRoundEndingSwitchView.value = (timer.timerAlerts?.endAlertEnabled)!
+        alertRoundStartingSwitchView.value = timer.startAlertEnabled
+        alertRoundStartingSoundPicker.value = timer.startAlertSound
+        alertRoundHalfwaySwitchView.value = timer.halfwayAlertEnabled
+        alertRoundHalfwaySoundPicker.value = timer.halfwayAlertSound
+        alertRoundEndingSwitchView.value = timer.endAlertEnabled
     }
     
-    private func assignInputToTimer(timer: RoundTimer) {
+    private func assignUserInputToTimer(timer: RoundTimer) {
         // Timer details.
-        timer.timerDetails = TimerDetails()
-        timer.timerDetails?.timerName = nameTextView.value!
-        timer.timerDetails?.timerDescription = descriptionTextView.value
-        timer.timerDetails?.timerType = .round
+        timer.timerName = nameTextView.value!
+        timer.timerDescription = descriptionTextView.value
         
         // Setup warmup timer.
         timer.warmupTimerEnabled = warmupHeader.value
-        if warmupHeader.value {
-            timer.warmupTimer = SubTimer()
-            timer.warmupTimer?.intervalInSeconds.fromTuple(interval: warmupTimePicker.value)
-            timer.warmupTimer?.timerDirection = warmupCountDirection.value
-        }
+        timer.warmupIntervalInSeconds.fromTuple(interval: warmupTimePicker.value)
+        timer.warmupCountDirection = warmupCountDirection.value
+        
         // Setup rounds.
         timer.rounds = roundPicker.value
-        timer.roundTimer = SubTimer()
-        timer.roundTimer?.intervalInSeconds.fromTuple(interval: roundTimePicker.value)
-        timer.roundTimer?.timerDirection = roundCountDirection.value
+        timer.roundsIntervalInSeconds.fromTuple(interval: roundTimePicker.value)
+        timer.roundsCountDirection = roundCountDirection.value
         
         // Setup rest.
         timer.restTimerEnabled = restHeader.value
-        if restHeader.value {
-            timer.restTimer = SubTimer()
-            timer.restTimer?.intervalInSeconds.fromTuple(interval: restTimePicker.value)
-            timer.restTimer?.timerDirection = restCountDirection.value
-        }
+        timer.restIntervalInSeconds.fromTuple(interval: restTimePicker.value)
+        timer.restCountDirection = restCountDirection.value
+
         // Setup cooldown.
         timer.coolDownTimerEnabled = coolDownHeader.value
-        if coolDownHeader.value {
-            timer.coolDownTimer = SubTimer()
-            timer.coolDownTimer?.intervalInSeconds.fromTuple(interval: coolDownTimePicker.value)
-            timer.coolDownTimer?.timerDirection = coolDownCountDirection.value
-        }
-        
+        timer.coolDownIntervalInSeconds.fromTuple(interval: coolDownTimePicker.value)
+        timer.coolDownCountDirection = coolDownCountDirection.value
+   
         // Alerts.
-        timer.timerAlerts = TimerAlerts()
-        timer.timerAlerts?.endAlertEnabled = alertRoundEndingSwitchView.value
-        timer.timerAlerts?.endAlertSound = "End Beep"
-        timer.timerAlerts?.halfwayAlertEnabled = alertRoundHalfwaySwitchView.value
-        timer.timerAlerts?.halfwayAlertSound = alertRoundHalfwaySoundPicker.value
-        timer.timerAlerts?.startAlertEnabled = alertRoundStartingSwitchView.value
-        timer.timerAlerts?.startAlertSound = alertRoundStartingSoundPicker.value
+        timer.endAlertEnabled = alertRoundEndingSwitchView.value
+        timer.halfwayAlertEnabled = alertRoundHalfwaySwitchView.value
+        timer.halfwayAlertSound = alertRoundHalfwaySoundPicker.value
+        timer.startAlertEnabled = alertRoundStartingSwitchView.value
+        timer.startAlertSound = alertRoundStartingSoundPicker.value
     }
     
     private func updateTimer(){
         guard let timer = roundTimer else { return }
         do {
             try self.realm.write {
-                self.assignInputToTimer(timer: timer)
+                self.assignUserInputToTimer(timer: timer)
             }
         }
         catch {
@@ -180,7 +164,7 @@ class RoundTimerViewController: UIViewController, TimersController {
         // TODO: - Remove this line.
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         let timer = RoundTimer()
-        assignInputToTimer(timer: timer)
+        assignUserInputToTimer(timer: timer)
         do {
             try self.realm.write {
                 self.timers?.roundTimers.append(timer)

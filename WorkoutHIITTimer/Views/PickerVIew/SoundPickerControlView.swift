@@ -39,14 +39,15 @@ class SoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
     @IBInspectable
     var section: String = String()
     
-    var value: String {
+    var value: String? {
         get {
             return sounds[pickerView.selectedRow(inComponent: 0)]
         }
         set {
-            guard let index = sounds.index(of: newValue) else { return }
+            guard let sound = newValue else { return }
+            guard let index = sounds.index(of: sound) else { return }
             pickerView.selectRow(index, inComponent: 0, animated: false)
-            selectedValueLabel.text = newValue
+            selectedValueLabel.text = sound
         }
     }
     

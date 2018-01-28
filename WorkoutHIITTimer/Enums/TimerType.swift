@@ -14,4 +14,7 @@ enum TimerType: Int {
     case stopwatch
     case tabata
     case interval
+    case warmup
+    case coolDown
+    case rest
 }

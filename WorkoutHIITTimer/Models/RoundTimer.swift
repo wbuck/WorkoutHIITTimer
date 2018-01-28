@@ -9,8 +9,13 @@
 import Foundation
 import RealmSwift
 
-class RoundTimer: Timer {
+class RoundTimer: TimerBase {
     @objc dynamic var rounds: Int = 1
-    @objc dynamic var roundTimer: SubTimer?
+    @objc private dynamic var roundsTimerDirection: Int = Count.up.rawValue
+    var roundsCountDirection: Count {
+        get { return Count(rawValue: roundsTimerDirection)! }
+        set { roundsTimerDirection = newValue.rawValue }
+    }
+    @objc dynamic var roundsIntervalInSeconds: TimeInterval = 0
     var timers = LinkingObjects(fromType: Timers.self, property: "roundTimers")
 }
