@@ -23,13 +23,19 @@ class TimerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        startStopButton.layer.borderColor = UIColor(named: "TimerOrange")?.cgColor
-        startStopButton.backgroundColor = UIColor.clear
-        startStopButton.layer.borderWidth = 2
-        startStopButton.layer.cornerRadius = startStopButton.frame.width / 2
-        startStopButton.layer.masksToBounds = true
+        createCircularButton(startStopButton, color: UIColor(named: "TimerOrange"))
+        createCircularButton(resetButton, color: UIColor(named: "TimerWhite"))
+        createCircularButton(quitButton, color: UIColor(named: "TimerWhite"))
     }
-
+    
+    private func createCircularButton(_ button: UIButton, color: UIColor?) {
+        button.layer.borderColor = color?.cgColor
+        button.backgroundColor = UIColor.clear
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = button.frame.width / 2
+        button.layer.masksToBounds = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

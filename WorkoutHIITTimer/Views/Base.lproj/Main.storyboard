@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -580,11 +579,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtM-dU-ti7" userLabel="Indicators View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtM-dU-ti7" userLabel="Main View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-20-PhP">
+                                        <rect key="frame" x="114" y="48.5" width="147" height="46"/>
+                                        <color key="backgroundColor" name="TimerOrange"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="YJ8-b4-Lnf"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="wjx-t4-Tt3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" name="TimerWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-Bj-afa" userLabel="Controls View">
+                                        <rect key="frame" x="0.0" y="422" width="375" height="245"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-gL-0Yl">
+                                                <rect key="frame" x="34" y="61" width="306" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ht-CU-5zj">
+                                                        <rect key="frame" x="0.0" y="32" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="mms-Dy-S7R"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="qTo-f3-oEC"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" title="RESET">
+                                                            <color key="titleColor" name="TimerWhite"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guq-5u-an8">
+                                                        <rect key="frame" x="91" y="0.0" width="124" height="124"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="124" id="Oqv-pL-eUr"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="RZB-eB-sa9"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <state key="normal" title="START">
+                                                            <color key="titleColor" name="TimerOrange"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IO-yI-JTh">
+                                                        <rect key="frame" x="246" y="32" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="bfA-hh-X3q"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="m9P-oP-Ykb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" title="QUIT">
+                                                            <color key="titleColor" name="TimerWhite"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="TimerBlack"/>
+                                        <constraints>
+                                            <constraint firstItem="r4a-gL-0Yl" firstAttribute="centerX" secondItem="pQI-Bj-afa" secondAttribute="centerX" id="Nne-ld-ygX"/>
+                                            <constraint firstItem="r4a-gL-0Yl" firstAttribute="centerY" secondItem="pQI-Bj-afa" secondAttribute="centerY" id="XOi-yM-4v0"/>
+                                            <constraint firstAttribute="height" constant="245" id="kDh-4c-3xa"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGN-qD-P7e" userLabel="Indicator Panel">
-                                        <rect key="frame" x="0.0" y="350" width="375" height="72"/>
+                                        <rect key="frame" x="0.0" y="342" width="375" height="72"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="YNu-KB-lTw">
                                                 <rect key="frame" x="20" y="12.5" width="335" height="48"/>
@@ -702,74 +761,31 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="YNu-KB-lTw" firstAttribute="centerX" secondItem="aGN-qD-P7e" secondAttribute="centerX" id="2gx-Xq-H8o"/>
-                                            <constraint firstItem="YNu-KB-lTw" firstAttribute="centerY" secondItem="aGN-qD-P7e" secondAttribute="centerY" id="JeR-6a-KSS"/>
+                                            <constraint firstItem="YNu-KB-lTw" firstAttribute="centerX" secondItem="aGN-qD-P7e" secondAttribute="centerX" id="ba8-Sh-nJq"/>
+                                            <constraint firstAttribute="height" constant="72" id="cbg-jE-riz"/>
+                                            <constraint firstItem="YNu-KB-lTw" firstAttribute="centerY" secondItem="aGN-qD-P7e" secondAttribute="centerY" id="fcZ-jp-DIK"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-20-PhP">
-                                        <rect key="frame" x="114" y="48.5" width="147" height="46"/>
-                                        <color key="backgroundColor" name="TimerOrange"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="0jF-G1-0jV"/>
-                                            <constraint firstAttribute="height" constant="46" id="lD7-Ls-rKG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                        <color key="textColor" name="TimerWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="TimerDarkGrey"/>
                                 <constraints>
-                                    <constraint firstItem="aGN-qD-P7e" firstAttribute="leading" secondItem="jtM-dU-ti7" secondAttribute="leading" id="aRN-yQ-X3i"/>
-                                    <constraint firstItem="mZU-20-PhP" firstAttribute="centerY" secondItem="jtM-dU-ti7" secondAttribute="centerY" constant="-139.5" id="aVT-qR-08X"/>
-                                    <constraint firstAttribute="bottom" secondItem="aGN-qD-P7e" secondAttribute="bottom" id="ahQ-3m-YP9"/>
-                                    <constraint firstItem="mZU-20-PhP" firstAttribute="centerX" secondItem="jtM-dU-ti7" secondAttribute="centerX" id="gqn-Q7-1SV"/>
-                                    <constraint firstAttribute="trailing" secondItem="aGN-qD-P7e" secondAttribute="trailing" id="oDl-6d-b5e"/>
-                                    <constraint firstItem="aGN-qD-P7e" firstAttribute="top" secondItem="jtM-dU-ti7" secondAttribute="top" constant="350" id="t0T-7N-5na"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-Bj-afa" userLabel="Controls View">
-                                <rect key="frame" x="0.0" y="422" width="375" height="245"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IO-yI-JTh">
-                                        <rect key="frame" x="314" y="81" width="36" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="QUIT"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ht-CU-5zj">
-                                        <rect key="frame" x="32" y="81" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="RESET"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guq-5u-an8">
-                                        <rect key="frame" x="125.5" y="61" width="124" height="124"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="124" id="QQ3-ay-i6U"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="uVs-xP-5KF"/>
-                                        </constraints>
-                                        <state key="normal" title="START">
-                                            <color key="titleColor" name="TimerOrange"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" name="TimerBlack"/>
-                                <constraints>
-                                    <constraint firstItem="guq-5u-an8" firstAttribute="centerX" secondItem="pQI-Bj-afa" secondAttribute="centerX" id="f1n-ZH-l6Z"/>
-                                    <constraint firstItem="guq-5u-an8" firstAttribute="centerY" secondItem="pQI-Bj-afa" secondAttribute="centerY" id="jNb-rb-OL1"/>
+                                    <constraint firstAttribute="trailing" secondItem="aGN-qD-P7e" secondAttribute="trailing" id="E3t-FK-JFs"/>
+                                    <constraint firstItem="pQI-Bj-afa" firstAttribute="top" secondItem="aGN-qD-P7e" secondAttribute="bottom" constant="8" id="EO8-N3-idc"/>
+                                    <constraint firstItem="aGN-qD-P7e" firstAttribute="leading" secondItem="jtM-dU-ti7" secondAttribute="leading" id="UsE-lG-Iyh"/>
+                                    <constraint firstItem="mZU-20-PhP" firstAttribute="centerX" secondItem="jtM-dU-ti7" secondAttribute="centerX" id="aYI-jb-QgS"/>
+                                    <constraint firstItem="pQI-Bj-afa" firstAttribute="leading" secondItem="jtM-dU-ti7" secondAttribute="leading" id="oaZ-8L-JSM"/>
+                                    <constraint firstItem="mZU-20-PhP" firstAttribute="centerY" secondItem="jtM-dU-ti7" secondAttribute="centerY" constant="-262" id="qX0-Zs-oWJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="pQI-Bj-afa" secondAttribute="trailing" id="tTA-Cs-5Yy"/>
+                                    <constraint firstAttribute="bottom" secondItem="pQI-Bj-afa" secondAttribute="bottom" id="x9W-0u-tQq"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pQI-Bj-afa" firstAttribute="top" secondItem="jtM-dU-ti7" secondAttribute="bottom" id="53r-qM-oVh"/>
-                            <constraint firstItem="pQI-Bj-afa" firstAttribute="trailing" secondItem="I1k-Dh-7J2" secondAttribute="trailing" id="BrV-JW-i34"/>
-                            <constraint firstItem="jtM-dU-ti7" firstAttribute="leading" secondItem="I1k-Dh-7J2" secondAttribute="leading" id="QbY-YL-6f0"/>
-                            <constraint firstItem="pQI-Bj-afa" firstAttribute="width" secondItem="jtM-dU-ti7" secondAttribute="height" multiplier="16:18" id="R5v-PJ-NSK"/>
-                            <constraint firstItem="pQI-Bj-afa" firstAttribute="top" secondItem="jtM-dU-ti7" secondAttribute="bottom" id="Xr0-qk-ZWw"/>
-                            <constraint firstItem="jtM-dU-ti7" firstAttribute="top" secondItem="7yH-ok-Djr" secondAttribute="top" id="jPK-ay-xur"/>
-                            <constraint firstItem="pQI-Bj-afa" firstAttribute="leading" secondItem="I1k-Dh-7J2" secondAttribute="leading" id="tcQ-5c-JLJ"/>
-                            <constraint firstItem="jtM-dU-ti7" firstAttribute="trailing" secondItem="I1k-Dh-7J2" secondAttribute="trailing" id="wJ5-oI-Ni9"/>
-                            <constraint firstItem="pQI-Bj-afa" firstAttribute="bottom" secondItem="I1k-Dh-7J2" secondAttribute="bottom" id="yzW-He-S7N"/>
+                            <constraint firstItem="jtM-dU-ti7" firstAttribute="leading" secondItem="I1k-Dh-7J2" secondAttribute="leading" id="EYL-om-LfE"/>
+                            <constraint firstItem="jtM-dU-ti7" firstAttribute="top" secondItem="7yH-ok-Djr" secondAttribute="top" id="Rgf-Cq-95M"/>
+                            <constraint firstItem="jtM-dU-ti7" firstAttribute="trailing" secondItem="I1k-Dh-7J2" secondAttribute="trailing" id="bSt-PQ-Ogn"/>
+                            <constraint firstItem="jtM-dU-ti7" firstAttribute="bottom" secondItem="I1k-Dh-7J2" secondAttribute="bottom" id="nf4-Nc-NwN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I1k-Dh-7J2"/>
                     </view>
@@ -783,14 +799,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2F-gd-9O6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2098" y="264"/>
+            <point key="canvasLocation" x="2096.8000000000002" y="263.11844077961024"/>
         </scene>
     </scenes>
     <resources>
         <image name="RightArrow" width="13" height="20"/>
-        <namedColor name="TimerBlack">
-            <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="TimerBlack">
             <color red="0.14900000393390656" green="0.14900000393390656" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -808,6 +821,9 @@
         </namedColor>
         <namedColor name="TimerTextGrey">
             <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TimerWhite">
+            <color red="0.93699997663497925" green="0.93699997663497925" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TimerWhite">
             <color red="0.93699997663497925" green="0.93699997663497925" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
