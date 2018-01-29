@@ -596,7 +596,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-Bj-afa" userLabel="Controls View">
                                         <rect key="frame" x="0.0" y="358" width="375" height="245"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-gL-0Yl">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-gL-0Yl">
                                                 <rect key="frame" x="34" y="61" width="306" height="124"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ht-CU-5zj">
@@ -791,8 +791,11 @@
                     </view>
                     <connections>
                         <outlet property="controlsContainerView" destination="pQI-Bj-afa" id="CBg-rb-M3P"/>
+                        <outlet property="controlsViewHeightConstraint" destination="kDh-4c-3xa" id="LCF-F6-FjY"/>
                         <outlet property="quitButton" destination="9IO-yI-JTh" id="GJa-JM-mFG"/>
                         <outlet property="resetButton" destination="1Ht-CU-5zj" id="I8U-29-WMM"/>
+                        <outlet property="startButtonHeightConstraint" destination="Oqv-pL-eUr" id="nPZ-mh-ahS"/>
+                        <outlet property="startButtonWidthConstraint" destination="RZB-eB-sa9" id="aSg-5N-VTx"/>
                         <outlet property="startStopButton" destination="guq-5u-an8" id="A23-xj-ujr"/>
                     </connections>
                 </viewController>
