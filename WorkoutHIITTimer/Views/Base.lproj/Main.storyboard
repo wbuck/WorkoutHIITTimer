@@ -596,8 +596,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-Bj-afa" userLabel="Controls View">
                                         <rect key="frame" x="0.0" y="358" width="375" height="245"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-gL-0Yl">
-                                                <rect key="frame" x="34" y="61" width="306" height="124"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-gL-0Yl">
+                                                <rect key="frame" x="25.5" y="61" width="324" height="124"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ht-CU-5zj">
                                                         <rect key="frame" x="0.0" y="32" width="60" height="60"/>
@@ -611,7 +611,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guq-5u-an8">
-                                                        <rect key="frame" x="91" y="0.0" width="124" height="124"/>
+                                                        <rect key="frame" x="100" y="0.0" width="124" height="124"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="124" id="Oqv-pL-eUr"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="RZB-eB-sa9"/>
@@ -622,7 +622,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IO-yI-JTh">
-                                                        <rect key="frame" x="246" y="32" width="60" height="60"/>
+                                                        <rect key="frame" x="264" y="32" width="60" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="bfA-hh-X3q"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="m9P-oP-Ykb"/>
@@ -637,8 +637,8 @@
                                         </subviews>
                                         <color key="backgroundColor" name="TimerBlack"/>
                                         <constraints>
-                                            <constraint firstItem="r4a-gL-0Yl" firstAttribute="centerX" secondItem="pQI-Bj-afa" secondAttribute="centerX" id="Nne-ld-ygX"/>
-                                            <constraint firstItem="r4a-gL-0Yl" firstAttribute="centerY" secondItem="pQI-Bj-afa" secondAttribute="centerY" id="XOi-yM-4v0"/>
+                                            <constraint firstItem="r4a-gL-0Yl" firstAttribute="centerY" secondItem="pQI-Bj-afa" secondAttribute="centerY" id="E4J-5p-kiv"/>
+                                            <constraint firstItem="r4a-gL-0Yl" firstAttribute="centerX" secondItem="pQI-Bj-afa" secondAttribute="centerX" id="Nsd-er-bXA"/>
                                             <constraint firstAttribute="height" constant="245" id="kDh-4c-3xa"/>
                                         </constraints>
                                     </view>
@@ -790,6 +790,7 @@
                         <viewLayoutGuide key="safeArea" id="I1k-Dh-7J2"/>
                     </view>
                     <connections>
+                        <outlet property="buttonStackView" destination="r4a-gL-0Yl" id="yaH-FH-Q5P"/>
                         <outlet property="controlsContainerView" destination="pQI-Bj-afa" id="CBg-rb-M3P"/>
                         <outlet property="controlsViewHeightConstraint" destination="kDh-4c-3xa" id="LCF-F6-FjY"/>
                         <outlet property="quitButton" destination="9IO-yI-JTh" id="GJa-JM-mFG"/>
