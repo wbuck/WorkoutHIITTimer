@@ -18,7 +18,12 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     var timers: Timers? {
         didSet { loadTimers() }
     }
-    var workoutTimers = [HeaderSections: [TimerBase]]()
+    //var workoutTimers = [HeaderSections: [TimerBase]]()
+    var workoutTimers = [HeaderSections.roundTimers: [TimerBase](),
+             HeaderSections.emomTimers: [TimerBase](),
+             HeaderSections.stopWatches: [TimerBase](),
+             HeaderSections.tabataTimers: [TimerBase](),
+             HeaderSections.intervalTimers: [TimerBase]()]
     var selectedSectionAndIndex: (section: HeaderSections, index: Int)?
     
     override func viewDidLoad() {
@@ -30,11 +35,15 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
+        loadTimers()
+        tableView.reloadData()
     }
     
     private func loadTimers() {
         guard let allTimers = timers else { return }
-        workoutTimers[.roundTimers] = allTimers.roundTimers.map{ $0 as TimerBase }
+        let roundTimers: [TimerBase] = allTimers.roundTimers.map{ $0 as TimerBase }
+        workoutTimers[.roundTimers]?.removeAll()
+        workoutTimers[.roundTimers]?.append(contentsOf: roundTimers)
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,7 +55,7 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return workoutTimers.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,15 +90,16 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") {
             (action, indexPath) in
             
+            // Get the headers associated key.
             guard let section = HeaderSections(rawValue: indexPath.section) else { return }
-            guard let timer = self.workoutTimers[section]?[indexPath.row] else { return }
+//            guard var timers = self.workoutTimers[section] else { return }
+//            let timer = timers[indexPath.row]
             
             switch section {
             case HeaderSections.roundTimers:
-                guard let roundTimer = timer as? RoundTimer else { return }
-                self.remove(timer: roundTimer)
+                guard let timer = self.workoutTimers[section]?[indexPath.row] else { return }
+                self.remove(timer: timer as? RoundTimer)
                 self.workoutTimers[section]!.remove(at: indexPath.row)
-                self.tableView.reloadData()
             case HeaderSections.emomTimers:
                 print("Emom timer")
             case HeaderSections.stopWatches:
@@ -99,7 +109,6 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
             case HeaderSections.intervalTimers:
                 print("Interval")
             }
-           
         }
         let editAction = SwipeAction(style: .default, title: "Edit") {
             (action, indexPath) in
@@ -149,10 +158,11 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
         return options
     }
     
-    private func remove<T: Object>(timer: T) {
+    private func remove<T: Object>(timer: T?) {
+        guard let timerToRemove = timer else { return }
         do {
             try realm.write {
-                realm.delete(timer)
+                realm.delete(timerToRemove)
             }
         }
         catch {

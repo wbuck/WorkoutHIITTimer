@@ -52,6 +52,7 @@ class MainMenuTableViewController: UITableViewController {
                     let timers = Timers()
                     realm.add(timers)
                 }
+                print(Realm.Configuration.defaultConfiguration.fileURL!)
             }
             catch {
                 print("Error creating timers table. \(error)")
