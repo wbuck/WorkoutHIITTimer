@@ -27,6 +27,11 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
         tableView.rowHeight = 86
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     private func loadTimers() {
         guard let allTimers = timers else { return }
         workoutTimers[.roundTimers] = allTimers.roundTimers.map{ $0 as TimerBase }
@@ -84,6 +89,7 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
                 guard let roundTimer = timer as? RoundTimer else { return }
                 self.remove(timer: roundTimer)
                 self.workoutTimers[section]!.remove(at: indexPath.row)
+                self.tableView.reloadData()
             case HeaderSections.emomTimers:
                 print("Emom timer")
             case HeaderSections.stopWatches:

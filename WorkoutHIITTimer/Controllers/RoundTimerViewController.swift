@@ -66,6 +66,7 @@ class RoundTimerViewController: UIViewController, TimersController {
             }
         }
         assignRoundTimerValues()
+        navigationController?.isNavigationBarHidden = false
     }
     
     override func didReceiveMemoryWarning() {

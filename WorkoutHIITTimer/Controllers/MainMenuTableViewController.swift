@@ -33,6 +33,7 @@ class MainMenuTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         guard let nav = navigationController?.navigationBar else { return }
         nav.tintColor = UIColor(named: "TimerOrange")
+        navigationController?.isNavigationBarHidden = false
     }
     
     override func didReceiveMemoryWarning() {

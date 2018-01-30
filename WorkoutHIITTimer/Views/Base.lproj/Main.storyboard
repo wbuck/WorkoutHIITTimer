@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -576,11 +577,11 @@
             <objects>
                 <viewController id="Bte-gO-cKV" customClass="TimerViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7yH-ok-Djr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtM-dU-ti7" userLabel="Main View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-20-PhP">
                                         <rect key="frame" x="114" y="29.5" width="147" height="46"/>
@@ -594,10 +595,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-Bj-afa" userLabel="Controls View">
-                                        <rect key="frame" x="0.0" y="358" width="375" height="245"/>
+                                        <rect key="frame" x="0.0" y="506" width="375" height="161"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-gL-0Yl">
-                                                <rect key="frame" x="25.5" y="61" width="324" height="124"/>
+                                                <rect key="frame" x="25.5" y="19" width="324" height="124"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ht-CU-5zj">
                                                         <rect key="frame" x="0.0" y="32" width="60" height="60"/>
@@ -639,11 +640,11 @@
                                         <constraints>
                                             <constraint firstItem="r4a-gL-0Yl" firstAttribute="centerY" secondItem="pQI-Bj-afa" secondAttribute="centerY" id="E4J-5p-kiv"/>
                                             <constraint firstItem="r4a-gL-0Yl" firstAttribute="centerX" secondItem="pQI-Bj-afa" secondAttribute="centerX" id="Nsd-er-bXA"/>
-                                            <constraint firstAttribute="height" constant="245" id="kDh-4c-3xa"/>
+                                            <constraint firstAttribute="height" secondItem="r4a-gL-0Yl" secondAttribute="height" multiplier="1.3" id="cg8-VO-CWI"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGN-qD-P7e" userLabel="Indicator Panel">
-                                        <rect key="frame" x="0.0" y="278" width="375" height="72"/>
+                                        <rect key="frame" x="0.0" y="426" width="375" height="72"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="YNu-KB-lTw">
                                                 <rect key="frame" x="20" y="12.5" width="335" height="48"/>
@@ -789,15 +790,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I1k-Dh-7J2"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="buttonStackView" destination="r4a-gL-0Yl" id="yaH-FH-Q5P"/>
                         <outlet property="controlsContainerView" destination="pQI-Bj-afa" id="CBg-rb-M3P"/>
-                        <outlet property="controlsViewHeightConstraint" destination="kDh-4c-3xa" id="LCF-F6-FjY"/>
                         <outlet property="quitButton" destination="9IO-yI-JTh" id="GJa-JM-mFG"/>
                         <outlet property="resetButton" destination="1Ht-CU-5zj" id="I8U-29-WMM"/>
                         <outlet property="startButtonHeightConstraint" destination="Oqv-pL-eUr" id="nPZ-mh-ahS"/>
                         <outlet property="startButtonWidthConstraint" destination="RZB-eB-sa9" id="aSg-5N-VTx"/>
                         <outlet property="startStopButton" destination="guq-5u-an8" id="A23-xj-ujr"/>
+                        <outlet property="workoutLabel" destination="mZU-20-PhP" id="3Hf-0w-YAx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2F-gd-9O6" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,22 +14,23 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var quitButton: UIButton!
     @IBOutlet weak var controlsContainerView: UIView!
-    @IBOutlet weak var controlsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var startButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var startButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonStackView: UIStackView!
+    @IBOutlet weak var workoutLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         drawCircularButton(startStopButton, color: UIColor(named: "TimerOrange"))
         drawCircularButton(resetButton, color: UIColor(named: "TimerWhite"))
         drawCircularButton(quitButton, color: UIColor(named: "TimerWhite"))
+        workoutLabel.layer.cornerRadius = 5
+        workoutLabel.layer.masksToBounds = true
+        navigationController?.isNavigationBarHidden = true
     }
     
     private func drawCircularButton(_ button: UIButton, color: UIColor?) {
@@ -40,23 +41,24 @@ class TimerViewController: UIViewController {
         button.layer.masksToBounds = true
     }
     
+    private func resizeStartButton(new size: CGFloat, font ofSize: CGFloat){
+        startButtonHeightConstraint.constant = size
+        startButtonWidthConstraint.constant = size
+        startStopButton.titleLabel?.font = UIFont.systemFont(ofSize: ofSize)
+        buttonStackView.layoutIfNeeded()
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         if UIDevice.current.orientation.isLandscape {
-            self.controlsViewHeightConstraint.constant = 150
-            self.startButtonHeightConstraint.constant = 60
-            self.startButtonWidthConstraint.constant = 60
-            self.startStopButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-            self.buttonStackView.layoutIfNeeded()
-            self.drawCircularButton(self.startStopButton, color: UIColor(named: "TimerOrange"))
+            resizeStartButton(new: 60, font: 13)
+            drawCircularButton(startStopButton, color: UIColor(named: "TimerOrange"))
+            buttonStackView.spacing = 60
         }
         else {
-            self.controlsViewHeightConstraint.constant = 245
-            self.startButtonHeightConstraint.constant = 124
-            self.startButtonWidthConstraint.constant = 124
-            self.startStopButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-            self.buttonStackView.layoutIfNeeded()
-            self.drawCircularButton(self.startStopButton, color: UIColor(named: "TimerOrange"))
+            resizeStartButton(new: 124, font: 20)
+            drawCircularButton(startStopButton, color: UIColor(named: "TimerOrange"))
+            buttonStackView.spacing = 40
             
         }
     }
