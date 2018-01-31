@@ -18,7 +18,12 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var startButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var workoutLabel: UILabel!
+    @IBOutlet weak var workoutLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var workoutLabelWidthConstraint: NSLayoutConstraint!
     
+    let mainMenuSegue = "GoToMainMenu"
+    var timers: Timers?
+    var selectedIndex: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,18 +53,28 @@ class TimerViewController: UIViewController {
         buttonStackView.layoutIfNeeded()
     }
     
+    //46 147
+    
+    private func resizeWorkoutLabel(new size: CGSize, font ofSize: CGFloat) {
+        workoutLabelWidthConstraint.constant = size.width
+        workoutLabelHeightConstraint.constant = size.height
+        workoutLabel.font = UIFont.systemFont(ofSize: ofSize, weight: UIFont.Weight.semibold)
+        workoutLabel.layoutIfNeeded()
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
         if UIDevice.current.orientation.isLandscape {
             resizeStartButton(new: 60, font: 13)
             drawCircularButton(startStopButton, color: UIColor(named: "TimerOrange"))
             buttonStackView.spacing = 60
+            resizeWorkoutLabel(new: CGSize(width: 135, height: 38), font: 18)
         }
         else {
             resizeStartButton(new: 124, font: 20)
             drawCircularButton(startStopButton, color: UIColor(named: "TimerOrange"))
             buttonStackView.spacing = 40
-            
+            resizeWorkoutLabel(new: CGSize(width: 147, height: 46), font: 24)
         }
     }
     
@@ -69,6 +84,9 @@ class TimerViewController: UIViewController {
     }
     
     
+    @IBAction func quitButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: mainMenuSegue, sender: self)
+    }
     /*
      // MARK: - Navigation
      

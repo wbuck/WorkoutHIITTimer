@@ -114,6 +114,8 @@ class MainMenuTableViewController: UITableViewController {
             TimersController else { return }
         destination.timers = timers
     }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { /* Intentionally left empty */}
 }
 
 

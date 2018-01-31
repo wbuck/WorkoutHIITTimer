@@ -10,4 +10,5 @@ import Foundation
 
 protocol TimersController {
     var timers: Timers? { get set }
+    var selectedIndex: IndexPath? { get set }
 }

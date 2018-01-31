@@ -35,7 +35,13 @@ class RoundTimerViewController: UIViewController, TimersController {
     let realm = try! Realm()
     
     var timers: Timers?
-    var roundTimer: RoundTimer?
+    var selectedIndex: IndexPath? {
+        didSet {
+            guard let index = selectedIndex else { return }
+            roundTimer = timers?.roundTimers[index.row]
+        }
+    }
+    private var roundTimer: RoundTimer?
     
     // The key represents the tag of each picker
     // view control. The value is the name of

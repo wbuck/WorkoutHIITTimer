@@ -95,7 +95,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDc-Jv-bnh">
                                                     <rect key="frame" x="16" y="29" width="343" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" name="TimerTextGrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -145,11 +145,12 @@
                     </tableView>
                     <connections>
                         <segue destination="LX3-ta-hBQ" kind="show" identifier="GoToEditRoundTimer" id="CTJ-Pu-KI5"/>
+                        <segue destination="Bte-gO-cKV" kind="show" identifier="GoToSelectedTimer" id="EuQ-Hf-MMM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQv-II-dWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="998.95052473763121"/>
+            <point key="canvasLocation" x="386" y="1019"/>
         </scene>
         <!--Round Timer-->
         <scene sceneID="5VY-jk-BVf">
@@ -632,6 +633,9 @@
                                                         <state key="normal" title="QUIT">
                                                             <color key="titleColor" name="TimerWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="quitButtonPressed:" destination="Bte-gO-cKV" eventType="touchUpInside" id="Jaa-GD-bpB"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -800,11 +804,15 @@
                         <outlet property="startButtonWidthConstraint" destination="RZB-eB-sa9" id="aSg-5N-VTx"/>
                         <outlet property="startStopButton" destination="guq-5u-an8" id="A23-xj-ujr"/>
                         <outlet property="workoutLabel" destination="mZU-20-PhP" id="3Hf-0w-YAx"/>
+                        <outlet property="workoutLabelHeightConstraint" destination="E9g-zU-LYB" id="rdT-Qj-eGS"/>
+                        <outlet property="workoutLabelWidthConstraint" destination="xdV-Kw-AJ4" id="4Xj-zj-ZIL"/>
+                        <segue destination="bdb-76-ffr" kind="unwind" identifier="GoToMainMenu" unwindAction="prepareForUnwindWithSegue:" id="EfU-xd-OYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2F-gd-9O6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bdb-76-ffr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2096.8000000000002" y="263.11844077961024"/>
+            <point key="canvasLocation" x="1942" y="994"/>
         </scene>
     </scenes>
     <resources>
@@ -832,6 +840,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="EuQ-Hf-MMM"/>
         <segue reference="CTJ-Pu-KI5"/>
     </inferredMetricsTieBreakers>
 </document>
