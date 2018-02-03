@@ -12,21 +12,22 @@ import RealmSwift
 class MainMenuTableViewController: UITableViewController {
     
     var realm = try! Realm()
-    var timers: Timers?
+    var repositoryFactory: RepositoryFactory!
     
     let mainMenuCellId = "MainMenuCell"
-    let segueIds = ["GoToMyTimers", "GoToRoundTimer", "GoToEmomTimer", "GoToStopWatch", "GoToTabataTimer", "GoToIntervalTimer"]
+    let segueIds = ["GoToMyTimers", "GoToRoundTimer", "GoToEmomTimer",
+                    "GoToStopWatch", "GoToTabataTimer", "GoToIntervalTimer"]
     
-    let menuOptions = ["My Timers", "Round Timer", "EMOM Timer", "Stopwatch", "Tabata Timer", "Interval Timer"]
+    let menuOptions = ["My Timers", "Round Timer", "EMOM Timer",
+                       "Stopwatch", "Tabata Timer", "Interval Timer"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Register custom table view cell.
-        tableView.register(UINib(nibName: "MainMenuTableViewCell", bundle: nil), forCellReuseIdentifier: mainMenuCellId)
-        // Only occurs when app first starts up.
-        createTimersTable()
-        fetchTimers()
+        tableView.register(UINib(nibName: "MainMenuTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: mainMenuCellId)
+        repositoryFactory = TimerRepositoryFactory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,47 +42,11 @@ class MainMenuTableViewController: UITableViewController {
         print("MEMORY WARNING")
     }
     
-    private func createTimersTable() {
-        // Only create the timers table when the
-        // application first starts up.
-        
-        if realm.objects(Timers.self).isEmpty {
-            print("Creating timers table")
-            do {
-                try realm.write {
-                    let timers = Timers()
-                    realm.add(timers)
-                }
-                print(Realm.Configuration.defaultConfiguration.fileURL!)
-            }
-            catch {
-                print("Error creating timers table. \(error)")
-            }
-        }
-    }
-    
-    private func fetchTimers() {
-        timers = realm.objects(Timers.self).first
-    }
-    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuOptions.count
     }
-    
-    func updateTableContentInset() {
-        let numRows = menuOptions.count
-        var contentInsetTop = tableView.bounds.size.height
-        for i in 0..<numRows {
-            contentInsetTop -= tableView(tableView, heightForRowAt: IndexPath(item: i, section: 0))
-            if contentInsetTop <= 0 {
-                contentInsetTop = 0
-            }
-        }
-        tableView.contentInset = UIEdgeInsetsMake(contentInsetTop, 0, 0, 0)
-    }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: mainMenuCellId, for: indexPath) as! MainMenuTableViewCell
@@ -110,9 +75,12 @@ class MainMenuTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard var destination = segue.destination as?
-            TimersController else { return }
-        destination.timers = timers
+        if let roundTimerViewController = segue.destination as? RoundTimerViewController {
+            roundTimerViewController.timerRepository = repositoryFactory.getRoundTimerRepository()
+        }
+        else if let myTimersViewController = segue.destination as? MyTimersTableViewController {
+            myTimersViewController.repositoryFactory = repositoryFactory
+        }
     }
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { /* Intentionally left empty */}

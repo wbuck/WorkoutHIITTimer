@@ -9,6 +9,7 @@
 import Foundation
 
 protocol TimersController {
-    var timers: Timers? { get set }
-    var selectedIndex: IndexPath? { get set }
+    associatedtype T where T == TimerRepository
+    var repository: T!  { get set }
+    var selectedTimerPrimaryKey: String? { get set }
 }

@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Check to ensure Realm initializes with
-        // no error.
-        do { _ = try Realm() }
-        catch { print("Error initializing Realm. \(error)") }
+        
+        if let firstViewController = window?.rootViewController as? MainMenuTableViewController {
+            firstViewController.repositoryFactory = TimerRepositoryFactory()
+        }
         return true
     }
 

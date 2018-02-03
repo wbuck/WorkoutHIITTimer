@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AsyncTimer
 
-class TimerViewController: UIViewController {
+class RoundTimerDisplayViewController: UIViewController {
     
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
@@ -20,10 +21,13 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var workoutLabel: UILabel!
     @IBOutlet weak var workoutLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var workoutLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var roundTitleLabel: UILabel!
+    @IBOutlet weak var roundIndicatorLabel: UILabel!
+    @IBOutlet weak var timeIndicatorLabel: UILabel!
     
+    var asyncTimers = [AsyncTimer]()
     let mainMenuSegue = "GoToMainMenu"
-    var timers: Timers?
-    var selectedIndex: IndexPath?
+    var roundTimer: RoundTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,52 @@ class TimerViewController: UIViewController {
         workoutLabel.layer.cornerRadius = 5
         workoutLabel.layer.masksToBounds = true
         navigationController?.isNavigationBarHidden = true
+        constructTimer()
+    }
+    
+    private func constructTimer() {
+        
+        roundIndicatorLabel.text = "rounds".uppercased()
+        roundIndicatorLabel.text = "000"
+        setupTimers(roundTimer: roundTimer)
+        print("Round timer")
+        
+    }
+    var timer: AsyncTimer?
+    var totalTimer = 0
+    
+    private func setupTimers(roundTimer: RoundTimer) {
+        let interval = Int(roundTimer.roundsIntervalInSeconds)
+        print(interval)
+        timer = AsyncTimer(queue: .main, interval: .seconds(1), repeats: true) {
+            self.totalTimer += 1
+            self.timeIndicatorLabel.text = "\(self.formatTime(from: self.totalTimer))"
+            if self.totalTimer == interval {
+                self.timer?.stop()
+            }
+        }
+        
+        /*
+         timer = AsyncTimer(queue: .main,
+         interval: .seconds(1),
+         times: 20,
+         block: {
+         (value) in
+         self.timeIndicatorLabel.text = "00:\(value)"
+         }) {
+         print("Complete")
+         }
+         
+         timer!.start()
+         */
+    }
+    
+    private func formatTime(from seconds: Int) -> String {
+        let time = (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+        let hour = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
+        let minute = time.1 < 10 ? "0\(time.1)" : "\(time.1)"
+        let second = time.2 < 10 ? "0\(time.2)" : "\(time.2)"
+        return "\(hour):\(minute):\(second)"
     }
     
     private func drawCircularButton(_ button: UIButton, color: UIColor?) {
@@ -52,8 +102,6 @@ class TimerViewController: UIViewController {
         startStopButton.titleLabel?.font = UIFont.systemFont(ofSize: ofSize)
         buttonStackView.layoutIfNeeded()
     }
-    
-    //46 147
     
     private func resizeWorkoutLabel(new size: CGSize, font ofSize: CGFloat) {
         workoutLabelWidthConstraint.constant = size.width
@@ -82,6 +130,25 @@ class TimerViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func startStopButtonPressed(_ sender: UIButton) {
+        if timer == nil { return }
+        if (timer?.isStopped)! {
+            timer?.start()
+            sender.setTitle("STOP", for: .normal)
+        }
+        else if (timer?.isPaused)! {
+            timer?.resume()
+            sender.setTitle("STOP", for: .normal)
+        }
+        else {
+            timer?.pause()
+            sender.setTitle("START", for: .normal)
+        }
+        
+    }
+    //myButton.setTitle("Pressed", forState: UIControlState.Normal)
     
     
     @IBAction func quitButtonPressed(_ sender: UIButton) {

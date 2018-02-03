@@ -10,23 +10,22 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 
-class MyTimersTableViewController: UITableViewController, TimersController, SwipeTableViewCellDelegate {
+class MyTimersTableViewController: UITableViewController, SwipeTableViewCellDelegate {
     
     let editSegues = ["GoToEditRoundTimer"]
     let timerSegue = "GoToSelectedTimer"
     let headerTitles = ["ROUND TIMERS", "EMOM TIMERS", "STOPWATCHES", "TABATA TIMERS", "INTERVAL TIMERS"]
-    var realm = try! Realm()
-    var timers: Timers? {
-        didSet { loadTimers() }
-    }
-
-    var workoutTimers = [HeaderSections.roundTimers: [TimerBase](),
-             HeaderSections.emomTimers: [TimerBase](),
-             HeaderSections.stopWatches: [TimerBase](),
-             HeaderSections.tabataTimers: [TimerBase](),
-             HeaderSections.intervalTimers: [TimerBase]()]
-
-    var selectedIndex: IndexPath?
+    var selectedTimerId: String?
+    
+    var roundTimers = [RoundTimer]()
+    var emomTimers = [EmomTimer]()
+    var stopWatches = [StopWatch]()
+    var tabataTimers = [TabataTimer]()
+    var intervalTimers = [IntervalTimer]()
+    
+    var repositoryFactory: RepositoryFactory!
+    
+    //var selectedIndex: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +41,11 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     }
     
     private func loadTimers() {
-        guard let allTimers = timers else { return }
-        let roundTimers: [TimerBase] = allTimers.roundTimers.map{ $0 as TimerBase }
-        workoutTimers[.roundTimers]?.removeAll()
-        workoutTimers[.roundTimers]?.append(contentsOf: roundTimers)
+        roundTimers = repositoryFactory.getRoundTimerRepository().getAll()
+        emomTimers = repositoryFactory.getEmomTimerRepository().getAll()
+        stopWatches = repositoryFactory.getStopWatchRepository().getAll()
+        tabataTimers = repositoryFactory.getTabataRepository().getAll()
+        intervalTimers = repositoryFactory.getIntervalRepository().getAll()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,14 +55,23 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return workoutTimers.count
+        return headerTitles.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let section = HeaderSections(rawValue: section) {
-            return workoutTimers[section]?.count ?? 0
+        guard let timerType = TimerType(rawValue: section) else { return 0 }
+        switch timerType {
+        case .roundTimers:
+            return roundTimers.count
+        case .emomTimers:
+            return emomTimers.count
+        case .stopWatches:
+            return stopWatches.count
+        case .tabataTimers:
+            return tabataTimers.count
+        case .intervalTimers:
+            return intervalTimers.count
         }
-        return 0
     }
     
     
@@ -71,24 +80,72 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
             as! MyTimersTableViewCell
         
         cell.delegate = self
-        if let section = HeaderSections(rawValue: indexPath.section) {
-            if let timer = workoutTimers[section]?[indexPath.row] {
-                cell.timerToDisplay = timer
-            }
+        guard let timerType = TimerType(rawValue: indexPath.section) else { return cell }
+        switch timerType {
+        case .roundTimers:
+            cell.timerToDisplay = roundTimers[indexPath.row]
+        case .emomTimers:
+            cell.timerToDisplay = emomTimers[indexPath.row]
+        case .stopWatches:
+            cell.timerToDisplay = stopWatches[indexPath.row]
+        case .tabataTimers:
+            cell.timerToDisplay = tabataTimers[indexPath.row]
+        case .intervalTimers:
+            cell.timerToDisplay = intervalTimers[indexPath.row]
         }
         cell.setCellBackgroundColor(for: indexPath)
         return cell
+    }
+    
+    private func getTimer(at indexPath: IndexPath) -> Timer? {
+        guard let timerType = TimerType(rawValue: indexPath.section) else { return nil }
+        switch timerType {
+        case .roundTimers:
+            return roundTimers[indexPath.row]
+        case .emomTimers:
+            return emomTimers[indexPath.row]
+        case .stopWatches:
+            return stopWatches[indexPath.row]
+        case .tabataTimers:
+            return tabataTimers[indexPath.row]
+        case .intervalTimers:
+            return intervalTimers[indexPath.row]
+        }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") {
             (action, indexPath) in
-            self.removeTimer(at: indexPath)
+            guard let timerType = TimerType(rawValue: indexPath.section) else { return }
+            switch timerType {
+            case .roundTimers:
+                let timer = self.roundTimers[indexPath.row]
+                _ = self.repositoryFactory.getRoundTimerRepository().delete(timer: timer)
+                self.roundTimers.remove(at: indexPath.row)
+            case .emomTimers:
+                let timer =  self.emomTimers[indexPath.row]
+                _ = self.repositoryFactory.getEmomTimerRepository().delete(timer: timer)
+                self.emomTimers.remove(at: indexPath.row)
+            case .stopWatches:
+                let timer = self.stopWatches[indexPath.row]
+                _ = self.repositoryFactory.getStopWatchRepository().delete(timer: timer)
+                self.stopWatches.remove(at: indexPath.row)
+            case .tabataTimers:
+                let timer = self.tabataTimers[indexPath.row]
+                _ = self.repositoryFactory.getTabataRepository().delete(timer: timer)
+                self.tabataTimers.remove(at: indexPath.row)
+            case .intervalTimers:
+                let timer = self.intervalTimers[indexPath.row]
+                _ = self.repositoryFactory.getIntervalRepository().delete(timer: timer)
+                self.intervalTimers.remove(at: indexPath.row)
+            }
         }
         let editAction = SwipeAction(style: .default, title: "Edit") {
             (action, indexPath) in
-            self.selectedIndex = indexPath
+            if let timer = self.getTimer(at: indexPath) {
+                self.selectedTimerId = timer.id
+            }
             self.performSegue(indexPath.section)
         }
         editAction.image = UIImage(named: "Gears")
@@ -113,14 +170,15 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let indexPath = selectedIndex else { return }
-        if var timerController = segue.destination as? TimersController {
-            timerController.timers = timers
-            timerController.selectedIndex = indexPath
+        guard let id = selectedTimerId else { return }
+        if let roundTimerController = segue.destination as? RoundTimerViewController {
+            roundTimerController.timerRepository = repositoryFactory.getRoundTimerRepository()
+            roundTimerController.selectedTimerId = id
         }
-        else if let timer = segue.destination as? TimerViewController {
-            timer.timers = timers
-            timer.selectedIndex = selectedIndex
+            
+        else if let roundTimerDisplayController = segue.destination as? RoundTimerDisplayViewController {
+            let timer = repositoryFactory.getRoundTimerRepository().get(timer: UUID(uuidString: id)!)
+            roundTimerDisplayController.roundTimer = timer
         }
     }
     
@@ -132,22 +190,7 @@ class MyTimersTableViewController: UITableViewController, TimersController, Swip
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath
+        selectedTimerId = getTimer(at: indexPath)?.id
         performSegue(withIdentifier: timerSegue, sender: self)
-    }
-    
-    private func removeTimer(at indexPath: IndexPath) {
-        guard let section = HeaderSections(rawValue: indexPath.section) else { return }
-        guard workoutTimers.keys.contains(section) else { return }
-        let timer = workoutTimers[section]![indexPath.row]
-        do {
-            try realm.write {
-                realm.delete(timer)
-                workoutTimers[section]!.remove(at: indexPath.row)
-            }
-        }
-        catch {
-            print("Failed to remove timer. \(error)")
-        }
     }
 }

@@ -15,7 +15,7 @@ class MyTimersTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var timerToDisplay: TimerBase? {
+    var timerToDisplay: Timer? {
         didSet {
             setupCell()
         }

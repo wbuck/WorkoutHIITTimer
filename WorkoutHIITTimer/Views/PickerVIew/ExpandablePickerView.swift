@@ -38,7 +38,9 @@ class ExpandablePickerView: UIView, PickerView, NibFileOwnerLoadable {
             let leadingDistance = pickerViewState == .expanded ? 0 : 16
             UIView.animate(withDuration: 0.3) {
                 self.arrow.transform = self.arrow.transform.rotated(by: angle)
-                self.separatorLeadingConstraint.constant = CGFloat(leadingDistance)
+                if !self.separatorIsHidden {
+                    self.separatorLeadingConstraint.constant = CGFloat(leadingDistance)
+                }
                 self.layoutIfNeeded()
             }
         }
@@ -62,7 +64,6 @@ class ExpandablePickerView: UIView, PickerView, NibFileOwnerLoadable {
     
     private func initializeView() {
         loadNibContent()
-        
         observer?.invalidate()
         observer = self.layer.observe(\CALayer.bounds, changeHandler: {
             (layer, _) in
