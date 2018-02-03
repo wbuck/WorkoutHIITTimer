@@ -9,9 +9,12 @@
 import Foundation
 
 enum TimerType: Int {
-    case roundTimers
-    case emomTimers
-    case stopWatches
-    case tabataTimers
-    case intervalTimers
+    case roundTimer
+    case emomTimer
+    case stopwatch
+    case tabataTimer
+    case intervalTimer
+    case warmupTimer
+    case restTimer
+    case coolDownTimer
 }

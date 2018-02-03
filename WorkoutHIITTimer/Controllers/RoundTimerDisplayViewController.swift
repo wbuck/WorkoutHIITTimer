@@ -25,12 +25,23 @@ class RoundTimerDisplayViewController: UIViewController {
     @IBOutlet weak var roundIndicatorLabel: UILabel!
     @IBOutlet weak var timeIndicatorLabel: UILabel!
     
-    var asyncTimers = [AsyncTimer]()
-    let mainMenuSegue = "GoToMainMenu"
+    private let mainMenuSegue = "GoToMainMenu"
+    private var warmupTime: AsyncTimer?
+    private var restTime: AsyncTimer?
+    private var roundTime: AsyncTimer!
+    private var coolDownTimer: AsyncTimer?
+    private var countDirection: Count!
+    private var currentRound: Int = 1
+    private var timer: AsyncTimer!
+    private var totalTime = 0
     var roundTimer: RoundTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    private func updateUI() {
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,39 +57,23 @@ class RoundTimerDisplayViewController: UIViewController {
     private func constructTimer() {
         
         roundIndicatorLabel.text = "rounds".uppercased()
-        roundIndicatorLabel.text = "000"
-        setupTimers(roundTimer: roundTimer)
+        roundIndicatorLabel.text = "---"
         print("Round timer")
         
     }
-    var timer: AsyncTimer?
-    var totalTimer = 0
     
-    private func setupTimers(roundTimer: RoundTimer) {
-        let interval = Int(roundTimer.roundsIntervalInSeconds)
-        print(interval)
-        timer = AsyncTimer(queue: .main, interval: .seconds(1), repeats: true) {
-            self.totalTimer += 1
-            self.timeIndicatorLabel.text = "\(self.formatTime(from: self.totalTimer))"
-            if self.totalTimer == interval {
-                self.timer?.stop()
-            }
-        }
-        
-        /*
-         timer = AsyncTimer(queue: .main,
-         interval: .seconds(1),
-         times: 20,
-         block: {
-         (value) in
-         self.timeIndicatorLabel.text = "00:\(value)"
-         }) {
-         print("Complete")
-         }
-         
-         timer!.start()
-         */
-    }
+    
+//        private func setupTimers(roundTimer: RoundTimer) {
+//            let interval = Int(roundTimer.roundsIntervalInSeconds)
+//            print(interval)
+//            timer = AsyncTimer(queue: .main, interval: .seconds(1), repeats: true) {
+//                self.totalTimer += 1
+//                self.timeIndicatorLabel.text = "\(self.formatTime(from: self.totalTimer))"
+//                if self.totalTimer == interval {
+//                    self.timer?.stop()
+//                }
+//            }
+//        }
     
     private func formatTime(from seconds: Int) -> String {
         let time = (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
@@ -148,20 +143,94 @@ class RoundTimerDisplayViewController: UIViewController {
         }
         
     }
-    //myButton.setTitle("Pressed", forState: UIControlState.Normal)
-    
     
     @IBAction func quitButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: mainMenuSegue, sender: self)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+
+class TimerControl {
+    private var timer: AsyncTimer!
+    private(set) var timerType: TimerType
+    // Count direction (up or down) of the timer.
+    private(set) var timerDirection: Count
+    // Total time of timer.
+    let timeInterval: TimeInterval
+    private(set) var elapsedTimeInSeconds: TimeInterval
+    private(set) var remainingTimeInSeconds: TimeInterval
+    private(set) var isTimerComplete: Bool
+    var delegate: TimerChangedDelegate?
+    var timerState: TimerState {
+        get {
+            if timer.isRunning { return TimerState.running }
+            else if timer.isPaused { return TimerState.paused }
+            else { return TimerState.stopped }
+        }
+    }
+    
+    init(type: TimerType, direction: Count, interval: TimeInterval) {
+        timerType = type
+        timeInterval = interval
+        timerDirection = direction
+        elapsedTimeInSeconds = 0
+        remainingTimeInSeconds = timeInterval
+        isTimerComplete = false
+        createTimer()
+    }
+    
+    private func createTimer() {
+        switch timerDirection {
+        case .up:
+            timer = AsyncTimer(queue: .main, interval: .seconds(1), times: Int(timeInterval),
+            block: { (value) in
+                self.elapsedTimeInSeconds += 1
+                self.remainingTimeInSeconds -= 1
+                self.delegate?.timerControl(self, elapsedTime: self.elapsedTimeInSeconds, remaining: self.remainingTimeInSeconds)
+            }, completion: {
+                self.isTimerComplete = true
+                self.delegate?.timerControl(self, finalTime: self.elapsedTimeInSeconds)
+            })
+        case .down:
+            timer = AsyncTimer(queue: .main, interval: .seconds(1), times: Int(timeInterval),
+                               block: { (value) in
+                                self.elapsedTimeInSeconds += 1
+                                self.remainingTimeInSeconds -= 1
+                                self.delegate?.timerControl(self, elapsedTime: self.remainingTimeInSeconds, remaining: self.elapsedTimeInSeconds)
+            }, completion: {
+                self.isTimerComplete = true
+                self.delegate?.timerControl(self, finalTime: self.remainingTimeInSeconds)
+            })
+        }
+    }
+    
+    func start() {
+        timer.start()
+    }
+    
+    func stop() {
+        timer.stop()
+    }
+    
+    func pause() {
+        timer.pause()
+    }
+    
+    func resume() {
+        timer.resume()
+    }
+    
+    func reset() {
+        timer.restart()
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

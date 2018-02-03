@@ -61,16 +61,18 @@ class MyTimersTableViewController: UITableViewController, SwipeTableViewCellDele
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let timerType = TimerType(rawValue: section) else { return 0 }
         switch timerType {
-        case .roundTimers:
+        case .roundTimer:
             return roundTimers.count
-        case .emomTimers:
+        case .emomTimer:
             return emomTimers.count
-        case .stopWatches:
+        case .stopwatch:
             return stopWatches.count
-        case .tabataTimers:
+        case .tabataTimer:
             return tabataTimers.count
-        case .intervalTimers:
+        case .intervalTimer:
             return intervalTimers.count
+        default:
+            fatalError("Timer type is not supported here")
         }
     }
     
@@ -82,16 +84,18 @@ class MyTimersTableViewController: UITableViewController, SwipeTableViewCellDele
         cell.delegate = self
         guard let timerType = TimerType(rawValue: indexPath.section) else { return cell }
         switch timerType {
-        case .roundTimers:
+        case .roundTimer:
             cell.timerToDisplay = roundTimers[indexPath.row]
-        case .emomTimers:
+        case .emomTimer:
             cell.timerToDisplay = emomTimers[indexPath.row]
-        case .stopWatches:
+        case .stopwatch:
             cell.timerToDisplay = stopWatches[indexPath.row]
-        case .tabataTimers:
+        case .tabataTimer:
             cell.timerToDisplay = tabataTimers[indexPath.row]
-        case .intervalTimers:
+        case .intervalTimer:
             cell.timerToDisplay = intervalTimers[indexPath.row]
+        default:
+            fatalError("Timer type is not supported here")
         }
         cell.setCellBackgroundColor(for: indexPath)
         return cell
@@ -100,16 +104,18 @@ class MyTimersTableViewController: UITableViewController, SwipeTableViewCellDele
     private func getTimer(at indexPath: IndexPath) -> Timer? {
         guard let timerType = TimerType(rawValue: indexPath.section) else { return nil }
         switch timerType {
-        case .roundTimers:
+        case .roundTimer:
             return roundTimers[indexPath.row]
-        case .emomTimers:
+        case .emomTimer:
             return emomTimers[indexPath.row]
-        case .stopWatches:
+        case .stopwatch:
             return stopWatches[indexPath.row]
-        case .tabataTimers:
+        case .tabataTimer:
             return tabataTimers[indexPath.row]
-        case .intervalTimers:
+        case .intervalTimer:
             return intervalTimers[indexPath.row]
+        default:
+            fatalError("Timer type is not supported here")
         }
     }
     
@@ -119,26 +125,28 @@ class MyTimersTableViewController: UITableViewController, SwipeTableViewCellDele
             (action, indexPath) in
             guard let timerType = TimerType(rawValue: indexPath.section) else { return }
             switch timerType {
-            case .roundTimers:
+            case .roundTimer:
                 let timer = self.roundTimers[indexPath.row]
                 _ = self.repositoryFactory.getRoundTimerRepository().delete(timer: timer)
                 self.roundTimers.remove(at: indexPath.row)
-            case .emomTimers:
+            case .emomTimer:
                 let timer =  self.emomTimers[indexPath.row]
                 _ = self.repositoryFactory.getEmomTimerRepository().delete(timer: timer)
                 self.emomTimers.remove(at: indexPath.row)
-            case .stopWatches:
+            case .stopwatch:
                 let timer = self.stopWatches[indexPath.row]
                 _ = self.repositoryFactory.getStopWatchRepository().delete(timer: timer)
                 self.stopWatches.remove(at: indexPath.row)
-            case .tabataTimers:
+            case .tabataTimer:
                 let timer = self.tabataTimers[indexPath.row]
                 _ = self.repositoryFactory.getTabataRepository().delete(timer: timer)
                 self.tabataTimers.remove(at: indexPath.row)
-            case .intervalTimers:
+            case .intervalTimer:
                 let timer = self.intervalTimers[indexPath.row]
                 _ = self.repositoryFactory.getIntervalRepository().delete(timer: timer)
                 self.intervalTimers.remove(at: indexPath.row)
+            default:
+                fatalError("Timer type is not supported here")
             }
         }
         let editAction = SwipeAction(style: .default, title: "Edit") {

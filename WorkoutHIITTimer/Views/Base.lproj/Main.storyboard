@@ -157,14 +157,14 @@
             <objects>
                 <viewController id="LX3-ta-hBQ" customClass="RoundTimerViewController" customModule="WorkoutHIITTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h72-Rq-nLe" userLabel="Parent View">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFV-gh-BMu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sG2-p1-lBl" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                                         <subviews>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bk2-UD-tXQ" userLabel="Timer Details Name Text Field View" customClass="TextFieldView" customModule="WorkoutHIITTimer" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="111" width="375" height="50"/>
@@ -475,7 +475,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Hed-YI-t95" secondAttribute="trailing" id="qVY-JQ-TAb"/>
                                             <constraint firstItem="jmD-4g-tmp" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="qnu-eD-9zr"/>
                                             <constraint firstItem="sdq-bn-5zh" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" constant="16" id="sm6-cJ-PL7"/>
-                                            <constraint firstAttribute="height" constant="1500" id="tkG-NP-Lgn"/>
+                                            <constraint firstAttribute="height" constant="1100" id="tkG-NP-Lgn"/>
                                             <constraint firstAttribute="trailing" secondItem="17p-jL-h35" secondAttribute="trailing" id="uJh-Gg-T7S"/>
                                             <constraint firstAttribute="trailing" secondItem="jmD-4g-tmp" secondAttribute="trailing" id="vNY-ud-X0N"/>
                                             <constraint firstItem="pp7-TF-1hZ" firstAttribute="top" secondItem="17p-jL-h35" secondAttribute="bottom" id="vn0-ob-I5z"/>
@@ -490,7 +490,7 @@
                                     <constraint firstItem="sG2-p1-lBl" firstAttribute="leading" secondItem="hFV-gh-BMu" secondAttribute="leading" id="FDI-If-GNQ"/>
                                     <constraint firstItem="sG2-p1-lBl" firstAttribute="top" secondItem="hFV-gh-BMu" secondAttribute="top" id="Mjz-kY-Nei"/>
                                     <constraint firstAttribute="trailing" secondItem="sG2-p1-lBl" secondAttribute="trailing" id="pyf-ZW-iGD"/>
-                                    <constraint firstAttribute="bottom" secondItem="sG2-p1-lBl" secondAttribute="bottom" constant="36" id="tCd-xc-jhu"/>
+                                    <constraint firstAttribute="bottom" secondItem="sG2-p1-lBl" secondAttribute="bottom" id="tCd-xc-jhu"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -500,7 +500,7 @@
                             <constraint firstAttribute="trailing" secondItem="hFV-gh-BMu" secondAttribute="trailing" id="2wu-3c-65Q"/>
                             <constraint firstItem="sG2-p1-lBl" firstAttribute="width" secondItem="h72-Rq-nLe" secondAttribute="width" id="8ge-QU-pOK"/>
                             <constraint firstItem="hFV-gh-BMu" firstAttribute="top" secondItem="h72-Rq-nLe" secondAttribute="top" id="s7C-Oy-3Dm"/>
-                            <constraint firstAttribute="bottom" secondItem="hFV-gh-BMu" secondAttribute="bottom" id="xUK-s5-e0g"/>
+                            <constraint firstAttribute="bottom" secondItem="hFV-gh-BMu" secondAttribute="bottom" constant="-64" id="xUK-s5-e0g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NAi-NF-MJI"/>
                     </view>
@@ -511,7 +511,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="375" height="1600"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="alertRoundEndingSwitchView" destination="Hed-YI-t95" id="ewB-vg-Yfu"/>
                         <outlet property="alertRoundHalfwaySoundPicker" destination="Fqx-xo-qoy" id="7kk-hF-DgB"/>
@@ -820,14 +820,8 @@
         <namedColor name="TimerFadedGrey">
             <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="TimerFadedGrey">
-            <color red="0.58399999141693115" green="0.59600001573562622" blue="0.60399997234344482" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="TimerGrey">
             <color red="0.2669999897480011" green="0.2669999897480011" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="TimerOrange">
-            <color red="1" green="0.32499998807907104" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TimerOrange">
             <color red="1" green="0.32499998807907104" blue="0.050999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
