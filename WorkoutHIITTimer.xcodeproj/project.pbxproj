@@ -19,6 +19,9 @@
 		106EADB92027561800E68360 /* TimerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADB82027561800E68360 /* TimerFunctions.swift */; };
 		106EADBB2027599600E68360 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADBA2027599600E68360 /* StringExtensions.swift */; };
 		106EADBD20275A4A00E68360 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADBC20275A4A00E68360 /* ButtonExtensions.swift */; };
+		106EADBF20277AB800E68360 /* TimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADBE20277AB800E68360 /* TimerWrapper.swift */; };
+		106EADC120277BCB00E68360 /* LabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC020277BCB00E68360 /* LabelExtensions.swift */; };
+		106EADC320277D6500E68360 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC220277D6500E68360 /* AudioPlayer.swift */; };
 		107157422006E58B00BE3739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107157412006E58B00BE3739 /* AppDelegate.swift */; };
 		107157472006E58B00BE3739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107157452006E58B00BE3739 /* Main.storyboard */; };
 		1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1071574B2006E58B00BE3739 /* Assets.xcassets */; };
@@ -88,6 +91,9 @@
 		106EADB82027561800E68360 /* TimerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFunctions.swift; sourceTree = "<group>"; };
 		106EADBA2027599600E68360 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		106EADBC20275A4A00E68360 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
+		106EADBE20277AB800E68360 /* TimerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWrapper.swift; sourceTree = "<group>"; };
+		106EADC020277BCB00E68360 /* LabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtensions.swift; sourceTree = "<group>"; };
+		106EADC220277D6500E68360 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		1071573E2006E58B00BE3739 /* WorkoutHIITTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutHIITTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107157412006E58B00BE3739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		107157462006E58B00BE3739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -181,12 +187,12 @@
 		107157402006E58B00BE3739 /* WorkoutHIITTimer */ = {
 			isa = PBXGroup;
 			children = (
+				107157412006E58B00BE3739 /* AppDelegate.swift */,
+				107157502006E58B00BE3739 /* Info.plist */,
 				10CDC6FF20233F1700F3E6BF /* Services */,
 				10EBE20D201A41F400A553E9 /* Extensions */,
 				1076F832200C0E230080E1D3 /* Enums */,
 				1076F81F200B89FA0080E1D3 /* Protocols */,
-				107157502006E58B00BE3739 /* Info.plist */,
-				107157412006E58B00BE3739 /* AppDelegate.swift */,
 				107157572006E61400BE3739 /* Models */,
 				107157562006E60500BE3739 /* Controllers */,
 				1071575D2006F5AE00BE3739 /* Custom Cells */,
@@ -290,6 +296,8 @@
 				10CDC7102023E52C00F3E6BF /* TabataTimerRepository.swift */,
 				10CDC7122023E58500F3E6BF /* IntervalTimerRepository.swift */,
 				10CDC7182023EE1000F3E6BF /* TimerRepositoryFactory.swift */,
+				106EADBE20277AB800E68360 /* TimerWrapper.swift */,
+				106EADC220277D6500E68360 /* AudioPlayer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				10EBE20E201A421B00A553E9 /* TimeIntervalExtensions.swift */,
 				106EADBA2027599600E68360 /* StringExtensions.swift */,
 				106EADBC20275A4A00E68360 /* ButtonExtensions.swift */,
+				106EADC020277BCB00E68360 /* LabelExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -566,11 +575,14 @@
 				10F1275A200F834200DE7F6D /* Rotate.swift in Sources */,
 				10F1275C2010CF2800DE7F6D /* HeaderBase.swift in Sources */,
 				10CDC7072023E3D200F3E6BF /* StopWatch.swift in Sources */,
+				106EADC320277D6500E68360 /* AudioPlayer.swift in Sources */,
 				10175DC1201415AD00784B26 /* RoundPickerControlView.swift in Sources */,
 				10CDC7132023E58500F3E6BF /* IntervalTimerRepository.swift in Sources */,
 				10175DBF2014108900784B26 /* ExpandablePickerView.swift in Sources */,
 				10525D5D201B7F0000D5F403 /* TimersController.swift in Sources */,
 				10CDC7112023E52C00F3E6BF /* TabataTimerRepository.swift in Sources */,
+				106EADC120277BCB00E68360 /* LabelExtensions.swift in Sources */,
+				106EADBF20277AB800E68360 /* TimerWrapper.swift in Sources */,
 				10CDC7192023EE1000F3E6BF /* TimerRepositoryFactory.swift in Sources */,
 				10525D5F201B91B500D5F403 /* MyTimersTableViewCell.swift in Sources */,
 				10F1273C200D698B00DE7F6D /* NibFileOwnerLoadable.swift in Sources */,

@@ -24,8 +24,6 @@ class RoundTimerViewController: UIViewController {
     @IBOutlet weak var coolDownTimePicker: TimePickerControlView!
     @IBOutlet weak var alertRoundStartingSwitchView: SwitchControlView!
     @IBOutlet weak var alertRoundStartingSoundPicker: SoundPickerControlView!
-    @IBOutlet weak var alertRoundHalfwaySwitchView: SwitchControlView!
-    @IBOutlet weak var alertRoundHalfwaySoundPicker: SoundPickerControlView!
     @IBOutlet weak var alertRoundEndingSwitchView: SwitchControlView!
     @IBOutlet weak var timerDirectionSegmentView: SegmentControlView!
     @IBOutlet weak var contentView: UIView!
@@ -108,8 +106,6 @@ class RoundTimerViewController: UIViewController {
         // Options set up.
         alertRoundStartingSwitchView.value = roundTimer.startAlertEnabled
         alertRoundStartingSoundPicker.value = roundTimer.startAlertSound
-        alertRoundHalfwaySwitchView.value = roundTimer.halfwayAlertEnabled
-        alertRoundHalfwaySoundPicker.value = roundTimer.halfwayAlertSound
         alertRoundEndingSwitchView.value = roundTimer.endAlertEnabled
         timerDirectionSegmentView.value = roundTimer.countDirection
     }
@@ -137,8 +133,6 @@ class RoundTimerViewController: UIViewController {
    
         // Options.
         roundTimer.endAlertEnabled = alertRoundEndingSwitchView.value
-        roundTimer.halfwayAlertEnabled = alertRoundHalfwaySwitchView.value
-        roundTimer.halfwayAlertSound = alertRoundHalfwaySoundPicker.value
         roundTimer.startAlertEnabled = alertRoundStartingSwitchView.value
         roundTimer.startAlertSound = alertRoundStartingSoundPicker.value
         roundTimer.countDirection = timerDirectionSegmentView.value

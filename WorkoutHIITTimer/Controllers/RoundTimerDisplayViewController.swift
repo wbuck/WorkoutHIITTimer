@@ -7,28 +7,14 @@
 //
 
 import UIKit
-import AsyncTimer
 
 class RoundTimerDisplayViewController: UIViewController {
     
-    @IBOutlet weak var startStopButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var quitButton: UIButton!
-    @IBOutlet weak var controlsContainerView: UIView!
-    @IBOutlet weak var startButtonHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var startButtonWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var buttonStackView: UIStackView!
-    @IBOutlet weak var workoutLabel: UILabel!
-    @IBOutlet weak var workoutLabelHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var workoutLabelWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var roundTitleLabel: UILabel!
-    @IBOutlet weak var roundIndicatorLabel: UILabel!
-    @IBOutlet weak var timeIndicatorLabel: UILabel!
-    @IBOutlet weak var timeRemainingIndicatorLabel: UILabel!
-    @IBOutlet weak var totalTimeIndicatorLabel: UILabel!
+    private let audioPlayer = AudioPlayer()
     private var currentTimerIndex: Int = 0
     private let mainMenuSegue = "GoToMainMenu"
-    private var timers = [TimerControl]()
+    private var timers = [TimerWrapper]()
+    private var firstTimerTickComplete = false
     var roundTimer: RoundTimer!
     private var currentRound: Int = 0 {
         didSet {
@@ -51,16 +37,33 @@ class RoundTimerDisplayViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var startStopButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var quitButton: UIButton!
+    @IBOutlet weak var controlsContainerView: UIView!
+    @IBOutlet weak var startButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var startButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonStackView: UIStackView!
+    @IBOutlet weak var workoutLabel: UILabel!
+    @IBOutlet weak var workoutLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var workoutLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var roundTitleLabel: UILabel!
+    @IBOutlet weak var roundIndicatorLabel: UILabel!
+    @IBOutlet weak var timeIndicatorLabel: UILabel!
+    @IBOutlet weak var timeRemainingIndicatorLabel: UILabel!
+    @IBOutlet weak var totalTimeIndicatorLabel: UILabel!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createTimers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        startStopButton.circleButton(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerOrange"))
-        resetButton.circleButton(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerWhite"))
-        quitButton.circleButton(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerWhite"))
-        drawBorderedLabel(workoutLabel, backgroundColor: UIColor.clear, cornerRadius: 5, borderWidth: 2, borderColor: UIColor.clear)
+        startStopButton.drawAsCircle(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerOrange"))
+        resetButton.drawAsCircle(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerWhite"))
+        quitButton.drawAsCircle(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerWhite"))
+        workoutLabel.roundCorners(backgroundColor: UIColor.clear, cornerRadius: 5, borderWidth: 2, borderColor: UIColor.clear)
         navigationController?.isNavigationBarHidden = true
         roundIndicatorLabel.text = "rounds".uppercased()
         currentRound = 0
@@ -83,7 +86,7 @@ class RoundTimerDisplayViewController: UIViewController {
         startStopButton.setTitle("START", for: .normal)
     }
     
-    private func changeWorkoutLabel(_ timer: TimerControl) {
+    private func changeWorkoutLabel(_ timer: TimerWrapper) {
         workoutLabel.text = timer.displayName
         workoutLabel.layer.borderColor = timer.borderColor.cgColor
         workoutLabel.textColor = timer.textColor
@@ -94,25 +97,25 @@ class RoundTimerDisplayViewController: UIViewController {
         timers.removeAll()
         let direction = roundTimer.countDirection
         if roundTimer.warmupTimerEnabled {
-            let warmup = TimerControl(type: .warmupTimer, name: "Warmup",
+            let warmup = TimerWrapper(type: .warmupTimer, name: "Warmup",
                                       direction: direction, interval: roundTimer.warmupIntervalInSeconds)
             warmup.delegate = self
             timers.append(warmup)
         }
         for _ in 1...roundTimer.rounds {
-            let round = TimerControl(type: .roundTimer, name: "Workout",
+            let round = TimerWrapper(type: .roundTimer, name: "Workout",
                                      direction: direction, interval: roundTimer.roundsIntervalInSeconds)
             round.delegate = self
             timers.append(round)
             if roundTimer.restTimerEnabled {
-                let rest = TimerControl(type: .restTimer, name: "Rest",
+                let rest = TimerWrapper(type: .restTimer, name: "Rest",
                                         direction: direction, interval: roundTimer.restIntervalInSeconds)
                 rest.delegate = self
                 timers.append(rest)
             }
         }
         if roundTimer.coolDownTimerEnabled {
-            let coolDown = TimerControl(type: .coolDownTimer, name: "Cooldown",
+            let coolDown = TimerWrapper(type: .coolDownTimer, name: "Cooldown",
                                         direction: direction, interval: roundTimer.coolDownIntervalInSeconds)
             coolDown.delegate = self
             timers.append(coolDown)
@@ -134,14 +137,6 @@ class RoundTimerDisplayViewController: UIViewController {
         let minute = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
         let second = time.1 < 10 ? "0\(time.1)" : "\(time.1)"
         return "\(minute):\(second)"
-    }
-    
-    private func drawBorderedLabel(_ label: UILabel, backgroundColor: UIColor?, cornerRadius: Float, borderWidth: Float, borderColor: UIColor?) {
-        label.layer.cornerRadius = CGFloat(cornerRadius)
-        label.layer.masksToBounds = true
-        label.layer.borderWidth = CGFloat(borderWidth)
-        label.backgroundColor = backgroundColor
-        label.layer.borderColor = borderColor?.cgColor
     }
     
     private func resizeStartButton(new size: CGFloat, font ofSize: CGFloat){
@@ -166,13 +161,13 @@ class RoundTimerDisplayViewController: UIViewController {
     private func changeSizeBasedOnOrientation() {
         if UIDevice.current.orientation.isLandscape {
             resizeStartButton(new: 70, font: 13)
-            startStopButton.circleButton(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerOrange"))
+            startStopButton.drawAsCircle(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerOrange"))
             buttonStackView.spacing = 60
             resizeWorkoutLabel(new: CGSize(width: 135, height: 38), font: 18)
         }
         else {
             resizeStartButton(new: 124, font: 20)
-            startStopButton.circleButton(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerOrange"))
+            startStopButton.drawAsCircle(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerOrange"))
             buttonStackView.spacing = 40
             resizeWorkoutLabel(new: CGSize(width: 160, height: 46), font: 24)
         }
@@ -201,6 +196,7 @@ class RoundTimerDisplayViewController: UIViewController {
     @IBAction func resetButtonPressed(_ sender: UIButton) {
         timers[currentTimerIndex].stop()
         currentTimerIndex = 0
+        firstTimerTickComplete = false
         createTimers()
         updateInterface()
     }
@@ -213,23 +209,45 @@ class RoundTimerDisplayViewController: UIViewController {
 
 extension RoundTimerDisplayViewController: TimerChangedDelegate {
     
-    func timerValueChanged(_ timerControl: TimerControl, elapsedTimeInSeconds: TimeInterval, totalTimeInSeconds: TimeInterval) {
+    func timerStarted(_ timerControl: TimerWrapper) {
+        if timerControl.timerType == .roundTimer {
+            currentRound += 1
+        }
+        // Play timer starting sound if enabled.
+        if roundTimer.startAlertEnabled {
+            guard let sound = roundTimer.startAlertSound else { return }
+            audioPlayer.playSound(sound, "wav")
+        }
+    }
+    
+    func timerValueChanged(_ timerControl: TimerWrapper, elapsedTimeInSeconds: TimeInterval, totalTimeInSeconds: TimeInterval) {
         if timerControl.timerDirection == .up {
             self.elapsedTimeInSeconds = Int(elapsedTimeInSeconds)
-            remainingTimeInSeconds = Int(totalTimeInSeconds - elapsedTimeInSeconds)
+            // Count the current second displayed as
+            // time remaining.
+            remainingTimeInSeconds = Int(totalTimeInSeconds - elapsedTimeInSeconds) + 1
             self.totalTimeInSeconds += 1
         } else {
-            // Add 1 to the display value so that 0 isnt
+            // Add 1 to the display value so that 0 is not
             // shown as the last value for a timer.
             let remainingTime = Int(totalTimeInSeconds - elapsedTimeInSeconds) + 1
             self.elapsedTimeInSeconds = remainingTime
             remainingTimeInSeconds = remainingTime
-            self.totalTimeInSeconds += 1
+            // Prevents to total time indicator from incrementing
+            // before the other time indicators increment.
+            if firstTimerTickComplete {
+                self.totalTimeInSeconds += 1
+            }
+            firstTimerTickComplete = true
         }
-        
+        // Play ending beep if enabled.
+        if remainingTimeInSeconds <= 3 && timerControl.timerType != .coolDownTimer &&
+            roundTimer.endAlertEnabled {
+            audioPlayer.playSound("End Beep", "wav")
+        }
     }
     
-    func timerComplete(_ timerControl: TimerControl) {
+    func timerComplete(_ timerControl: TimerWrapper) {
         // Queue up the next timer to display.
         if let index = timers.index(0, offsetBy: currentTimerIndex + 1, limitedBy: timers.endIndex - 1) {
             currentTimerIndex = index
@@ -242,85 +260,16 @@ extension RoundTimerDisplayViewController: TimerChangedDelegate {
             // on the display when the last timer finishes.
             elapsedTimeInSeconds = 0
             remainingTimeInSeconds = 0
+            totalTimeInSeconds += 1
+        } else if timerControl.timerDirection == .up {
+            // Ensure when the timer is done that the
+            // remaining time reads 0.
+            remainingTimeInSeconds = 0
         }
     }
 }
 
-class TimerControl {
-    private var timer: AsyncTimer!
-    private(set) var timerType: TimerType
-    private(set) var timerDirection: Count
-    let totalTimeInSeconds: TimeInterval
-    private(set) var elapsedTimeInSeconds: TimeInterval = 0
-    private(set) var isTimerComplete: Bool = false
-    private(set) var displayName: String
-    private(set) var borderColor: UIColor!
-    private(set) var textColor: UIColor!
-    var delegate: TimerChangedDelegate?
-    var timerState: TimerState {
-        get {
-            if timer.isRunning { return TimerState.running }
-            else if timer.isPaused { return TimerState.paused }
-            else { return TimerState.stopped }
-        }
-    }
-    
-    init(type: TimerType, name: String, direction: Count, interval: TimeInterval) {
-        timerType = type
-        displayName = name.uppercased()
-        totalTimeInSeconds = interval
-        timerDirection = direction
-        selectedColorTheme()
-        createTimer()
-    }
-    
-    private func selectedColorTheme() {
-        switch timerType {
-        case .warmupTimer:
-            borderColor = UIColor(named: "TimerYellow") ?? UIColor.yellow
-        case .restTimer:
-            borderColor = UIColor(named: "TimerGreen") ?? UIColor.green
-        case .coolDownTimer:
-            borderColor = UIColor(named: "TimerBlue") ?? UIColor.blue
-        default:
-            borderColor = UIColor(named: "TimerOrange") ?? UIColor.orange
-        }
-        textColor = UIColor(named: "TimerWhite") ?? UIColor.white
-    }
-    
-    private func createTimer() {
-        timer = AsyncTimer(queue: .main, interval: .seconds(1), repeats: true, block: {
-            if self.elapsedTimeInSeconds == self.totalTimeInSeconds {
-                self.timer.stop()
-                self.isTimerComplete = true
-                self.delegate?.timerComplete(self)
-            } else {
-                self.elapsedTimeInSeconds += 1
-                self.delegate?.timerValueChanged(self, elapsedTimeInSeconds: self.elapsedTimeInSeconds, totalTimeInSeconds: self.totalTimeInSeconds)
-            }
-        })
-    }
-    
-    func start() {
-        timer.start()
-    }
-    
-    func stop() {
-        timer.stop()
-    }
-    
-    func pause() {
-        timer.pause()
-    }
-    
-    func resume() {
-        timer.resume()
-    }
-    
-    func reset() {
-        timer.restart()
-    }
-}
+
 
 
 

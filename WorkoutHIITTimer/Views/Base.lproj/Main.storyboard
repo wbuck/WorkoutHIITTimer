@@ -348,25 +348,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Starting Sound"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSH-ir-Cyq" customClass="SwitchControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="812" width="375" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="IOq-Qc-dU7"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Round Halfway"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dme-Gf-2aN">
-                                                <rect key="frame" x="16" y="862" width="359" height="1"/>
-                                                <color key="backgroundColor" name="TimerFadedGrey"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="arm-Qa-0m1"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hed-YI-t95" customClass="SwitchControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="913" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="812" width="375" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="F2U-lm-0jT"/>
@@ -375,25 +358,15 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Round Ending (3s)"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqx-xo-qoy" customClass="SoundPickerControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="863" width="375" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" identifier="AlertHalfwaySoundPickerHeight" id="FLn-xH-rcO"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Halfway Sound"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdq-bn-5zh">
-                                                <rect key="frame" x="16" y="963" width="359" height="1"/>
+                                                <rect key="frame" x="16" y="862" width="359" height="1"/>
                                                 <color key="backgroundColor" name="TimerFadedGrey"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Gq0-tM-Jk2"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DH3-Mg-wzB" customClass="SegmentControlView" customModule="WorkoutHIITTimer" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="964" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="863" width="375" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="psg-2M-fiO"/>
@@ -408,7 +381,6 @@
                                             <constraint firstItem="3EY-Uu-hbv" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="0KZ-9A-sdc"/>
                                             <constraint firstAttribute="trailing" secondItem="8rs-p3-HVi" secondAttribute="trailing" id="0fA-59-Ya4"/>
                                             <constraint firstItem="Ejq-Jn-Lmg" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="2OO-Lq-J3a"/>
-                                            <constraint firstItem="Fqx-xo-qoy" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="3dO-gF-Rey"/>
                                             <constraint firstItem="0Si-Le-sN4" firstAttribute="top" secondItem="mNg-Pi-fNv" secondAttribute="bottom" id="4Mn-ar-aeW"/>
                                             <constraint firstItem="nzA-xN-671" firstAttribute="top" secondItem="JY0-fx-EsU" secondAttribute="bottom" id="6ww-fM-vh3"/>
                                             <constraint firstItem="u0v-Aq-PBF" firstAttribute="top" secondItem="jmD-4g-tmp" secondAttribute="bottom" id="7gd-BP-2My"/>
@@ -418,23 +390,19 @@
                                             <constraint firstAttribute="trailing" secondItem="JY0-fx-EsU" secondAttribute="trailing" id="9hH-KH-450"/>
                                             <constraint firstAttribute="trailing" secondItem="JY0-fx-EsU" secondAttribute="trailing" id="AIB-jh-5bd"/>
                                             <constraint firstAttribute="trailing" secondItem="UWm-1U-QaU" secondAttribute="trailing" id="CIc-Y7-HMQ"/>
-                                            <constraint firstItem="dme-Gf-2aN" firstAttribute="top" secondItem="VSH-ir-Cyq" secondAttribute="bottom" id="Ekd-1N-pGe"/>
                                             <constraint firstItem="0Si-Le-sN4" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="F3I-rJ-SvH"/>
                                             <constraint firstItem="Bk2-UD-tXQ" firstAttribute="top" secondItem="06l-R5-kGm" secondAttribute="bottom" id="Hu8-eb-8wh"/>
                                             <constraint firstItem="Ejq-Jn-Lmg" firstAttribute="top" secondItem="aBx-a2-Y3y" secondAttribute="bottom" id="Ipd-cZ-vg8"/>
                                             <constraint firstItem="17p-jL-h35" firstAttribute="top" secondItem="sG2-p1-lBl" secondAttribute="top" id="JLs-SW-ifS"/>
                                             <constraint firstAttribute="trailing" secondItem="DH3-Mg-wzB" secondAttribute="trailing" id="JQc-4I-dZx"/>
                                             <constraint firstAttribute="trailing" secondItem="0Si-Le-sN4" secondAttribute="trailing" id="JaP-cD-61K"/>
-                                            <constraint firstAttribute="trailing" secondItem="VSH-ir-Cyq" secondAttribute="trailing" id="K2i-2d-HLz"/>
                                             <constraint firstAttribute="trailing" secondItem="VDV-AX-SUS" secondAttribute="trailing" id="KUt-mY-WEJ"/>
                                             <constraint firstAttribute="trailing" secondItem="pp7-TF-1hZ" secondAttribute="trailing" id="Kx6-Qd-Huk"/>
                                             <constraint firstItem="8rs-p3-HVi" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="LMJ-r4-vlG"/>
                                             <constraint firstItem="UWm-1U-QaU" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="NnR-2C-6L8"/>
-                                            <constraint firstItem="VSH-ir-Cyq" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="OIu-cI-5Hf"/>
                                             <constraint firstItem="mNg-Pi-fNv" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="Pb8-4G-Ds7"/>
                                             <constraint firstAttribute="trailing" secondItem="Bk2-UD-tXQ" secondAttribute="trailing" id="PyI-5k-KKs"/>
                                             <constraint firstAttribute="trailing" secondItem="06l-R5-kGm" secondAttribute="trailing" id="T7d-Zc-uIP"/>
-                                            <constraint firstAttribute="trailing" secondItem="Fqx-xo-qoy" secondAttribute="trailing" id="Tau-GD-6n6"/>
                                             <constraint firstItem="SSc-fG-yNl" firstAttribute="top" secondItem="u0v-Aq-PBF" secondAttribute="bottom" id="VAV-Q0-Sm7"/>
                                             <constraint firstItem="06l-R5-kGm" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" constant="16" id="VBM-z7-z1M"/>
                                             <constraint firstItem="jmD-4g-tmp" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="VHh-06-0RQ"/>
@@ -443,12 +411,9 @@
                                             <constraint firstItem="UWm-1U-QaU" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="XbW-QZ-B43"/>
                                             <constraint firstAttribute="trailing" secondItem="sdq-bn-5zh" secondAttribute="trailing" id="YJB-DG-nlB"/>
                                             <constraint firstAttribute="trailing" secondItem="aBx-a2-Y3y" secondAttribute="trailing" id="ZVF-X1-SLr"/>
-                                            <constraint firstAttribute="trailing" secondItem="dme-Gf-2aN" secondAttribute="trailing" id="aF2-1N-eob"/>
                                             <constraint firstItem="Bk2-UD-tXQ" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="aPT-CV-U9w"/>
-                                            <constraint firstItem="Hed-YI-t95" firstAttribute="top" secondItem="Fqx-xo-qoy" secondAttribute="bottom" id="aXG-sp-cPm"/>
                                             <constraint firstItem="SSc-fG-yNl" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" constant="16" id="bMp-zk-hiG"/>
                                             <constraint firstItem="aBx-a2-Y3y" firstAttribute="top" secondItem="0Si-Le-sN4" secondAttribute="bottom" id="bOg-dA-3xP"/>
-                                            <constraint firstItem="dme-Gf-2aN" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" constant="16" id="bSl-xh-gDq"/>
                                             <constraint firstItem="VDV-AX-SUS" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="cZh-Iy-VK2"/>
                                             <constraint firstItem="17p-jL-h35" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="dHc-ZN-r3O"/>
                                             <constraint firstItem="mNg-Pi-fNv" firstAttribute="top" secondItem="VDV-AX-SUS" secondAttribute="bottom" id="dgA-ot-9Vi"/>
@@ -466,7 +431,6 @@
                                             <constraint firstItem="JY0-fx-EsU" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="kf9-dk-EwW"/>
                                             <constraint firstAttribute="trailing" secondItem="nzA-xN-671" secondAttribute="trailing" id="koA-bO-dpw"/>
                                             <constraint firstAttribute="trailing" secondItem="UWm-1U-QaU" secondAttribute="trailing" id="ktK-7i-mMn"/>
-                                            <constraint firstItem="VSH-ir-Cyq" firstAttribute="top" secondItem="8rs-p3-HVi" secondAttribute="bottom" id="lTa-ab-xmd"/>
                                             <constraint firstItem="Hed-YI-t95" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="lXj-6Y-gb5"/>
                                             <constraint firstItem="VDV-AX-SUS" firstAttribute="top" secondItem="Bk2-UD-tXQ" secondAttribute="bottom" id="ltw-Vf-L8Y"/>
                                             <constraint firstAttribute="trailing" secondItem="SSc-fG-yNl" secondAttribute="trailing" id="mBn-Vy-uqC"/>
@@ -477,12 +441,12 @@
                                             <constraint firstItem="sdq-bn-5zh" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" constant="16" id="sm6-cJ-PL7"/>
                                             <constraint firstAttribute="height" constant="1100" id="tkG-NP-Lgn"/>
                                             <constraint firstAttribute="trailing" secondItem="17p-jL-h35" secondAttribute="trailing" id="uJh-Gg-T7S"/>
+                                            <constraint firstItem="Hed-YI-t95" firstAttribute="top" secondItem="8rs-p3-HVi" secondAttribute="bottom" id="uiX-jV-jD7"/>
                                             <constraint firstAttribute="trailing" secondItem="jmD-4g-tmp" secondAttribute="trailing" id="vNY-ud-X0N"/>
                                             <constraint firstItem="pp7-TF-1hZ" firstAttribute="top" secondItem="17p-jL-h35" secondAttribute="bottom" id="vn0-ob-I5z"/>
                                             <constraint firstItem="JY0-fx-EsU" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="x8j-L7-X86"/>
                                             <constraint firstItem="0Si-Le-sN4" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="yYi-Zi-YVG"/>
                                             <constraint firstItem="DH3-Mg-wzB" firstAttribute="leading" secondItem="sG2-p1-lBl" secondAttribute="leading" id="yeS-U4-but"/>
-                                            <constraint firstItem="Fqx-xo-qoy" firstAttribute="top" secondItem="dme-Gf-2aN" secondAttribute="bottom" id="zHI-oz-xp4"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -514,8 +478,6 @@
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="alertRoundEndingSwitchView" destination="Hed-YI-t95" id="ewB-vg-Yfu"/>
-                        <outlet property="alertRoundHalfwaySoundPicker" destination="Fqx-xo-qoy" id="7kk-hF-DgB"/>
-                        <outlet property="alertRoundHalfwaySwitchView" destination="VSH-ir-Cyq" id="PJ5-dp-c2n"/>
                         <outlet property="alertRoundStartingSoundPicker" destination="8rs-p3-HVi" id="yfp-S8-G2f"/>
                         <outlet property="alertRoundStartingSwitchView" destination="u0v-Aq-PBF" id="QIR-Fz-EsI"/>
                         <outlet property="contentView" destination="sG2-p1-lBl" id="Q8w-Kj-9Qr"/>

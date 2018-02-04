@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIButton {
     
-    func circleButton(backgroundColor: UIColor?, borderWidth: Float, borderColor: UIColor?) {
+    func drawAsCircle(backgroundColor: UIColor?, borderWidth: Float, borderColor: UIColor?) {
         self.layer.borderColor = borderColor?.cgColor
         self.backgroundColor = backgroundColor
         self.layer.borderWidth = CGFloat(borderWidth)
@@ -19,12 +19,3 @@ public extension UIButton {
     }
 }
 
-/*
-private func drawCircularButton(_ button: UIButton, backgroundColor: UIColor?, borderWidth: Float, borderColor: UIColor?) {
-    button.layer.borderColor = borderColor?.cgColor
-    button.backgroundColor = backgroundColor
-    button.layer.borderWidth = CGFloat(borderWidth)
-    button.layer.cornerRadius = button.frame.width / 2
-    button.layer.masksToBounds = true
-}
-*/
