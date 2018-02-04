@@ -30,7 +30,7 @@ class SwitchControlView: UIView, NibFileOwnerLoadable {
     }
     
     @IBInspectable
-    var section: String = String()
+    var section: String = String.empty
     
     var value: Bool {
         get {

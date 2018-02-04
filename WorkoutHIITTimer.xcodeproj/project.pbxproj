@@ -22,6 +22,7 @@
 		106EADBF20277AB800E68360 /* TimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADBE20277AB800E68360 /* TimerWrapper.swift */; };
 		106EADC120277BCB00E68360 /* LabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC020277BCB00E68360 /* LabelExtensions.swift */; };
 		106EADC320277D6500E68360 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC220277D6500E68360 /* AudioPlayer.swift */; };
+		106EADC520278B8700E68360 /* IntegerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EADC420278B8700E68360 /* IntegerExtensions.swift */; };
 		107157422006E58B00BE3739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107157412006E58B00BE3739 /* AppDelegate.swift */; };
 		107157472006E58B00BE3739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107157452006E58B00BE3739 /* Main.storyboard */; };
 		1071574C2006E58B00BE3739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1071574B2006E58B00BE3739 /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		106EADBE20277AB800E68360 /* TimerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWrapper.swift; sourceTree = "<group>"; };
 		106EADC020277BCB00E68360 /* LabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtensions.swift; sourceTree = "<group>"; };
 		106EADC220277D6500E68360 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		106EADC420278B8700E68360 /* IntegerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerExtensions.swift; sourceTree = "<group>"; };
 		1071573E2006E58B00BE3739 /* WorkoutHIITTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutHIITTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107157412006E58B00BE3739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		107157462006E58B00BE3739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				106EADBA2027599600E68360 /* StringExtensions.swift */,
 				106EADBC20275A4A00E68360 /* ButtonExtensions.swift */,
 				106EADC020277BCB00E68360 /* LabelExtensions.swift */,
+				106EADC420278B8700E68360 /* IntegerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				10F1273C200D698B00DE7F6D /* NibFileOwnerLoadable.swift in Sources */,
 				1087F0BC201E72FA00345382 /* RoundTimerDisplayViewController.swift in Sources */,
 				10F12740200D809C00DE7F6D /* SegmentControlView.swift in Sources */,
+				106EADC520278B8700E68360 /* IntegerExtensions.swift in Sources */,
 				10F12744200D826E00DE7F6D /* HeaderView.swift in Sources */,
 				107157422006E58B00BE3739 /* AppDelegate.swift in Sources */,
 				1087E43A2012F47D0075FDE6 /* PickerView.swift in Sources */,

@@ -28,7 +28,7 @@ class TimePickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPic
     }
     
     @IBInspectable
-    var section: String = String()
+    var section: String = String.empty
     
     // Format and display time in label.
     var value: (UInt, UInt, UInt) {

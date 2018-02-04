@@ -23,17 +23,17 @@ class RoundTimerDisplayViewController: UIViewController {
     }
     private var totalTimeInSeconds: Int = 0 {
         didSet {
-            totalTimeIndicatorLabel.text = formatTime(from: totalTimeInSeconds)
+            totalTimeIndicatorLabel.text = totalTimeInSeconds.formatToMinutesAndSeconds()
         }
     }
     private var elapsedTimeInSeconds: Int = 0 {
         didSet {
-            timeIndicatorLabel.text = formatTime(from: Int(elapsedTimeInSeconds))
+            timeIndicatorLabel.text = elapsedTimeInSeconds.formatToMinutesAndSeconds()
         }
     }
     private var remainingTimeInSeconds: Int = 0 {
         didSet {
-            timeRemainingIndicatorLabel.text = formatTime(from: Int(remainingTimeInSeconds))
+            timeRemainingIndicatorLabel.text = remainingTimeInSeconds.formatToMinutesAndSeconds()
         }
     }
     
@@ -47,12 +47,14 @@ class RoundTimerDisplayViewController: UIViewController {
     @IBOutlet weak var workoutLabel: UILabel!
     @IBOutlet weak var workoutLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var workoutLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var workoutLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var roundTitleLabel: UILabel!
     @IBOutlet weak var roundIndicatorLabel: UILabel!
     @IBOutlet weak var timeIndicatorLabel: UILabel!
     @IBOutlet weak var timeRemainingIndicatorLabel: UILabel!
     @IBOutlet weak var totalTimeIndicatorLabel: UILabel!
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,24 +123,7 @@ class RoundTimerDisplayViewController: UIViewController {
             timers.append(coolDown)
         }
     }
-    /*
-     private func formatTime(from seconds: Int) -> String {
-     let f = (seconds / 60, (seconds % 60))
-     print("minutes \(f.0) seconds \(f.1)")
-     let time = (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-     let hour = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
-     let minute = time.1 < 10 ? "0\(time.1)" : "\(time.1)"
-     let second = time.2 < 10 ? "0\(time.2)" : "\(time.2)"
-     return "\(hour):\(minute):\(second)"
-     }
-     */
-    private func formatTime(from seconds: Int) -> String {
-        let time = (seconds / 60, (seconds % 60))
-        let minute = time.0 < 10 ? "0\(time.0)" : "\(time.0)"
-        let second = time.1 < 10 ? "0\(time.1)" : "\(time.1)"
-        return "\(minute):\(second)"
-    }
-    
+
     private func resizeStartButton(new size: CGFloat, font ofSize: CGFloat){
         startButtonHeightConstraint.constant = size
         startButtonWidthConstraint.constant = size
@@ -146,9 +131,10 @@ class RoundTimerDisplayViewController: UIViewController {
         buttonStackView.layoutIfNeeded()
     }
     
-    private func resizeWorkoutLabel(new size: CGSize, font ofSize: CGFloat) {
+    private func resizeWorkoutLabel(new size: CGSize, font ofSize: CGFloat, topPosition: CGFloat = 30) {
         workoutLabelWidthConstraint.constant = size.width
         workoutLabelHeightConstraint.constant = size.height
+        workoutLabelTopConstraint.constant = topPosition
         workoutLabel.font = UIFont.systemFont(ofSize: ofSize, weight: UIFont.Weight.semibold)
         workoutLabel.layoutIfNeeded()
     }
@@ -163,13 +149,13 @@ class RoundTimerDisplayViewController: UIViewController {
             resizeStartButton(new: 70, font: 13)
             startStopButton.drawAsCircle(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerOrange"))
             buttonStackView.spacing = 60
-            resizeWorkoutLabel(new: CGSize(width: 135, height: 38), font: 18)
+            resizeWorkoutLabel(new: CGSize(width: 135, height: 38), font: 18, topPosition: 20)
         }
         else {
             resizeStartButton(new: 124, font: 20)
             startStopButton.drawAsCircle(backgroundColor: UIColor.clear, borderWidth: 2, borderColor: UIColor(named: "TimerOrange"))
             buttonStackView.spacing = 40
-            resizeWorkoutLabel(new: CGSize(width: 160, height: 46), font: 24)
+            resizeWorkoutLabel(new: CGSize(width: 160, height: 46), font: 24, topPosition: 40)
         }
     }
     
@@ -223,9 +209,7 @@ extension RoundTimerDisplayViewController: TimerChangedDelegate {
     func timerValueChanged(_ timerControl: TimerWrapper, elapsedTimeInSeconds: TimeInterval, totalTimeInSeconds: TimeInterval) {
         if timerControl.timerDirection == .up {
             self.elapsedTimeInSeconds = Int(elapsedTimeInSeconds)
-            // Count the current second displayed as
-            // time remaining.
-            remainingTimeInSeconds = Int(totalTimeInSeconds - elapsedTimeInSeconds) + 1
+            remainingTimeInSeconds = Int(totalTimeInSeconds - elapsedTimeInSeconds)
             self.totalTimeInSeconds += 1
         } else {
             // Add 1 to the display value so that 0 is not
@@ -261,10 +245,6 @@ extension RoundTimerDisplayViewController: TimerChangedDelegate {
             elapsedTimeInSeconds = 0
             remainingTimeInSeconds = 0
             totalTimeInSeconds += 1
-        } else if timerControl.timerDirection == .up {
-            // Ensure when the timer is done that the
-            // remaining time reads 0.
-            remainingTimeInSeconds = 0
         }
     }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 public extension String {
-    static let emptyString: String = String()
+    static let empty: String = String()
 }

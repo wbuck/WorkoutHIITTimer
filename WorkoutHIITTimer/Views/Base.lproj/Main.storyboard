@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Verdana.ttf">
+            <string>Verdana</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="rug-3J-wBy">
@@ -511,7 +516,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-20-PhP">
-                                        <rect key="frame" x="107.5" y="29.5" width="160" height="46"/>
+                                        <rect key="frame" x="107.5" y="40" width="160" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="E9g-zU-LYB"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="xdV-Kw-AJ4"/>
@@ -703,15 +708,15 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtc-K0-sMu" userLabel="Timer Indicator View">
-                                        <rect key="frame" x="0.0" y="75.5" width="375" height="350.5"/>
+                                        <rect key="frame" x="0.0" y="86" width="375" height="340"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJE-Nb-gOP">
-                                                <rect key="frame" x="16" y="144.5" width="343" height="60"/>
+                                                <rect key="frame" x="16" y="133" width="343" height="73"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="Zdb-CU-XHn"/>
-                                                    <constraint firstAttribute="height" constant="60" id="ffX-pS-bmo"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="ffX-pS-bmo"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="60"/>
                                                 <color key="textColor" name="TimerOrange"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -730,7 +735,7 @@
                                     <constraint firstAttribute="trailing" secondItem="aGN-qD-P7e" secondAttribute="trailing" id="E3t-FK-JFs"/>
                                     <constraint firstItem="pQI-Bj-afa" firstAttribute="top" secondItem="aGN-qD-P7e" secondAttribute="bottom" constant="8" id="EO8-N3-idc"/>
                                     <constraint firstItem="Rtc-K0-sMu" firstAttribute="leading" secondItem="jtM-dU-ti7" secondAttribute="leading" id="Inr-zr-pMj"/>
-                                    <constraint firstItem="mZU-20-PhP" firstAttribute="top" secondItem="jtM-dU-ti7" secondAttribute="top" constant="30" id="Rno-ZZ-MRs"/>
+                                    <constraint firstItem="mZU-20-PhP" firstAttribute="top" secondItem="jtM-dU-ti7" secondAttribute="top" constant="40" id="Rno-ZZ-MRs"/>
                                     <constraint firstItem="aGN-qD-P7e" firstAttribute="leading" secondItem="jtM-dU-ti7" secondAttribute="leading" id="UsE-lG-Iyh"/>
                                     <constraint firstItem="mZU-20-PhP" firstAttribute="centerX" secondItem="jtM-dU-ti7" secondAttribute="centerX" id="cia-Cz-4yo"/>
                                     <constraint firstItem="pQI-Bj-afa" firstAttribute="leading" secondItem="jtM-dU-ti7" secondAttribute="leading" id="oaZ-8L-JSM"/>
@@ -765,6 +770,7 @@
                         <outlet property="totalTimeIndicatorLabel" destination="Dcb-TF-ADJ" id="uOp-1z-61d"/>
                         <outlet property="workoutLabel" destination="mZU-20-PhP" id="3Hf-0w-YAx"/>
                         <outlet property="workoutLabelHeightConstraint" destination="E9g-zU-LYB" id="rdT-Qj-eGS"/>
+                        <outlet property="workoutLabelTopConstraint" destination="Rno-ZZ-MRs" id="gO5-6P-B8L"/>
                         <outlet property="workoutLabelWidthConstraint" destination="xdV-Kw-AJ4" id="4Xj-zj-ZIL"/>
                         <segue destination="bdb-76-ffr" kind="unwind" identifier="GoToMainMenu" unwindAction="prepareForUnwindWithSegue:" id="EfU-xd-OYu"/>
                     </connections>

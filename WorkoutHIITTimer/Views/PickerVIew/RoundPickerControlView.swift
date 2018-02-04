@@ -30,7 +30,7 @@ class RoundPickerControlView: ExpandablePickerView, UIPickerViewDataSource, UIPi
     }
     
     @IBInspectable
-    var section: String = String()
+    var section: String = String.empty
     
     var value: Int {
         get {
