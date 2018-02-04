@@ -549,14 +549,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-20-PhP">
-                                        <rect key="frame" x="114" y="29.5" width="147" height="46"/>
-                                        <color key="backgroundColor" name="TimerOrange"/>
+                                        <rect key="frame" x="107.5" y="29.5" width="160" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="E9g-zU-LYB"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="xdV-Kw-AJ4"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="xdV-Kw-AJ4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                        <color key="textColor" name="TimerWhite"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-Bj-afa" userLabel="Controls View">
@@ -575,6 +574,9 @@
                                                         <state key="normal" title="RESET">
                                                             <color key="titleColor" name="TimerWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="resetButtonPressed:" destination="Bte-gO-cKV" eventType="touchUpInside" id="W0F-rO-I2q"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guq-5u-an8">
                                                         <rect key="frame" x="100" y="0.0" width="124" height="124"/>
@@ -797,6 +799,8 @@
                         <outlet property="startButtonWidthConstraint" destination="RZB-eB-sa9" id="aSg-5N-VTx"/>
                         <outlet property="startStopButton" destination="guq-5u-an8" id="A23-xj-ujr"/>
                         <outlet property="timeIndicatorLabel" destination="sJE-Nb-gOP" id="fAq-FA-Sz9"/>
+                        <outlet property="timeRemainingIndicatorLabel" destination="MYB-yR-IB3" id="RDO-ZK-7i3"/>
+                        <outlet property="totalTimeIndicatorLabel" destination="Dcb-TF-ADJ" id="uOp-1z-61d"/>
                         <outlet property="workoutLabel" destination="mZU-20-PhP" id="3Hf-0w-YAx"/>
                         <outlet property="workoutLabelHeightConstraint" destination="E9g-zU-LYB" id="rdT-Qj-eGS"/>
                         <outlet property="workoutLabelWidthConstraint" destination="xdV-Kw-AJ4" id="4Xj-zj-ZIL"/>

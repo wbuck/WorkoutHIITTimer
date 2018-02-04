@@ -9,6 +9,9 @@
 import Foundation
 
 protocol TimerChangedDelegate {
-    func timerControl(_ timerControl: TimerControl, elapsedTime inSeconds: TimeInterval, remaining time: TimeInterval)
-    func timerControl(_ timerControl: TimerControl, finalTime inSeconds: TimeInterval)
+   // func timerStarted(_ timerControl: TimerControl )
+   // func timerValueChanged(_ timerControl: TimerControl, elapsedTime inSeconds: TimeInterval, remaining time: TimeInterval)
+   // func timerCompleted(_ timerControl: TimerControl, timerCompleted inSeconds: TimeInterval)
+    func timerValueChanged(_ timerControl: TimerControl, elapsedTimeInSeconds: TimeInterval, totalTimeInSeconds: TimeInterval)
+    func timerComplete(_ timerControl: TimerControl)
 }
