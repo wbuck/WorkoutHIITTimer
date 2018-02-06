@@ -101,7 +101,7 @@ class MyTimersTableViewController: UITableViewController, SwipeTableViewCellDele
         return cell
     }
     
-    private func getTimer(at indexPath: IndexPath) -> Timer? {
+    private func getTimer(at indexPath: IndexPath) -> WorkoutTimer? {
         guard let timerType = TimerType(rawValue: indexPath.section) else { return nil }
         switch timerType {
         case .roundTimer:

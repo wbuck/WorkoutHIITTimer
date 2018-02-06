@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-protocol Timer {
+protocol WorkoutTimer {
     var id: String { get set }
     var timerName: String  { get set }
     var timerDescription: String? { get set }

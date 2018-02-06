@@ -211,6 +211,10 @@ extension RoundTimerDisplayViewController: TimerChangedDelegate {
             self.elapsedTimeInSeconds = Int(elapsedTimeInSeconds)
             remainingTimeInSeconds = Int(totalTimeInSeconds - elapsedTimeInSeconds)
             self.totalTimeInSeconds += 1
+            // Play ending beep if enabled.
+            if remainingTimeInSeconds + 1 <= 3 && roundTimer.endAlertEnabled {
+                audioPlayer.playSound("End Beep", "wav")
+            }
         } else {
             // Add 1 to the display value so that 0 is not
             // shown as the last value for a timer.
@@ -223,12 +227,12 @@ extension RoundTimerDisplayViewController: TimerChangedDelegate {
                 self.totalTimeInSeconds += 1
             }
             firstTimerTickComplete = true
+            // Play ending beep if enabled.
+            if remainingTimeInSeconds <= 3 && roundTimer.endAlertEnabled {
+                audioPlayer.playSound("End Beep", "wav")
+            }
         }
-        // Play ending beep if enabled.
-        if remainingTimeInSeconds <= 3 && timerControl.timerType != .coolDownTimer &&
-            roundTimer.endAlertEnabled {
-            audioPlayer.playSound("End Beep", "wav")
-        }
+        
     }
     
     func timerComplete(_ timerControl: TimerWrapper) {

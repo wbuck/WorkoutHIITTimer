@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import AsyncTimer
+import SwiftyTimer
 
 class TimerWrapper {
-    private var timer: AsyncTimer!
+    private var timer: Timer!
     private(set) var timerType: TimerType
     private(set) var timerDirection: Count
     let totalTimeInSeconds: TimeInterval
@@ -20,19 +20,14 @@ class TimerWrapper {
     private(set) var borderColor: UIColor!
     private(set) var textColor: UIColor!
     var delegate: TimerChangedDelegate?
-    var timerState: TimerState {
-        get {
-            if timer.isRunning { return TimerState.running }
-            else if timer.isPaused { return TimerState.paused }
-            else { return TimerState.stopped }
-        }
-    }
+    private(set) var timerState: TimerState
     
     init(type: TimerType, name: String, direction: Count, interval: TimeInterval) {
         timerType = type
         displayName = name.uppercased()
         totalTimeInSeconds = interval
         timerDirection = direction
+        timerState = .stopped
         selectedColorTheme()
         createTimer()
     }
@@ -52,9 +47,9 @@ class TimerWrapper {
     }
     
     private func createTimer() {
-        timer = AsyncTimer(queue: .main, interval: .seconds(1), repeats: true, block: {
+        timer = Timer.new(every: 1.seconds, { (timer) in
             if self.elapsedTimeInSeconds == self.totalTimeInSeconds {
-                self.timer.stop()
+                timer.invalidate()
                 self.isTimerComplete = true
                 self.delegate?.timerComplete(self)
             } else {
@@ -65,25 +60,44 @@ class TimerWrapper {
                 self.delegate?.timerValueChanged(self, elapsedTimeInSeconds: self.elapsedTimeInSeconds, totalTimeInSeconds: self.totalTimeInSeconds)
             }
         })
+        //        timer = AsyncTimer(queue: .main, interval: .seconds(1), repeats: true, block: {
+        //            if self.elapsedTimeInSeconds == self.totalTimeInSeconds {
+        //                self.timer.stop()
+        //                self.isTimerComplete = true
+        //                self.delegate?.timerComplete(self)
+        //            } else {
+        //                if self.elapsedTimeInSeconds == 0 {
+        //                    self.delegate?.timerStarted(self)
+        //                }
+        //                self.elapsedTimeInSeconds += 1
+        //                self.delegate?.timerValueChanged(self, elapsedTimeInSeconds: self.elapsedTimeInSeconds, totalTimeInSeconds: self.totalTimeInSeconds)
+        //            }
+        //        })
     }
     
     func start() {
         timer.start()
+        timerState = .running
     }
     
     func stop() {
-        timer.stop()
+        timer.invalidate()
+        timerState = .stopped
     }
     
     func pause() {
-        timer.pause()
+        timer.invalidate()
+        timerState = .paused
     }
     
     func resume() {
-        timer.resume()
+        createTimer()
+        start()
     }
     
     func reset() {
-        timer.restart()
+        elapsedTimeInSeconds = 0
+        createTimer()
+        timerState = .stopped
     }
 }

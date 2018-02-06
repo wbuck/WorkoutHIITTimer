@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class IntervalTimer: Object, Timer {
+class IntervalTimer: Object, WorkoutTimer {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var timerName: String = "Interval timer"
     @objc dynamic var timerDescription: String?

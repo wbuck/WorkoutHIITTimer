@@ -47,7 +47,7 @@
 		10CDC70F2023E4DF00F3E6BF /* StopWatchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC70E2023E4DF00F3E6BF /* StopWatchRepository.swift */; };
 		10CDC7112023E52C00F3E6BF /* TabataTimerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC7102023E52C00F3E6BF /* TabataTimerRepository.swift */; };
 		10CDC7132023E58500F3E6BF /* IntervalTimerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC7122023E58500F3E6BF /* IntervalTimerRepository.swift */; };
-		10CDC7172023E9A400F3E6BF /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC7162023E9A400F3E6BF /* Timer.swift */; };
+		10CDC7172023E9A400F3E6BF /* WorkoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC7162023E9A400F3E6BF /* WorkoutTimer.swift */; };
 		10CDC7192023EE1000F3E6BF /* TimerRepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC7182023EE1000F3E6BF /* TimerRepositoryFactory.swift */; };
 		10CDC71B2023EE3500F3E6BF /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC71A2023EE3500F3E6BF /* RepositoryFactory.swift */; };
 		10CF297D20180FF200BA9499 /* SwitchControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CF297C20180FF200BA9499 /* SwitchControlView.xib */; };
@@ -122,7 +122,7 @@
 		10CDC70E2023E4DF00F3E6BF /* StopWatchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchRepository.swift; sourceTree = "<group>"; };
 		10CDC7102023E52C00F3E6BF /* TabataTimerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataTimerRepository.swift; sourceTree = "<group>"; };
 		10CDC7122023E58500F3E6BF /* IntervalTimerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerRepository.swift; sourceTree = "<group>"; };
-		10CDC7162023E9A400F3E6BF /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		10CDC7162023E9A400F3E6BF /* WorkoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimer.swift; sourceTree = "<group>"; };
 		10CDC7182023EE1000F3E6BF /* TimerRepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRepositoryFactory.swift; sourceTree = "<group>"; };
 		10CDC71A2023EE3500F3E6BF /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		10CF297C20180FF200BA9499 /* SwitchControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchControlView.xib; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 				10EBE210201AD1FC00A553E9 /* HeaderSwitchViewDelegate.swift */,
 				10525D5C201B7F0000D5F403 /* TimersController.swift */,
 				10CDC6FD20233BD400F3E6BF /* TimerRepository.swift */,
-				10CDC7162023E9A400F3E6BF /* Timer.swift */,
+				10CDC7162023E9A400F3E6BF /* WorkoutTimer.swift */,
 				10CDC71A2023EE3500F3E6BF /* RepositoryFactory.swift */,
 				106EADB6202618EC00E68360 /* TimerChangedDelegate.swift */,
 			);
@@ -530,6 +530,7 @@
 				"${BUILT_PRODUCTS_DIR}/AsyncTimer/AsyncTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -537,6 +538,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,7 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10CDC7172023E9A400F3E6BF /* Timer.swift in Sources */,
+				10CDC7172023E9A400F3E6BF /* WorkoutTimer.swift in Sources */,
 				106EADBD20275A4A00E68360 /* ButtonExtensions.swift in Sources */,
 				10CDC7092023E3F100F3E6BF /* TabataTimer.swift in Sources */,
 				10CDC6FE20233BD400F3E6BF /* TimerRepository.swift in Sources */,

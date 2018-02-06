@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class StopWatch: Object, Timer {
+class StopWatch: Object, WorkoutTimer {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var timerName: String = "Stopwatch"
     @objc dynamic var timerDescription: String?
