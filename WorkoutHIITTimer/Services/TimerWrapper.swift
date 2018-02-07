@@ -48,6 +48,10 @@ class TimerWrapper {
     
     private func createTimer() {
         timer = Timer.new(every: 1.seconds, { (timer) in
+            if !timer.isValid { return }
+            let formatter = DateFormatter()
+            formatter.dateFormat = "ss.SSSS"
+            print("\(formatter.string(from: Date())) Current elapsed time \(self.elapsedTimeInSeconds)")
             if self.elapsedTimeInSeconds == self.totalTimeInSeconds {
                 timer.invalidate()
                 self.isTimerComplete = true
@@ -60,19 +64,6 @@ class TimerWrapper {
                 self.delegate?.timerValueChanged(self, elapsedTimeInSeconds: self.elapsedTimeInSeconds, totalTimeInSeconds: self.totalTimeInSeconds)
             }
         })
-        //        timer = AsyncTimer(queue: .main, interval: .seconds(1), repeats: true, block: {
-        //            if self.elapsedTimeInSeconds == self.totalTimeInSeconds {
-        //                self.timer.stop()
-        //                self.isTimerComplete = true
-        //                self.delegate?.timerComplete(self)
-        //            } else {
-        //                if self.elapsedTimeInSeconds == 0 {
-        //                    self.delegate?.timerStarted(self)
-        //                }
-        //                self.elapsedTimeInSeconds += 1
-        //                self.delegate?.timerValueChanged(self, elapsedTimeInSeconds: self.elapsedTimeInSeconds, totalTimeInSeconds: self.totalTimeInSeconds)
-        //            }
-        //        })
     }
     
     func start() {

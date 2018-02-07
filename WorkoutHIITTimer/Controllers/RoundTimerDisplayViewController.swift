@@ -231,8 +231,7 @@ extension RoundTimerDisplayViewController: TimerChangedDelegate {
             if remainingTimeInSeconds <= 3 && roundTimer.endAlertEnabled {
                 audioPlayer.playSound("End Beep", "wav")
             }
-        }
-        
+        }  
     }
     
     func timerComplete(_ timerControl: TimerWrapper) {

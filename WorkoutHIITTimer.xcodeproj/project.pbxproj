@@ -37,6 +37,7 @@
 		108B1C132013E2BC00803855 /* SoundPickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1C122013E2BC00803855 /* SoundPickerControlView.swift */; };
 		10A51A152018AE8900F08029 /* End Beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10A51A142018AE8800F08029 /* End Beep.wav */; };
 		10A51A172018B10E00F08029 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A51A162018B10E00F08029 /* Count.swift */; };
+		10C10B01202A86F400B69710 /* TimerDisplayInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C10B00202A86F400B69710 /* TimerDisplayInformation.swift */; };
 		10CDC6FE20233BD400F3E6BF /* TimerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC6FD20233BD400F3E6BF /* TimerRepository.swift */; };
 		10CDC70120233F5400F3E6BF /* RoundTimerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC70020233F5400F3E6BF /* RoundTimerRepository.swift */; };
 		10CDC7052023E3AB00F3E6BF /* EmomTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDC7042023E3AB00F3E6BF /* EmomTimer.swift */; };
@@ -112,6 +113,7 @@
 		108B1C122013E2BC00803855 /* SoundPickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerControlView.swift; sourceTree = "<group>"; };
 		10A51A142018AE8800F08029 /* End Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "End Beep.wav"; sourceTree = "<group>"; };
 		10A51A162018B10E00F08029 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
+		10C10B00202A86F400B69710 /* TimerDisplayInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplayInformation.swift; sourceTree = "<group>"; };
 		10CDC6FD20233BD400F3E6BF /* TimerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRepository.swift; sourceTree = "<group>"; };
 		10CDC70020233F5400F3E6BF /* RoundTimerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTimerRepository.swift; sourceTree = "<group>"; };
 		10CDC7042023E3AB00F3E6BF /* EmomTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmomTimer.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				10CDC7182023EE1000F3E6BF /* TimerRepositoryFactory.swift */,
 				106EADBE20277AB800E68360 /* TimerWrapper.swift */,
 				106EADC220277D6500E68360 /* AudioPlayer.swift */,
+				10C10B00202A86F400B69710 /* TimerDisplayInformation.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				10525D59201B666C00D5F403 /* MyTimersTableViewController.swift in Sources */,
 				10F1275E20117C5A00DE7F6D /* PickerViewState.swift in Sources */,
 				107157602006F61F00BE3739 /* MainMenuTableViewCell.swift in Sources */,
+				10C10B01202A86F400B69710 /* TimerDisplayInformation.swift in Sources */,
 				10CDC70120233F5400F3E6BF /* RoundTimerRepository.swift in Sources */,
 				10EBE20F201A421B00A553E9 /* TimeIntervalExtensions.swift in Sources */,
 				10CDC70F2023E4DF00F3E6BF /* StopWatchRepository.swift in Sources */,
